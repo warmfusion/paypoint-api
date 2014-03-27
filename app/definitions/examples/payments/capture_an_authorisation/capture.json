@@ -1,0 +1,40 @@
+{
+	"description": "Capture",
+	"request": {
+		"description": "POST /transactions/{instId}/13504712363/capture",
+		"body": {
+			"transaction" : {}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"gatewayReference": "7832031551661246",
+					"gatewayCode": "1",
+					"gatewayMessage": "FULFILLED OK",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"transaction": {
+				"transactionId": "13504712364",
+				"status": "SUCCESS",
+				"type": "CAPTURE",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T20:59:40.233Z",
+				"relatedTransaction": {
+					"transactionId": "13504712363",
+					"merchantRef": "mer_txn_1234557"
+				}
+			  },
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

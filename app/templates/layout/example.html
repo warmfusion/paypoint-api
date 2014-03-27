@@ -1,0 +1,17 @@
+<div>
+	<div class="row">
+		<div class="col-md-8">
+			<h4><%= description %></h4>
+		</div>
+		<div class="col-md-4 toggle vertical-extend vertical-align-h4">
+			<a onclick="$(this).parent().parent().parent().find('pre').slideToggle();$(this).find('span').toggleClass('hidden');">
+				<span class="hidden">Hide</span><span>Show</span> Details</a>
+		</div>
+	</div>
+	<pre style="display: none;">
+<strong><%= request.description %></strong>
+<%= request.body %>
+<strong><%= response.description %></strong>
+<%= response.body %>
+	</pre>
+</div>

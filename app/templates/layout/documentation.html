@@ -1,0 +1,12 @@
+<%= new GenericRenderer().render('header', {}) %>
+<div class="content">
+	<div class="menu-panel hidden-xs">
+		<%= new GenericRenderer().render('menu', {}) %>
+	</div>
+	<div class="row content-row">
+		<div class="col-sm-offset-4 col-md-offset-3 col-sm-8 col-md-9 col-xs-12 content-cell">
+			<%= new GenericRenderer().render('page', {}) %>
+		</div>
+	</div>
+</div>
+<%= new GenericRenderer().render('footer', {}) %>

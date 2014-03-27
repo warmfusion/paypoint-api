@@ -1,0 +1,13 @@
+<div class="panel">
+	<div class="panel-body">
+		<% var hash = location.hash.replace(/^#/, ''); %>
+		<a id="page-print" class="pull-right" target="_blank" href="index-print.html#<%= hash %>">Print this page</a>
+		<div id="page">
+			<% if(hash !== '') { %>
+				<%= new PageRenderer().render(hash) %>
+			<% } else { %>
+				Please select an entry from the table of contents.
+			<% }%>
+		</div>
+	</div>
+</div>

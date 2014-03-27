@@ -1,0 +1,50 @@
+<h2 class="page-title"> Submit an authorisation </h2>
+
+<div class="page-body">
+	<p>Payments can also be submitted for two-step authorisation and capturing of funds.
+	This is useful if you want to perform internal checks on your customer, their payment method or the order itself
+	prior to requesting the funds. Use the “Defer” indicator with the Payment request to indicate that you only
+	want to perform an authorisation and that you will request capture of funds or indeed cancel the authorisation
+	at a later date.
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>Authorisations expire by default after 7 days. After this time, you won’t be able to Capture or Cancel the request.</em>
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment', 'payments/submit_an_authorisation').get()) %>
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/submit_an_authorisation/preauth') %>
+					<%= new ExampleRenderer().render('payments/submit_an_authorisation/pci-free-preauth-new-customer') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/payments', 'payments/submit_an_authorisation').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('payments/submit_an_authorisation/submit-an-authorisation') %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

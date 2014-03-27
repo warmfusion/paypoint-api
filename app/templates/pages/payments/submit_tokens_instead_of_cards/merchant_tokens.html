@@ -1,0 +1,29 @@
+<h2 class="page-title"> Merchant tokens </h2>
+
+<div class="page-body">
+	<p>
+		If you’re using the API product, upon successful completion of your customer’s first payment, we’ll return a
+		token and a customer reference in the response. Either of these can be used for future Payment, Authorisation or
+		Payout requests in place of the customer’s card number. (PAN – Primary Account Number). All you need to do is
+		either provide the customer reference or the token itself for each subsequent request.
+	</p>
+
+	<p> Where a customer has registered multiple cards, you can also request a Payment, Authorisation or Payout from the
+		default card.</p>
+
+	<a href="#payments/make_a_payment"> see: Make a Payment </a>
+
+	<div class="endpoint">
+
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment',
+		'payments/submit_tokens_instead_of_cards/merchant_tokens').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/submit_tokens_instead_of_cards/merchant_tokens/submit-payment-with-merchant-card-token')
+			%>
+			<%= new ExampleRenderer().render('payments/submit_tokens_instead_of_cards/merchant_tokens/submit-payment-with-customer-default-card')
+			%>
+		</div>
+	</div>
+</div>

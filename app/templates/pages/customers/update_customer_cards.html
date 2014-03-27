@@ -1,0 +1,42 @@
+<h2 class="page-title"> Update your customer’s cards </h2>
+
+
+<div class="page-body">
+	<p>
+		Improve acceptance rates by keeping your customer’s payment method updated.  For example, Card Expiry.
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/{customerId}/paymentMethod/{token}/makeDefault', 'customers/update_customer_cards').get()) %>
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('customers/update_customer_cards/make-card-default-card') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/cards', 'customers/update_customer_cards').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('customers/update_customer_cards/update-customer-card') %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

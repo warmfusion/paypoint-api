@@ -1,0 +1,17 @@
+{
+	"description": "Resume a suspended payment",
+	"request":{
+		"description":"POST hosted/rest/sessions/{instId}/sessions/{sessionId}/resume",
+		"body":{
+
+		}
+	},
+	"response": {
+		"description":"HTTP/1.1 201",
+		"body": {
+			"sessionId": "2d4d9eef-3b6b-4acc-b9c8-747a01d53cde",
+			"redirectUrl": "http://www.paypoint.net/hosted/bbf124f5-f388-4909-bd55-2a95c1f72b28/resume/2d4d9eef-3b6b-4acc-b9c8-747a01d53cde/f99af598-39bf-490e-b0c9-57ecfddad076",
+			"status": "SUCCESS"
+		}
+	}
+}

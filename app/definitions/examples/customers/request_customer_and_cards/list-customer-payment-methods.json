@@ -1,0 +1,112 @@
+{
+	"description": "List Customer Payment Methods",
+	"request": {
+		"description": "GET  /customers/{instId}/10500/paymentMethods",
+		"body": {}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": [
+			{
+				"billingAddress": {
+					"city": "Bath",
+					"country": "UK",
+					"countryCode": null,
+					"line1": "Flat 3 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"name": null,
+					"postcode": "BA1 234",
+					"region": "Somerset"
+				},
+				"card": {
+					"cardHolderName": "John Smith",
+					"cardNickname": "My Card",
+					"cardToken": "yBuwboU0QTexB7AcNeQIfA",
+					"cardType": "VISA_DEBIT",
+					"expiryDate": "0215",
+					"issueNumber": null,
+					"issuer": "Lloyds",
+					"issuerCountry": "GBR",
+					"maskedPan": "100035******0007",
+					"validDate": "1212"
+				},
+				"isPrimary": false,
+				"link": [
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethods/yBuwboU0QTexB7AcNeQIfA",
+						"rel": "self"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethod/yBuwboU0QTexB7AcNeQIfA/remove",
+						"rel": "remove"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1",
+						"rel": "customer"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethods/yBuwboU0QTexB7AcNeQIfA/update",
+						"rel": "update"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethod/yBuwboU0QTexB7AcNeQIfA/makeDefault",
+						"rel": "make-primary"
+					}
+				],
+				"paymentClass": "CARD"
+			},
+			{
+				"billingAddress": {
+					"city": "Bath",
+					"country": "UK",
+					"countryCode": null,
+					"line1": "Flat 4 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"name": null,
+					"postcode": "BA1 234",
+					"region": "Somerset"
+				},
+				"card": {
+					"cardHolderName": "John Smith",
+					"cardNickname": "John",
+					"cardToken": "MT_lBWm_3wITvmm5b7sjCaSiA",
+					"cardType": "MC_DEBIT",
+					"expiryDate": "0115",
+					"issueNumber": "1112",
+					"issuer": "Lloyds",
+					"issuerCountry": "GBR",
+					"maskedPan": "544157******0008",
+					"validDate": "1111"
+				},
+				"isPrimary": true,
+				"link": [
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethods/MT_lBWm_3wITvmm5b7sjCaSiA",
+						"rel": "self"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethod/MT_lBWm_3wITvmm5b7sjCaSiA/remove",
+						"rel": "remove"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1",
+						"rel": "customer"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethods/MT_lBWm_3wITvmm5b7sjCaSiA/update",
+						"rel": "update"
+					},
+					{
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/1/paymentMethod/MT_lBWm_3wITvmm5b7sjCaSiA/makeDefault",
+						"rel": "make-primary"
+					}
+				],
+				"paymentClass": "CARD"
+			}
+		]
+	}
+}

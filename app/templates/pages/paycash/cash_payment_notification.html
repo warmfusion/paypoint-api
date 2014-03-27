@@ -1,0 +1,20 @@
+<h2 class="page-title"> Receive cash payment notification </h2>
+
+<div class="page-body">
+	<p>
+		Once your customer has utilised the barcode in an outlet and paid the specified cash amount we will send you a
+		notification to the URL specified in the PayCash issue.
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment',
+		'paycash/cash_payment_notification').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/cash_payment_notification/cash-payment-transaction-notification')
+			%>
+		</div>
+	</div>
+</div>
+

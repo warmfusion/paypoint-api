@@ -1,0 +1,81 @@
+<h2 class="page-title"> Anatomy of a request </h2>
+
+
+<div class="page-body">
+
+	<p> All of our API requests are submitted as a URL. For example: </p>
+
+	<pre>https://acceptor.paypoint.net/rest/transactions/{instId}/{resourceId}/action</pre>
+
+	<p>The request is broken down as:</p>
+
+	<table class="table">
+		<tr>
+			<th style="width: 30%"> Base URL</th>
+			<th>/Resource Type</th>
+			<th>/InstId</th>
+			<th>/Resource ID</th>
+			<th>/Action</th>
+		</tr>
+
+		<tr>
+			<td> The base URL for our rest services.</td>
+			<td> The type of resource you are submitting the request for.</td>
+			<td> The ID for your installation as provided by our Client Management team.</td>
+			<td> The ID for a resource either being fetched or operated on. This isn't present when creating a new
+				resource.
+			</td>
+			<td> The action being performed.</td>
+		</tr>
+
+		<tr>
+			<td>
+				<em>Examples:</em>
+<pre>
+https://acceptor.paypoint.net/rest
+https://hosted.paypoint.net/rest
+</pre>
+			</td>
+			<td>
+				<em>Examples:</em>
+<pre>
+/transactions
+/customers
+/sessions
+</pre>
+			</td>
+			<td>
+
+			</td>
+			<td>
+				<em>Examples:</em>
+<pre>
+/&lt;CustomerID&gt;
+/&lt;TransactionID&gt;
+/&lt;CustomerID&gt;/cards/&lt;tokenID&gt;
+</pre>
+			</td>
+			<td>
+				<em>Examples:</em>
+<pre>
+/payment
+/refund
+</pre>
+			</td>
+		</tr>
+	</table>
+
+	<p>
+		The body of the requests and responses uses the JSON format. All our requests are either POST or GET.
+		When the operation is successful the response code will be a 200, or 201 in the case where a new resource is
+		created.
+		Your credentials need to be sent with every request in the header using the HTTP Basic format, for example:
+	</p>
+
+	<pre>
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic cGF5cG9pbnQubmV0IHVzZXJuYW1lOnBhc3N3b3JkcGFzc3dvcmRwYXNzd29yZA==
+	</pre>
+
+</div>

@@ -1,0 +1,644 @@
+{
+	"paths": {
+
+		"/customFields": [
+			{
+				"mutation": "context-show",
+				"context": "payments/capture_custom_fields"
+			}
+		],
+
+		"/transaction/amount": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "The amount to refund. Omit for full refundable amount."
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "The amount that was refunded."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/capture_an_authorisation",
+				"description": "The amount that was captured."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/cancel_an_authorisation",
+				"description": "The amount that was cancelled."
+			}
+		],
+
+		"/transaction/money/amount/choice/option": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Mandatory if Amount Choice included in the request."
+			}
+		],
+
+		"/transaction/money/amount/range/max": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Mandatory if Amount Range included in the request."
+			}
+		],
+
+		"/transaction/money/amount/range/min": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Mandatory if Amount Range included in the request."
+			}
+		],
+
+		"/transaction/money/amount/suggested/range": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Mandatory if Suggested included in the request."
+			}
+		],
+
+		"/transaction/money/amount/suggested/choice": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Mandatory if Suggested included in the request."
+			}
+		],
+
+		"/transaction/commerceType": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "The Commerce Type for your Customer's refund."
+			}
+		],
+
+		"/transaction/merchantRef": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "Your ref"
+			}
+		],
+
+		"/transaction/deferred": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"/transaction/currency": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/transaction/deferralExpires": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"/transaction/relatedTransaction": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "Details of the transaction that was refunded."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/capture_an_authorisation",
+				"description": "Details of the authorisation that was captured."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/cancel_an_authorisation",
+				"description": "Details of the authorisation that was cancelled."
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"transaction/relatedTransaction": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_an_authorisation"
+			}
+		],
+
+		"/transaction/relatedTransaction/transactionId": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "Our ID for the transaction that was refunded."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/capture_an_authorisation",
+				"description": "Our ID for the transaction that was captured."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/cancel_an_authorisation",
+				"description": "Our ID for the transaction that was cancelled."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/repeat_a_payment",
+				"description": "Our ID for the original payment or authorisation that was repeated."
+			}
+		],
+
+		"/transaction/relatedTransaction/merchantRef": [
+			{
+				"mutation": "override-description",
+				"context": "payments/refund_a_payment",
+				"description": "Your reference for the transaction that was refunded."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/capture_an_authorisation",
+				"description": "Your reference for the transaction that was captured."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/cancel_an_authorisation",
+				"description": "Your reference for the transaction that was cancelled."
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/repeat_a_payment",
+				"description": "Your reference for the original payment or authorisation that was repeated."
+			}
+		],
+
+		"/processing/authResponse/authCode": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/status": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/acquirerReference": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/avsAddressCheck": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/statusCode": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/message": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/acquirerName": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/avsPostcodeCheck": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/processing/authResponse/cv2Check": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/fraudGuard/score": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/transaction/recurring": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"/paymentMethod/card": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_tokens_instead_of_cards/merchant_tokens"
+			},
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Use if you want to provide your Customer's card details. This section is mandatory if you are not providing a token (merchant or CardLock) or details of the Customer's default card.<br><a href=\"#payments/submit_tokens_instead_of_cards/submit_tokens_instead_of_cards\">Submit payment with token</a>"
+			}
+		],
+
+		"/paymentMethod/card/pan": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_tokens_instead_of_cards/card_lock"
+			}
+		],
+
+		"/paymentMethod/cardToken": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Use if you want to use tokenised card details from a previous transaction. This include using a merchant or CardLock token.  This section is mandatory if you are not providing details of the Customer's default card or their full card details."
+			},
+			{
+				"mutation": "context-show",
+				"context": "payments/submit_tokens_instead_of_cards/merchant_tokens"
+			}
+		],
+
+		"/paymentMethod/fromCustomer": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "Use if you want to use your Customer's default card. This section is mandatory if you are not providing a token or full card details."
+			},
+			{
+				"mutation": "context-hide",
+				"context": "paycash/issue_a_barcode"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "paycash/cash_payment_notification"
+			}
+		],
+
+		"/paymentMethod/billingAddress": [
+			{
+				"mutation": "override-description",
+				"context": "payments/make_a_payment",
+				"description": "The billing address of the Customer.  Will be used for AVS checks. We'll save the billing address when the customer makes their first payment.  Providing a billing address for subsequent payments will update the address we've saved if you send new, empty or no values for each field."
+			}
+		],
+
+		"/paymentMethod/card/cv2": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"/paymentMethod/card/cardLockToken": [
+			{
+				"mutation": "default-hide"
+			},
+			{
+				"mutation": "context-show",
+				"context": "payments/submit_tokens_instead_of_cards/card_lock"
+			}
+		],
+
+		"/transactionOptions": [
+			{
+				"mutation": "context-hide",
+				"context": "paycash/cash_payment_notification"
+			}
+		],
+
+		"/threeDSecureResponse": [
+			{
+				"mutation": "override-description",
+				"context": "payments/inflight_callbacks",
+				"description": "Provide 3DS details here when the transaction was suspended for 3DS authentication."
+			}
+		],
+
+		"/threeDSecureResponse/pares": [
+			{
+				"mutation": "override-description",
+				"context": "payments/inflight_callbacks",
+				"description": "Include the PARES resturned from the 3DS authentication process."
+			}
+		],
+
+		"/threeDSecure": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/repeat_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			}
+		],
+
+		"/paymentMethod": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/refund_a_payment"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/capture_an_authorisation"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "payments/cancel_an_authorisation"
+			}
+		],
+
+		"/transactionOptions": [
+			{
+				"mutation": "context-hide",
+				"context": "payments/submit_a_payout"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "paycash/issue_a_barcode"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "paycash/cash_payment_notification"
+			}
+		]
+
+	},
+	"types": {
+		"BigDecimal": [
+			{
+				"mutation": "alias",
+				"alias": "string"
+			},
+			{
+				"mutation": "prefix-description",
+				"description": "A string value that describes a precision 2 decimal number (i.e.: '1000.02')."
+			}
+		],
+		"List": [
+			{
+				"mutation": "alias",
+				"alias": "array"
+			}
+		],
+		"Void": [
+			{
+				"mutation": "default-hide"
+			}
+		],
+		"DateTime": [
+			{
+				"mutation": "alias",
+				"alias": "string"
+			}
+		],
+		"CustomFields": [
+			{
+				"mutation": "default-hide"
+			},
+			{
+				"mutation": "context-show",
+				"context": "payments/capture_custom_fields"
+			}
+		],
+		"CustomFieldState": [
+			{
+				"mutation": "default-hide"
+			}
+		],
+		"CallbackRequestDetails": [
+			{
+				"mutation": "default-hide"
+			},
+			{
+				"mutation": "context-show",
+				"context": "payments/inflight_callbacks"
+			}
+		],
+		"FullCardPaymentDetails": [
+			{
+				"mutation": "context-hide",
+				"context": "paycash/issue_a_barcode"
+			},
+			{
+				"mutation": "context-hide",
+				"context": "paycash/cash_payment_notification"
+			}
+		],
+		"CardTokenPaymentDetails": [
+			{
+				"mutation": "default-hide"
+			}
+		],
+		"PayCashPaymentDetails": [
+			{
+				"mutation": "default-hide"
+			},
+			{
+				"mutation": "context-show",
+				"context": "paycash/issue_a_barcode"
+			},
+			{
+				"mutation": "context-show",
+				"context": "paycash/cash_payment_notification"
+			}
+		],
+		"CustomerDetails.PostalAddress": [
+			{
+				"mutation": "alias",
+				"alias": "PostalAddress"
+			}
+		],
+		"PreAuthCallbackRequest": [
+			{
+				"mutation": "hide-flags",
+				"context": "payments/inflight_callbacks"
+			}
+		],
+		"PostAuthCallbackRequest": [
+			{
+				"mutation": "hide-flags",
+				"context": "payments/inflight_callbacks"
+			}
+		],
+		"TransactionNotification": [
+			{
+				"mutation": "hide-flags",
+				"context": "payments/notifications"
+			}
+		]
+	}
+}

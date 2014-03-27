@@ -1,0 +1,118 @@
+{
+	"description": "Submit payment using your customer’s default card",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction": {
+				"currency": "GBP",
+				"amount": "1000.0",
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234556",
+				"commerceType": "MOTO"
+			},
+			"paymentMethod": {
+				"fromCustomer" : {
+					"cv2" : "123"
+				}
+			},
+			"customer": {
+				"merchantRef": "mer_cust_131241413"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"statusCode": "00",
+					"message": "ACQUIRER OK",
+					"authCode": "112233",
+					"gatewayReference": "1049167854342314",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"avsAddressCheck": "NOT_MATCHED",
+					"avsPostcodeCheck": "FULL_MATCH",
+					"cv2Check": "NOT_MATCHED",
+					"status": "AUTHORISED"
+				},
+				"route": "DATACASH"
+			},
+			"paymentMethod": {
+				"card": {
+					"cardToken": "MT_Roc3d8XBTji5eDHnAZIcAg",
+					"new": false,
+					"cardType": "MC_DEBIT",
+					"maskedPan": "544157******0008",
+					"expiryDate": "0616",
+					"issuer": "DATACASH",
+					"issuerCountry": "GBR",
+					"cardHolderName": "dfgdf",
+					"cardNickname": "dfs",
+					"issueNumber": "1"
+				},
+				"billingAddress": {
+					"line1": "matcheddfdfg",
+					"line2": "initialCustomer1AddresssLine2dfg",
+					"line3": "fsdfsd",
+					"line4": "dfgdfgd",
+					"city": "initalCustomer1City",
+					"region": "initalCustomer1Region",
+					"postcode": "AVS111",
+					"country": "initialCustomer1Country"
+				},
+				"paymentClass": "CARD"
+			},
+			"customFields": {
+				"fieldState": [
+					{
+						"name": "measure_CV2_FAILURES",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_NO_DATA_MATCH",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "2000.00",
+						"transient": false
+					}
+				]
+			},
+			"threeDSecure": {},
+			"customer": {
+				"created": true,
+				"id": "10500",
+				"merchantRef": "1111111111111"
+			},
+			"transaction": {
+				"transactionId": "13685556791",
+				"merchantRef": "mer_txn_1234556",
+				"status": "SUCCESS",
+				"type": "PAYMENT",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-03-19T10:11:35.962Z"
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			},
+			"link": [
+				{
+					"rel": "transaction",
+					"href": "http://192.168.122.123:8080/acceptor/rest/transactions/1009/13685556791"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,24 @@
+<h2 class="page-title"> Submit transactions for reporting </h2>
+
+<div class="page-body">
+	<p>
+		Use this request type to submit transactions from all your business units, payment providers,
+		markets for a consolidated view of all your payment activity.
+
+	</p>
+
+
+	<div class="endpoint">
+
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/report', 'payments/submit_transactions_for_reporting').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/submit_transactions_for_reporting/submit-single-transaction-for-reporting') %>
+		</div>
+	</div>
+
+
+
+
+</div>

@@ -1,0 +1,75 @@
+{
+	"description": "Resume the suspended payment",
+	"request":{
+		"description":"POST /transactions/{instId}/{transactionId}/resume",
+		"body":{
+
+		}
+	},
+	"response": {
+		"description":"HTTP/1.1 201",
+		"body": {
+
+			"clientRedirect": {
+				"type": "CALLBACK_REDIRECT",
+				"url": "http://someurl.com",
+				"frame": "CONTAINER"
+			},
+			"customFields": {
+				"fieldState": [
+					{
+						"name": "measure_CV2_FAILURES",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_NO_DATA_MATCH",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "test2",
+						"value": "a2",
+						"transient": false
+					}
+				]
+			},
+			"customer": {
+				"created": true,
+				"id": "10506",
+				"merchantRef": "mer_cust_131244413"
+			},
+			"transaction": {
+				"transactionId": "13836901339",
+				"merchantRef": "mer_txn_1234556",
+				"status": "PENDING",
+				"type": "PAYMENT",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-02-12T16:44:22.443Z"
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "U101",
+				"reasonMessage": "Suspended by preauth callback"
+			},
+			"link": [
+				{
+					"rel": "transaction",
+					"href": "http://192.168.122.123:8080/acceptor/rest/transactions/1020/13836901339"
+				}
+			]
+
+		}
+	}
+}

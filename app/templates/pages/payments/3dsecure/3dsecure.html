@@ -1,0 +1,71 @@
+<h2 class="page-title"> 3D Secure </h2>
+
+<div class="page-body">
+	<p>
+		Intelligent Commerce has full 3D Secure support via it’s own dedicated Merchant Plug In (MPI).  This means you don’t have to integrate to a service separately to our payments service.
+	</p>
+	<p>
+		Requesting that your payments and authorisation requests are processed for 3D Secure is flexible to your requirements.  It can be enabled for your account, installation or can be overridden on a transaction by transaction basis.
+	</p>
+
+	
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<p class="text-margined-top">
+					If you are using the API solution we’ll handle the Enrolment check but you will need to handle redirecting your customer to the relevant issuing bank page for them to enter their authentication details.  We’ll send you the URL you need to direct the customer to.  Once the 3D Secure authentication is complete you’ll need to send us details of the results (PaRes) so we can send this onto the authoriser as evidence of the user authentication.
+				</p>
+				<p>
+					We can configure your account to automatically decline transactions where there is no liability shift (let us know if you want to do this) or we can send the results of the 3D Secure checks to you on an in-flight callback so you can make the decision yourself.
+				</p>
+				<p>
+					To request 3D Secure processing on a transaction basis (i.e. to override the account or installation) you should include the “do3DSecure”  field in the payment or authorisation request and expect to see the following fields in the response:
+				</p>
+
+				<div class="endpoint-line">
+					<div class="endpoint-line-body">
+						<div class="well well-sm">
+							<%= new GenericRenderer().render('type', new TypeModelProvider('payments/3dsecure/3dsecure', 'ThreeDSecureResponseDetail', new TypeReference('threeDSecure', {})).get()) %>
+						</div>
+					</div>
+				</div>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/3dsecure/3ds_payment') %>
+				</div>
+
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<p class="text-margined-top">
+					If you are using the hosted solution we’ll handle the Enrolment check as well as redirecting your customer to the relevant issuing bank page for them to enter their authentication details.  All you need to do is tell us how your account or installations enabled for 3D Secure.
+				</p>
+				<p>
+					We can configure your account to automatically decline transactions where there is no liability shift (let us know if you want to do this) or we can send the results of the 3D Secure checks to you on an in-flight callback so you can make the decision yourself.
+				</p>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/3dsecure/3ds_payment_hosted') %>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<h2 class="page-title"> Make a payment </h2>
+
+<div class="page-body">
+	<p>
+		Submit customer payments initiated online or over the phone using the Payment Request for a one-step authorisation and capturing of funds.
+		The request can additionally be processed with 3D Secure.  Configuring your account for 3D Secure can be performed at boarding or at a later date – it’s up to you.
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment', 'payments/make_a_payment').get()) %>
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/make_a_payment/payment-new-customer') %>
+					<%= new ExampleRenderer().render('payments/make_a_payment/payment-existing-customer-default-card') %>
+					<%= new ExampleRenderer().render('payments/make_a_payment/payment-existing-customer-new-card') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/payments', 'payments/make_a_payment').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('payments/make_a_payment/hosted-submit-a-payment') %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+

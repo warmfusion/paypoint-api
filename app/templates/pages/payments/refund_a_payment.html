@@ -1,0 +1,21 @@
+<h2 class="page-title"> Refund a payment </h2>
+
+<div class="page-body">
+	<p>
+		Do you need to return funds back to your customer’s original payment method? Use the Refund request
+		to return the full original sales amount (don’t send an amount on the Refund request) or a smaller amount
+		(specify the amount on the Refund request).  You’ll need to specify the reference for the original payment so
+		we can ensure the refunded amount(s) doesn’t exceed the amount of the original payment.
+		Refunds that that do exceed the original amount will be declined.
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}/refund', 'payments/refund_a_payment').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/refund_a_payment/refund-full-amount') %>
+			<%= new ExampleRenderer().render('payments/refund_a_payment/refund-partial-amount') %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+{
+	"description": "Update your customer's card",
+	"request": {
+		"description": "POST hosted/rest/sessions/{instId}/cards",
+		"body": {
+			"session": {
+				"returnUrl": {
+					"url": "http://www.merchant.com/customerResult?CUSTOMERREF=1111111111111"
+				}
+			},
+			"customer": {
+				"identity": {
+					"merchantCustomerId": "1111111111111"
+				}
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": {
+			"sessionId": "12c198cc-ef5c-4361-8bb3-b97c3e95b126",
+			"redirectUrl": "http://www.paypoint.net/hosted/0ba23e53-894e-4a93-9691-9d303b3c1d02/begin/12c198cc-ef5c-4361-8bb3-b97c3e95b126",
+			"status": "SUCCESS"
+		}
+	}
+}

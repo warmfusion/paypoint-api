@@ -1,0 +1,108 @@
+{
+	"description": "Resume a 3DSecure suspended payment",
+	"request": {
+		"description": "POST /transactions/{instId}/{transactionId}/resume",
+		"body": {
+			"threeDSecureResponse" : {
+				"pares" : "eJydVVtzokoQfvdXWO5jKhlu3rZGtoaLii4oCip5m8AEMAoICOivP4Mkxt06D6fOlJTd3/R8/XU3F/irOh7aBUmzMI5GHfaF6bRJ5MZeGPmjjm2NnwedXyK0gpQQZU3cc0pEqJMswz5ph96ow3wtluMYlmfYvtDriHCJViS7BbAcL3Rr6DOJSHO8cBB8uZQtdQMc5SLE7knSDHHIMgLDQPDpwiNJNUUU+n2O47t9CBofgu+Dy3NtZVRaFXqirqDyflnaRVfUK714Q3FGENQR0MM5EalegeHZQZsZ/qS/7gCCGw7xMT5TWvZWF9XRuDCps6A/9x4xSLuT0uZdxIm0hODuQVIlcURoBC37bkOPZK64xsfkQNpWiqMMuzltCBVRb0DwXVSCI5H5c3VZfkiz0w1o7USYh8c/62EZWhIENxxmOc7PmehA8GlBFxeFiBCS0HU+c0xqIXW11Q4Bui2J9ukWAokbikwtm/7fTqGDH6dhHhxFton5BiCopYDb6EW4Dv2IJktJm95hUTbqBHme/ASgLMuXkn+JUx9wtBDADAEN8LLQ/9FpThFPi95jEco4iqPQxYfwiuvO6CQPYq99T/hvlNaqZmXBSpWfKe2zywrRc43QxnQ74EHWf2H7W2Ca4ecswGxNtCLvpJ4vadsrbdT5cb/PldAnWf5/6L+oG4YNPpyJeHpbCGic2PuTsHOTyDoVSVqlHu5eEB3SYyQEd0nUfmzkveYm0MOOf/Td7Fqc9cQWvBXx1tz72h6XVhSpgzTk4zA5B+y8182Xm2O/VyJhupwjM3Rse0Zmi64+AR/biVKu/JbSzReOJm91NBo1WR8ywTm5NBJ2XWao4Bw3lkzSPHyno6VPm65pkm7JEj9HCvJVGfmBcuoL89VgxeVXZEj+xyn4CCfDkpGQaY9pFNFNppRLR9mY5lwtV/brzmBqrPUJ/r6DkrBTLJXRFb1aKKirW6hcbOJPzLkY+ztWTveqoaNsglhblQNdbW0mm6unPICVrjaY5OqImcjr02StvfGKqdbKEGIypKu+bJrya5Jt1n61C6/WacGcirL1tNmD3cXZ9t4GmnEtl4lfFd5g7nIume4H2xl5UnhPxpcrMfLB694eCPakiirB2F6nRrGYkGUvR74u0Qe1bCmmM5vHr1pQuAYy1bFkIsU0UTgoMl/NnbzYJwt1EV7mxwhLylBeC6f+OZk5sydtcf1I8VQ1zIkZeiz3ZrSQg7xSRTPdSbdcOe0/9Qrh5M0qRtWskowJBH+PrEGacYL7iL+Hf3s33z4R9Tvh8dPxD0LXFng="
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing" : {
+				"authResponse" : {
+					"statusCode" : "00",
+					"message" : "Approved or completed successfully",
+					"authCode" : "123456",
+					"gatewayReference" : "123546789",
+					"avsAddressCheck" : "FULL_MATCH",
+					"avsPostcodeCheck" : "FULL_MATCH",
+					"cv2Check" : "MATCHED",
+					"status" : "AUTHORISED"
+				},
+				"route" : "CREDORAX"
+			},
+			"paymentMethod" : {
+				"card" : {
+					"cardToken" : "MT_TPN3a4X6QhmMmOGxHWE6ew",
+					"new" : true,
+					"cardType" : "MC_DEBIT",
+					"maskedPan" : "910400******5139",
+					"expiryDate" : "0115",
+					"issuer" : "PAYPOINT_TEST_BANK",
+					"issuerCountry" : "BUR",
+					"cardHolderName" : "John Smith",
+					"cardNickname" : "John",
+					"validDate" : "1111"
+				},
+				"billingAddress" : {
+					"line1" : "Flat 1 ",
+					"line2" : "Cauldron house",
+					"line3" : "A Street",
+					"line4" : "Twertonia",
+					"city" : "Bath",
+					"region" : "Somerset",
+					"postcode" : "BA1 234",
+					"country" : "UK"
+				},
+				"paymentClass" : "CARD"
+			},
+			"customFields" : {
+				"fieldState" : [ {
+					"name" : "measure_CV2_FAILURES",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_NO_DATA_MATCH",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_ADDRESS_MATCH_ONLY",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_TOTAL_CARD_SPEND",
+					"value" : "0",
+					"transient" : false
+				} ]
+			},
+			"threeDSecure" : {
+				"scheme" : "MASTERCARD_SECURECODE",
+				"status" : "AUTHENTICATED",
+				"enrolmentIndicator" : "Y",
+				"enrolmentStatus" : "ENROLLED",
+				"enrolmentDateTime" : "2014-03-18T09:09:58.414Z",
+				"authenticationIndicator" : "Y",
+				"authenticationStatus" : "AUTHENTICATED",
+				"xid" : "00000000012201301746",
+				"avv" : "AAABAzKJYQAAAAERWIlhAAAAAAB=",
+				"eci" : "02"
+			},
+			"customer" : {
+				"created" : true,
+				"id" : "10736",
+				"merchantRef" : "mer_cust_131241412"
+			},
+			"transaction" : {
+				"transactionId" : "12201301746",
+				"merchantRef" : "mer_txn_1234556",
+				"status" : "SUCCESS",
+				"type" : "PAYMENT",
+				"amount" : 1000.0,
+				"currency" : "GBP",
+				"transactionTime" : "2014-03-18T09:11:26.005Z"
+			},
+			"outcome" : {
+				"status" : "SUCCESS",
+				"reasonCode" : "S100",
+				"reasonMessage" : "Authorised"
+			},
+			"link" : [ {
+				"rel" : "transaction",
+				"href" : "http://pbjboss2:8080/acceptor/rest/transactions/7010/12201301746"
+			} ]
+		}
+	}
+}

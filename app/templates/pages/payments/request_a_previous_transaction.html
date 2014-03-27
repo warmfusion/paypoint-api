@@ -1,0 +1,29 @@
+<h2 class="page-title"> Request a previous transaction </h2>
+
+<div class="page-body">
+	<p>
+		If you want to receive on-demand transaction information you can request details using the Get Transaction request.
+        Not only does the request return processed transactions but it will also return transactions that are in-flight.
+        For example, that are currently being processed for 3D Secure  or that you have suspended due to a call-back.
+	</p>
+	<p>
+		We’ll send you everything we know about the transaction including custom fields captured, 3D Secure information,
+		data we’ve found out through our third party data sources (for example, supplementary card information)
+		as well as information from the authoriser i.e. Authorisation responses, messages and codes, AVS and CV2 responses,
+		plus the core details of the request.
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>You can request a transaction using our reference or your own.</em>
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}', 'payments/request_a_previous_transaction').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/request_a_previous_transaction/fetch-transactions-by-merchant-reference') %>
+			<%= new ExampleRenderer().render('payments/request_a_previous_transaction/fetch-single-transaction-by-id') %>
+		</div>
+	</div>
+</div>

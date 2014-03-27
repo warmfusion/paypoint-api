@@ -1,0 +1,53 @@
+{
+	"description": "3DSecure hosted payment initialization",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"session": {
+				"returnUrl": {
+					"url": "http://bluebox:8080/hosted-merchant/transactionResult?MERCHANTREF=5198418781"
+				},
+				"skin": "FIRST_DEPOSIT"
+			},
+			"transaction": {
+				"commerceType": "ECOM",
+				"merchantReference": "5198418781",
+				"money": {
+					"amount": {
+						"fixed": 100
+					},
+					"currency": "GBP"
+				}
+			},
+			"customer": {
+				"create": "true",
+				"identity": {
+					"merchantCustomerId": "1078114962415"
+				},
+				"details": {
+					"name": "given1 Family1",
+					"address": {
+						"line1": "JIb7B9Lv7GAXTVf9",
+						"line2": "x6uj2Xf2BS",
+						"city": "zvjZHd3AH6",
+						"region": "fDoMvMCp8N",
+						"postcode": "AVS111",
+						"country": "7R1d2RlUR1"
+					},
+					"telephone": "1678886694",
+					"emailAddress": "IxxmIkLZhz@example.com",
+					"ipAddress": "1.1.1.1",
+					"defaultCurrency": "GBP"
+				}
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"sessionId": "2d079714-bbc6-4825-8f95-c2c6c1bd584f",
+			"redirectUrl": "http://192.168.122.123:8080/hosted/fd4db7f4-8b1a-4376-bc63-8f8d39aaa4dd/begin/2d079714-bbc6-4825-8f95-c2c6c1bd584f",
+			"status": "SUCCESS"
+		}
+	}
+}

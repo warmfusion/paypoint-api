@@ -1,0 +1,104 @@
+{
+	"description": "Receive and reply to a Callback",
+	"request": {
+		"description":"the URL you provided",
+		"body":{
+			"availableActions": {
+				"action": ["PROCEED", "CANCEL", "SUSPEND", "SUSPEND_REPLAY"]
+			},
+			"customFields": {
+				"fieldState": [
+					{
+						"name": "measure_CV2_FAILURES",
+						"value": "1",
+						"transient": false
+					},
+					{
+						"name": "measure_NO_DATA_MATCH",
+						"value": "1",
+						"transient": false
+					},
+					{
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "1000.00",
+						"transient": false
+					}
+				]
+			},
+			"paymentMethod": {
+				"card": {
+					"cardToken": "MT_AAcyrTC4S5aUX64IYMrbSw",
+					"new": false,
+					"cardType": "VISA_DEBIT",
+					"maskedPan": "100035******0007",
+					"expiryDate": "0215",
+					"issuer": "DATACASH",
+					"issuerCountry": "GBR",
+					"cardNickname": "John"
+				},
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				},
+				"paymentClass": "CARD"
+			},
+			"customer": {
+				"merchantRef": "mer_cust_131241412",
+				"id": "10500",
+				"displayName": "Mr O Whatasillyname",
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234"
+				},
+				"email": "test@test.com",
+				"telephone": "0123 456 789",
+				"defaultCurrency": "GBP"
+			},
+			"transaction": {
+				"transactionId": "10801022928",
+				"merchantRef": "mer_txn_1234556",
+				"merchantDescription": "Sample Transaction",
+				"type": "PAYMENT",
+				"amount": 1000.00,
+				"currency": "GBP",
+				"transactionTime": "2014-02-24T15:10:39.399Z"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": {
+			"callbackResponse": {
+				"preAuthCallbackResponse": {
+					"action": "PROCEED",
+					"customFields": {
+						"fieldState": [
+							{
+								"name": "test2",
+								"value": "a2"
+							}
+						]
+					},
+					"redirect": {
+						"url": "http://someurl.com",
+						"frame": "CONTAINER"
+					}
+				}
+			}
+		}
+	}
+}

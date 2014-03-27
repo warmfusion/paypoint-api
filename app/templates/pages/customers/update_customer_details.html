@@ -1,0 +1,17 @@
+<h2 class="page-title"> Update your customer’s details </h2>
+
+
+<div class="page-body">
+	<p>
+		Keep your customer’s billing address updated for more assured AVS responses.
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/{customerId}/paymentMethods/{token}/update', 'customers/update_customer_details').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('customers/update_customer_details/update-payment-method-information') %>
+		</div>
+	</div>
+</div>

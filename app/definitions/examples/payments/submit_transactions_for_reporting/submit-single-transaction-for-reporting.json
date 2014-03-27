@@ -1,0 +1,133 @@
+{
+	"description": "Submit a single transaction for reporting",
+	"request": {
+	"description": "POST /transactions/{instId}/report",
+		"body": {
+			"sessionId": "c2c1a632-4a2d-4f4b-be61-283d1defbcd2",
+			"reportTransaction": [
+				{
+					"installation": "1010",
+					"processing": {
+						"authResponse": {
+							"statusCode": "A101",
+							"acquirerReference": "6419169416",
+							"acquirerName": "Elavon",
+							"message": "Transaction OK",
+							"authCode": "32165321",
+							"gatewayReference": "196526269",
+							"gatewayCode": "A36",
+							"gatewayMessage": "Processed",
+							"avsAddressCheck": "NOT_CHECKED",
+							"avsPostcodeCheck": "NOT_CHECKED",
+							"cv2Check": "MATCHED",
+							"gatewayStatus": "A-OK",
+							"status": "AUTHORISED"
+						},
+						"route": "WorldPay",
+						"routeAccount": "631565416126",
+						"channel": "MOBILE",
+						"routeData": {
+							"routeDataItem": {
+								"key": "security_token",
+								"value": "SA8324DAAS"
+							}
+						},
+						"decidingEntity": "AUTHORISER"
+					},
+					"paymentMethod": {
+						"card": {
+							"pan": "4444333322221111",
+							"expiryDate": "0220",
+							"startDate": "0303",
+							"issueNumber": "1",
+							"cardType": "Mastercard",
+							"nickname": "My bestest card"
+						},
+						"paymentClass": "Card"
+					},
+					"customer": {
+						"merchantRef": "456789",
+						"displayName": "Mr Testy McTest",
+						"billingAddress": {
+							"name": "Mr Testy McTest",
+							"line1": "Flat 1",
+							"line2": "Testoria Corp",
+							"line3": "19 Testoria Avenue",
+							"line4": "Barlett",
+							"city": "Markton",
+							"region": "Leishire",
+							"postcode": "AS568EG",
+							"country": "United Kingdom",
+							"iso3AlphaCountryCode": "GBR"
+						},
+						"email": "test@mctest.com",
+						"dob": "12/12/1985",
+						"telephone": "01582 656544",
+						"defaultCurrency": "GBP",
+						"ip": "123.456.789.13"
+					},
+					"transaction": {
+						"deferred": "true",
+						"deferralExpires": "2013-07-10T13:47:59.494+01:00",
+						"merchantRef": "1561262156",
+						"merchantDescription": "Bought some widgets",
+						"status": "SUCCESS",
+						"type": "PAYMENT",
+						"amount": "10.63",
+						"transactionTime": "2013-07-05T13:47:59.494+01:00",
+						"currency": "GBP",
+						"commerceType": "ECOM",
+						"originalMerchantReference": "21106332",
+						"originalTransactionId": "126113156136"
+					},
+					"customFields": {
+						"fieldState": [
+							{
+								"name": "WidgetFactor",
+								"value": "36"
+							},
+							{
+								"name": "PreferredCustomer",
+								"value": "Yes"
+							}
+						]
+					},
+					"threeDSecureInformation": {
+						"status": "AUTHENTICATED",
+						"liabilityShift": "LIABILITY_SHIFT",
+						"scheme": "VERIFIED_BY_VISA",
+						"eci": "05",
+						"xid": "SS90S9DSFEA7",
+						"avvAlgorithm": "SECURE",
+						"enrolmentStatus": "ENROLLED",
+						"authorisationStatus": "AUTHENTICATED",
+						"processedDateTime": "2013-07-05T13:47:59.494Z",
+						"enrolmentDateTime": "2013-01-05T12:47:23.321Z",
+						"authorisationDateTime": "2013-07-05T13:47:59.494Z"
+					}
+				}
+			]
+		}
+	},
+	"response":{
+		"description":"HTTP/1.1 201",
+		"body":{
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Accepted",
+				"submitted": "1",
+				"successful": "1",
+				"failed": "0"
+			},
+			"sessionId": "c2c1a632-4a2d-4f4b-be61-283d1defbcd2",
+			"transaction": {
+				"merchantRef": "1561262156",
+				"transactionId": "13435581446",
+				"reportedStatus": "SUCCESS"
+			}
+		}
+
+	}
+}
+

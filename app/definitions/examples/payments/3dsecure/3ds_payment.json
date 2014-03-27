@@ -1,0 +1,118 @@
+{
+	"description": "3DSecure payment",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction" : {
+				"currency" : "GBP",
+				"amount" : 1000.0,
+				"description" : "Sample Transaction",
+				"merchantRef" : "mer_txn_1234556",
+				"commerceType" : "ECOM"
+			},
+			"paymentMethod" : {
+				"card" : {
+					"pan" : "9104000120000005139",
+					"cv2" : "123",
+					"expiryDate" : "0115",
+					"startDate" : "1111",
+					"cardType" : "MC_DEBIT",
+					"nickname" : "John",
+					"cardHolderName" : "John Smith",
+					"defaultCard" : false
+				},
+				"billingAddress" : {
+					"line1" : "Flat 1 ",
+					"line2" : "Cauldron house",
+					"line3" : "A Street",
+					"line4" : "Twertonia",
+					"city" : "Bath",
+					"region" : "Somerset",
+					"postcode" : "BA1 234",
+					"country" : "UK"
+				}
+			},
+			"customer" : {
+				"create" : true,
+				"merchantRef" : "mer_cust_131241412",
+				"displayName" : "Mr O Whatasillyname",
+				"billingAddress" : {
+					"line1" : "Flat 1 ",
+					"line2" : "Cauldron house",
+					"line3" : "A Street",
+					"line4" : "Twertonia",
+					"city" : "Bath",
+					"region" : "Somerset",
+					"postcode" : "BA1 234",
+					"country" : "UK"
+				},
+				"email" : "test@test.com",
+				"telephone" : "0123 456 789",
+				"defaultCurrency" : "GBP",
+				"ip" : "212.58.253.67"
+			},
+			"browserInfo" : {
+				"deviceCategory" : "DESKTOP",
+				"acceptHeader" : "*/*",
+				"userAgentHeader" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"clientRedirect" : {
+				"type" : "THREEDSECURE_ACS_REDIRECT",
+				"url" : "https://pbjboss2.test.paypoint.net:18443/acs",
+				"pareq" : "eJxVUttuwjAMfd9XVHxAk/RCAZmgQtHGAxuiPGyPURqNSvRC2q6wr59TWhhRIvnYybF9HFhcspP1o3SVFvl8xGw6WvAXOBy1UlGsZKMVh62qKvGtrDSZj+iwmONQ5lIWeOMRh124V2cOPRFHHtsBMkBk0PIo8pqDkOfl5p1PGfUoBdJDyJTeRNwLAsdx/QDIDUMuMsXdKLYGAmu1X0cf+/DTitdAujDIoslrfeUTZwxkANDoEz/WdTkjpG1bO+sJ0G3LIgNi4kAehe0aY1XId0kTvo3C9n4Om+s2Wv/icd+jrzkQcwMSUSuOGnjUZROLTme4/QmQzg8iM4Vw1mmFfd4glCZL+Bz77wNUXKtcXvnrcofdDAjUpSxyhTdQ1rsNiaokj0VWnpR10CKvhKxRcCzCBIA8mlq9Ge1ljaretMcB3gbpM3dqBtHFTJ4U5WM+ZV0iA4CY16SfMem/A1pP3+QPIfS8/w=="
+			},
+			"customFields" : {
+				"fieldState" : [ {
+					"name" : "measure_CV2_FAILURES",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_NO_DATA_MATCH",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_ADDRESS_MATCH_ONLY",
+					"value" : "0",
+					"transient" : false
+				}, {
+					"name" : "measure_TOTAL_CARD_SPEND",
+					"value" : "0",
+					"transient" : false
+				} ]
+			},
+			"threeDSecure" : {
+				"enrolmentIndicator" : "Y",
+				"enrolmentStatus" : "ENROLLED",
+				"enrolmentDateTime" : "2014-03-18T09:09:58.414Z"
+			},
+			"customer" : {
+				"created" : true,
+				"id" : "10736",
+				"merchantRef" : "mer_cust_131241412"
+			},
+			"transaction" : {
+				"transactionId" : "12201301746",
+				"merchantRef" : "mer_txn_1234556",
+				"status" : "PENDING",
+				"type" : "PAYMENT",
+				"amount" : 1000.0,
+				"currency" : "GBP",
+				"transactionTime" : "2014-03-18T09:09:58.520Z"
+			},
+			"outcome" : {
+				"status" : "SUCCESS",
+				"reasonCode" : "U100",
+				"reasonMessage" : "Suspended pending Three D Secure process"
+			},
+			"link" : [ {
+				"rel" : "transaction",
+				"href" : "http://pbjboss2:8080/acceptor/rest/transactions/7010/12201301746"
+			} ]
+		}
+	}
+}

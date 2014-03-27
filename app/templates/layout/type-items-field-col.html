@@ -1,0 +1,17 @@
+<div class="vertical-extend col-xs-5 right-bordered">
+	<div class="vertical-extend">
+		<% for(var i = 0; i < provider.offset(); i++) { %>
+			<div class="spacer"></div>
+		<% } %>
+
+		<span class="field-name"><%= provider.fieldName() %></span>
+
+		<% if(provider.hasChildren()) { %>
+		{
+		<% } %>
+
+		<% if(provider.isArray()) { %>
+		[
+		<% } %>
+	</div>
+</div>

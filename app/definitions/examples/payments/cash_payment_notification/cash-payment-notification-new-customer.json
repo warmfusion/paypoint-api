@@ -1,0 +1,81 @@
+{
+	"description": "Notification for the cash payment transaction (sent after the barcode is scanned)",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction": {
+				"currency": "GBP",
+				"amount": 1000,
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234556",
+				"commerceType": "MOTO"
+			},
+			"paymentMethod": {
+				"payCash": {}
+			},
+			"customer": {
+				"create": true,
+				"merchantRef": "mer_cust_131241412",
+				"displayName": "Mr O Whatasillyname",
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				},
+				"email": "test@test.com",
+				"telephone": "0123 456 789",
+				"defaultCurrency": "GBP",
+				"ip": "212.58.253.67"
+			},
+			"callbacks": {
+				"transactionNotification": {
+					"url": "http://localhost:8080/merchant/callback?id=1392915918678&amp;wait=0",
+					"format": "REST_JSON"
+				}
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"payCashResponse": {
+					"barcode": 1234567890263776500,
+					"barcodeUrl": "http://paypoint:8080/hosted/b/IegZ-Fq4E5twpByvci_GiYj_E9BL6rfS9eXfCEc-Svk="
+				},
+				"route": "PAYCASH"
+			},
+			"customFields": {},
+			"customer": {
+				"created": true,
+				"id": "10500",
+				"merchantRef": "mer_cust_131241412"
+			},
+			"transaction": {
+				"transactionId": "13011896414",
+				"merchantRef": "mer_txn_1234556",
+				"status": "SUCCESS",
+				"type": "CASH_ISSUE",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-02-20T17:13:07.160Z"
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Cash Issued"
+			},
+			"link": [
+				{
+					"rel": "transaction",
+					"href": "http://localhost:8080/acceptor/rest/transactions/5300001/13011896414"
+				}
+			]
+		}
+	}
+}

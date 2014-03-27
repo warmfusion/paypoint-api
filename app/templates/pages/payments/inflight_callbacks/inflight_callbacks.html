@@ -1,0 +1,66 @@
+<h2 class="page-title"> In-flight call-backs </h2>
+
+<div class="page-body">
+	<p>
+		Ever wish you could have rejected that transaction if you’d known about x, y z?
+		You can now save on acquirer processing costs by configuring all or individual Hosted and API requests for Pre-Authorisation (Pre-Auth) call-backs.
+		We’ll tell you everything we know about the transaction before we send it to the bank including custom fields captured, 3D Secure information,
+		data we’ve found out through our third party data sources (for example, supplementary card information) as well as the core details of the request.
+	</p>
+	<p>
+		You can decide whether you’re happy with the request and proceed to authorisation.
+		Alternatively you can choose to cancel the request or suspend the request whilst you perform internal checks.
+	</p>
+	<p>
+		For Hosted requests you can additionally request that the Customer be redirected to a URL of
+		your choice whilst the transaction is in-flight thus tailoring the payment experience to your business in a PCI safe environment.
+	</p>
+
+	<p> In order to register a callback, you should add a callbacks entry to your request body and provide it with your endpoint URL
+		where you need our platform to send the callbacks. Below is the reference of how you can construct that callback entry: </p>
+
+	<div class="endpoint-line">
+		<div class="endpoint-line-body">
+			<div class="well well-sm">
+				<%= new GenericRenderer().render('type', new TypeModelProvider('payments/inflight_callbacks', 'CallbackRequestDetails', new TypeReference('callbacks', {})).get()) %>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="endpoint">
+
+		<p> The endpoint you provide will have to handle an incoming CallbackRequest and respond with a JSON appropriately as shown by the section below: </p>
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#preauthtab" data-toggle="tab">PreAuth</a></li>
+			<li><a href="#postauthtab" data-toggle="tab">PostAuth</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- PreAuth TAB -->
+			<div class="tab-pane active" id="preauthtab">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('merchant defined pre-auth callback URL (endpoint)', 'payments/inflight_callbacks').get()) %>
+			</div>
+
+			<!-- PostAuth TAB -->
+			<div class="tab-pane" id="postauthtab">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('merchant defined post-auth callback URL (endpoint)', 'payments/inflight_callbacks').get()) %>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- EXAMPLES -->
+	<div class="endpoint-example-section">
+		<div class="endpoint-section-header">Callback Examples</div>
+		<%= new ExampleRenderer().render('payments/inflight_callbacks/callback-example') %>
+	</div>
+
+</div>

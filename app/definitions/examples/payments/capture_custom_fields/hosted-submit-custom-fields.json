@@ -1,0 +1,98 @@
+{
+	"description": "Submit custom fields",
+	"request": {
+		"description": "POST hosted/rest/sessions/{instId}/payments",
+		"body": {
+			"session": {
+					"returnUrl": { "url": "http://www.merchant.com/transactionResult?MERCHANTREF=761585761585" }
+				},
+				"transaction": {
+					"merchantReference": "761585761585",
+					"money": {
+						"amount" : { "fixed" : 100} ,
+						"currency": "GBP"
+					}
+				},
+				"customer": {
+					"create": "true",
+					"identity": { "merchantCustomerId": "1111111111111" },
+					"details": {
+						"name": "given1 Family1",
+						"address": {
+							"line1": "matched",
+							"line2": "initialCustomer1AddresssLine2",
+							"city": "initalCustomer1City",
+							"region": "initalCustomer1Region",
+							"postcode": "AVS111",
+							"country": "initialCustomer1Country"
+						},
+						"telephone": "0044111111111",
+						"emailAddress": "initialCustomer1@example.com",
+						"ipAddress": "1.1.1.1",
+						"defaultCurrency": "GBP"
+					}
+				},
+				"customFields": {
+					"dataFieldOrTextFieldOrLabelField" : {
+						"dataField" : {
+							"name" : "dataFieldName0",
+							"value" : "dataFieldValue0",
+							"transient" : true
+						},
+						"dataField" : {
+							"name" : "dataFieldName1",
+							"value" : "dataFieldValue1",
+							"transient" : true
+						},
+						"skinField" : {
+							"format" : "application/json",
+							"name" : "skinFieldName0",
+							"value" :"{\n  \"POKER\" : {\n    \"name\" : \"Poker\",\n    \"displayCurrency\" : {\n      \"name\" : \"CHIPS\",\n      \"exchangeRate\" : 0.8,\n      \"balance\" : 0.9,\n      \"information\" : \"http://www.chips.com/buymore\"\n    },\n    \"limits\" : {\n      \"maximum\" : 100.0,\n      \"minimum\" : 0.0\n    }\n  },\n  \"CASINO\" : {\n    \"name\" : \"Casino\",\n    \"displayCurrency\" : {\n      \"name\" : \"CHIPS\",\n      \"exchangeRate\" : 0.2,\n      \"balance\" : 20,\n      \"information\" : \"http://www.chips.com/buymore\"\n    },\n    \"limits\" : {\n      \"maximum\" : 100.0,\n      \"minimum\" : 0.0\n    }\n  },\n  \"SPORTS\" : {\n    \"name\" : \"Sports\",\n    \"limits\" : {\n      \"maximum\" : 500.0,\n      \"minimum\" : 0.0\n    }\n  },\n  \"GAMING\" : {\n    \"name\" : \"Gaming\",\n    \"displayCurrency\" : null,\n    \"limits\" : {\n      \"maximum\" : 100.0,\n      \"minimum\" : 0.0\n    }\n  }\n}",
+							"transient" : false
+						},
+						"textField" : {
+							"name" : "textFieldName0",
+							"value" : "textFieldValue0",
+							"transient" : false,
+							"locator" : "FORM_TOP"
+						},
+							"labelField" : {
+								"name" : "textFieldName1",
+								"value" : "textFieldValue0",
+								"transient" : false,
+								"locator" : "FORM_BOTTOM"
+							},
+							"radioField" : {
+								"name" : "textFieldName2",
+								"value" : "textFieldValue0",
+								"transient" : false,
+								"locator" : "FORM_BOTTOM",
+								"options" : {"option" :[ {"label" : "2" , "value" : "1" }]}
+							},
+							"passwordField" : {
+								"name" : "textFieldName3",
+								"value" : "textFieldValue0",
+								"transient" : false,
+								"locator" : "FORM_TOP",
+								"maxLength" : 11
+							},
+							"selectField" : {
+								"name" : "textFieldName4",
+								"value" : "textFieldValue0",
+								"transient" : false,
+								"locator" : "FORM_BOTTOM",
+								"options" : {"option" :[ {"label" : "2" , "value" : "1" }]}
+							}
+					}
+				}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"sessionId": "7c6b4cc1-dd20-4e5f-9b9d-0172e89cb674",
+			"redirectUrl": "http://www.paypoint.net/hosted/ace8ad19-1703-41c1-8e6a-e6fdfc642647/begin/7c6b4cc1-dd20-4e5f-9b9d-0172e89cb674",
+			"status": "SUCCESS"
+		}
+	}
+}

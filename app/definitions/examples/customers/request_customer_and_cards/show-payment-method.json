@@ -1,0 +1,57 @@
+{
+	"description": "Show Payment Method",
+	"request": {
+		"description": "GET /customers/{instId}/10500/paymentMethods/MT_hkuJIGioTy-4T_9hhNTzGw",
+		"body": {}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": {
+			"paymentClass":  "CARD",
+			"card":  {
+				"cardToken":  "MT_hkuJIGioTy-4T_9hhNTzGw",
+				"cardType":  "VISA_DEBIT",
+				"maskedPan":  "100035******0007",
+				"expiryDate":  "0315",
+				"issuer":  "DATACASH",
+				"issuerCountry":  "GBR",
+				"cardHolderName":  "John Smith",
+				"cardNickname":  "John",
+				"validDate":  "1111"
+			},
+			"isPrimary":  true,
+			"billingAddress":  {
+				"line1":  "Flat 1 ",
+				"line2":  "Cauldron house",
+				"line3":  "A Street",
+				"line4":  "Twertonia",
+				"city":  "Bath",
+				"region":  "Somerset",
+				"postcode":  "BA1 234",
+				"country":  "UK"
+			},
+			"link":  [
+				{
+					"rel":  "self",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500/paymentMethods/MT_hkuJIGioTy-4T_9hhNTzGw"
+				},
+				{
+					"rel":  "remove",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500/paymentMethod/MT_hkuJIGioTy-4T_9hhNTzGw/remove"
+				},
+				{
+					"rel":  "customer",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500"
+				},
+				{
+					"rel":  "update",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500/paymentMethods/MT_hkuJIGioTy-4T_9hhNTzGw/update"
+				},
+				{
+					"rel":  "make-primary",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500/paymentMethod/MT_hkuJIGioTy-4T_9hhNTzGw/makeDefault"
+				}
+			]
+		}
+	}
+}

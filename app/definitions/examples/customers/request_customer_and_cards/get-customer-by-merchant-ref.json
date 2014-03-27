@@ -1,0 +1,36 @@
+{
+	"description": "Get Customer by Merchant Reference",
+	"request": {
+		"description": "GET /customers/{instId}/byRef?merchantRef=mer_cust_131241412",
+		"body": {}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": {
+			"merchantRef":  "mer_cust_131241412",
+			"id":  "10500",
+			"displayName":  "Mr O Whatasillyname",
+			"billingAddress":  {
+				"line1":  "Flat 1 ",
+				"line2":  "Cauldron house",
+				"city":  "Bath",
+				"region":  "Somerset",
+				"postcode":  "BA1 234",
+				"country":  "UK"
+			},
+			"email":  "test@test.com",
+			"telephone":  "0123 456 789",
+			"defaultCurrency":  "GBP",
+			"link":  [
+				{
+					"rel":  "self",
+					 "href":  "http://localhost:8080/acceptor/rest/customers/1009/10500"
+				},
+				{
+					"rel":  "payment-methods",
+					"href":  "http://localhost:8080/acceptor/rest/customers/1009/10500/paymentMethods"
+				}
+			]
+		}
+	}
+}

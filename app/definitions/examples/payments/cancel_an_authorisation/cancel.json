@@ -1,0 +1,40 @@
+{
+	"description": "Cancel",
+	"request": {
+		"description": "POST /transactions/{instId}/13504712365/cancel",
+		"body": {
+			"transaction" : {}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"gatewayReference": "8849361392630503",
+					"gatewayCode": "1",
+					"gatewayMessage": "CANCELLED OK",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"transaction": {
+				"transactionId": "13504712366",
+				"status": "SUCCESS",
+				"type": "CANCEL",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T21:01:05.720Z",
+				"relatedTransaction": {
+					"transactionId": "13504712365",
+					"merchantRef": "mer_txn_1234557"
+				}
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+<h2 class="page-title"> Repeat a payment (or authorisation) </h2>
+
+<div class="page-body">
+	<p>
+		Do you offer goods or services on a recurring basis to your customers?
+		Do you accept scheduled payments for your customer?
+		You can simplify the submission of the repeated payments by using the Repeat request.
+		You’ll need to flag the very first payment or authorisation request as a repeatable transaction and the
+		repeats themselves will need to reference the original – using your reference or ours.
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>Your account can be configured to not require a CV2 for Payment or Authorisation requests.
+		Let us know if you want that feature to be enabled.</em>
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}/repeat', 'payments/repeat_a_payment').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/repeat_a_payment/initial-payment') %>
+			<%= new ExampleRenderer().render('payments/repeat_a_payment/repeat-original-amount') %>
+		</div>
+	</div>
+</div>

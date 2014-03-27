@@ -1,0 +1,80 @@
+<div>
+	<div class="endpoint-section">
+		<div class="endpoint-section-header">
+			<%= model.header %>
+		</div>
+
+		<div class="endpoint-line endpoint-line-highlight">
+			<span class="key">endpoint:</span>
+			<span class="value"><%= model.endpoint %></span>
+		</div>
+
+		<div class="endpoint-line">
+			<span class="key">method:</span>
+			<span class="value"><%= model.method %></span>
+		</div>
+
+		<div class="endpoint-line">
+			<span class="key">summary:</span>
+			<span class="value"><%= model.summary %></span>
+		</div>
+
+		<% var displayParams = !_.isEmpty(model.parameters); %>
+		<% if(displayParams) { %>
+		<div class="endpoint-line">
+			<span class="key">parameters:</span>
+			<div class="endpoint-line-params">
+				<div class="row header">
+					<div class="col-xs-4">Name</div>
+					<div class="col-xs-4">Data Type</div>
+					<div class="col-xs-4">Description</div>
+				</div>
+				<% _.each(model.parameters, function(item) { %>
+				<div class="row">
+					<div class="col-xs-4"><%= item.name %></div>
+					<div class="col-xs-4"><a class="field-type"><%= item.dataType %></a></div>
+					<div class="col-xs-4"><span class="description"><%= item.description %></span></div>
+				</div>
+				<% }); %>
+			</div>
+		</div>
+		<% } %>
+
+		<% var displayRequest = _.isString(model.request); %>
+		<% if(displayRequest) { %>
+		<div class="endpoint-line">
+			<div class="row">
+				<div class="col-md-8 key">request body:</div>
+				<div class="col-md-4 toggle">
+					<a onclick="$(this).parent().parent().parent().find('.well').slideToggle();$(this).find('span').toggleClass('hidden');">
+						<span>Hide</span><span class="hidden">Show</span> Details</a>
+				</div>
+			</div>
+			<div class="endpoint-line-body">
+				<div class="well well-sm">
+					<%= new GenericRenderer().render('type', new TypeModelProvider(model.context, model.request).get()) %>
+				</div>
+			</div>
+		</div>
+		<% } %>
+
+		<% var displayResponse = _.isString(model.response.type) && !_.isEqual(model.response.type, 'Void'); %>
+		<% if(displayResponse) { %>
+		<div class="endpoint-line endpoint-line-highlight">
+			<div class="row">
+				<div class="col-md-8 key">response:</div>
+				<div class="col-md-4 toggle">
+					<a onclick="$(this).parent().parent().parent().find('.well').slideToggle();$(this).find('span').toggleClass('hidden');">
+						<span>Hide</span><span class="hidden">Show</span> Details</a>
+				</div>
+			</div>
+			<div class="endpoint-line-body">
+				<div class="well well-sm">
+					<%= new GenericRenderer().render('type', new TypeModelProvider(model.context, model.response.type, new TypeReference('', model.response), undefined, undefined, false).get()) %>
+				</div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+

@@ -1,0 +1,20 @@
+<ul class="nav">
+	<% var hash = location.hash; %>
+
+	<% _.each(menuItems, function(value, key) { %>
+		<% if (_.isObject(value)) { %>
+			<% var classValue = (hash === value._default ? 'pp-nav-selected' : 'pp-nav-collapsed'); %>
+			<li class="pp-nav-group <%=classValue%>">
+				<a href="<%= value._default %>">
+					<%= key %>
+				</a>
+				<%= new GenericRenderer().render('menu-items', {menuItems: value}) %>
+			</li>
+		<% } else if (key!="_default"){ %>
+			<% var classValue = (hash === value ? 'active' : '') ; %>
+			<li class="<%= classValue %>">
+				<a href="<%= value %>"><%= key %></a>
+			</li>
+		<% } %>
+	<% }); %>
+</ul>

@@ -1,0 +1,40 @@
+{
+	"description": "Refund full amount",
+	"request": {
+		"description": "POST /transactions/{instId}/13502877397/refund",
+		"body": {
+			"transaction": {}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"gatewayReference": "7276339338400944",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"transaction": {
+				"transactionId": "13504188082",
+				"status": "SUCCESS",
+				"type": "REFUND",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T19:16:37.547Z",
+				"relatedTransaction": {
+					"transactionId": "13502877397",
+					"merchantRef": "mer_txn_1234556"
+				}
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+<h2 class="page-title"> Issue a cash barcode </h2>
+
+<div class="page-body">
+	<p>
+		The first step to processing a PayCash transaction is to submit a PayCash Issue request via our API. As part of
+		the request you will need
+		to send details of your customer. This can include name, address, email address etc but at a minimum just needs
+		you to provide a unique reference.
+    </p>
+
+    <p>
+		The PayCash issue request should also include the URL you want us to send notification of the completed cash
+		payment.
+	</p>
+
+	<p>
+		We’ll respond to your PayCash issue request with a URL for the barcode. You can use this to present to the
+		customer on-screen, via email or SMS.
+	</p>
+
+	<p>
+		Features such as <a href="#payments/capture_custom_fields">Custom Fields</a>, <a href="#payments/inflight_callbacks">In-Flight Call-backs</a>,
+        <a href="#payments/request_a_previous_transaction">Request a Previous Transaction</a>, Update Customer Details can also be used in conjunction
+		with a PayCash issue. Please refer to the relevant section.
+	</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment',
+		'paycash/issue_a_barcode').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new
+			ExampleRenderer().render('payments/cash_payment_notification/cash-payment-notification-new-customer') %>
+			<%= new
+			ExampleRenderer().render('payments/cash_payment_notification/cash-payment-notification-barcode-generated')
+			%>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,34 @@
+<h2 class="page-title"> CardLock </h2>
+
+<div class="page-body">
+	<p>
+		CardLock allows you to capture your customer’s card details whilst remaining PCI complaint. We will provide you
+		with a JavaScript library to embed into your site which, when integrated, securely transfers the card number
+		(and optionally the card security code) to our tokenisation service. We’ll exchange the card number for a
+		CardLock token which you can then use to complete your customer’s payment, authorisation or payout request.
+	</p>
+
+	<p>
+		CardLock needs to be enabled on your account and we need to issue you credentials that will allow you to access
+		our CardLock tokenisation service. Please ask our Client Management team if you would like this product enabled.
+	</p>
+
+	<p>
+		Once you’re set up you’ll be able to submit your customer’s first payment, authorisation or payout using a
+		CardLock token and all subsequent requests with the merchant token.
+	</p>
+
+	<a href="#payments/make_a_payment"> see: Make a Payment </a>
+
+	<div class="endpoint">
+
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment',
+		'payments/submit_tokens_instead_of_cards/card_lock').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/submit_tokens_instead_of_cards/card_lock/submit-first-payment-using-card-lock-token')
+			%>
+		</div>
+	</div>
+</div>

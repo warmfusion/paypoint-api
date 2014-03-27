@@ -1,0 +1,18 @@
+<h2 class="page-title"> Capture an authorisation </h2>
+
+<div class="page-body">
+	<p>If you’re happy with the results of any internal checks and you are now in a position to capture the funds for an
+		authorisation then use the Capture request. You can only capture the full amount of the original
+		authorisation and you’ll need to provide the reference for the original authorisation.</p>
+
+	<p>Captured authorisations can be Refunded as required using the Refund request.</p>
+
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}/capture', 'payments/capture_an_authorisation').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/capture_an_authorisation/capture') %>
+		</div>
+	</div>
+</div>

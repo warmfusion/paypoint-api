@@ -1,0 +1,59 @@
+{
+	"description": "Notification for the above cash issue transaction (sent when the barcode is generated)",
+	"request": {
+		"description": "POST /merchant/callback?id=1392915918678&amp;wait=0",
+		"body": {
+			"history": [
+				{
+					"transactionStatus": "SUCCESS",
+					"reasonCode": "S100",
+					"reasonMessage": "Cash Issued",
+					"timeStamp": "2014-02-21T15:14:11.209Z"
+				}
+			],
+			"processing": {
+				"payCashResponse": {
+					"barcode": 1234567890263776500,
+					"barcodeUrl": "http://paypoint:8080/hosted/b/IegZ-Fq4E5twpByvci_GiYj_E9BL6rfS9eXfCEc-Svk="
+				},
+				"route": "PAYCASH"
+			},
+			"customFields": {},
+			"paymentMethod": {
+				"paymentClass": "CASH"
+			},
+			"customer": {
+				"merchantRef": "mer_cust_131241412",
+				"id": "10500",
+				"displayName": "Mr O Whatasillyname",
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234"
+				},
+				"email": "test@test.com",
+				"telephone": "0123 456 789",
+				"defaultCurrency": "GBP",
+				"ip": "212.58.253.67"
+			},
+			"transaction": {
+				"transactionId": "13012420690",
+				"merchantRef": "mer_txn_1234556",
+				"merchantDescription": "Sample Transaction",
+				"status": "SUCCESS",
+				"type": "CASH_ISSUE",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-02-21T15:14:10.856Z"
+			}
+		}
+	},
+	"response": {
+		"description": null,
+		"body": ""
+	}
+}

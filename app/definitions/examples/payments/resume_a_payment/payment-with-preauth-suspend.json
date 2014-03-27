@@ -1,0 +1,69 @@
+{
+	"description": "Payment with preAuth SUSPEND",
+	"request":{
+		"description":"POST /transactions/1009/payment",
+		"body":{
+			"transaction": {
+				"currency": "GBP",
+				"amount": "1000.0",
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234556",
+				"commerceType": "MOTO"
+			},
+			"paymentMethod": {
+				"card": {
+					"pan": "4950650000000012",
+					"cv2": "123",
+					"expiryDate": "0115",
+					"startDate": "1111",
+					"cardType": "MC_DEBIT",
+					"nickname": "John",
+					"cardHolderName": "John Smith",
+					"defaultCard": "false"
+				},
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				}
+			},
+			"customer": {
+				"create": "true",
+				"merchantRef": "mer_cust_131244413",
+				"displayName": "Mr O Whatasillyname",
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				},
+				"email": "test@test.com",
+				"telephone": "0123 456 789",
+				"defaultCurrency": "GBP",
+				"ip": "212.58.253.67"
+			},
+			"callbacks": {
+				"preAuthCallback": {
+					"url": "{merchant_specific_url}",
+					"format" : "REST_XML"
+				}
+
+			}
+		}
+	},
+	"response": {
+		"description":"",
+		"body": {
+
+		}
+	}
+}

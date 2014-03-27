@@ -1,0 +1,43 @@
+<h2 class="page-title"> Resume Request </h2>
+
+<div class="page-body">
+	<p>
+
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}/resume', 'payments/resume_a_payment').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/3dsecure/3ds_resume') %>
+				</div>
+
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/sessions/{sessionId}/resume', 'payments/resume_a_payment').get()) %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

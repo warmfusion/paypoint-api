@@ -1,0 +1,9 @@
+ul.nav, .toggle {
+	display: none;
+}
+
+#container {
+	background: transparent;
+}
+
+

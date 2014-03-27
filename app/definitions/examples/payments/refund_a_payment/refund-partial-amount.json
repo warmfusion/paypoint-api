@@ -1,0 +1,44 @@
+{
+	"description": "Refund partial amount",
+	"request": {
+		"description": "POST /transactions/{instId}/13502877394/refund",
+		"body": {
+			"transaction": {
+				"amount": 250.00,
+				"currency": "GBP"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"gatewayReference": "1530166587977409",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"transaction": {
+				"transactionId": "13504450222",
+				"merchantRef": "mer_ref_54321",
+				"status": "SUCCESS",
+				"type": "REFUND",
+				"amount": 250,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T19:58:13.762Z",
+				"relatedTransaction": {
+					"transactionId": "13502877394",
+					"merchantRef": "mer_txn_1234557"
+				}
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

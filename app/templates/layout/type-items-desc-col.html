@@ -1,0 +1,25 @@
+<div class="vertical-extend col-xs-7">
+	<div class="vertical-extend">
+		<div class="data-type-description">
+
+			<% if(!provider.hideTypeDescription()) { %>
+				<span class="field-type"><%= provider.typeName() %></span>
+			<% } %>
+
+			<% _.each(provider.flags(), function (value) { %>
+				<div class="data-type-flag <%= value.className %>" title="<%= value.title %>"><%= value.title %></div>
+			<% }); %>
+		</div>
+
+		<% if(provider.hasValues()) { %>
+			<div class="values">
+				<span class="values-label">Possible Values:</span>
+				<span class="value-entries"><%= provider.valueString() %></span>
+			</div>
+		<% } %>
+
+		<div class="description">
+			<%= provider.description() %>
+		</div>
+	</div>
+</div>

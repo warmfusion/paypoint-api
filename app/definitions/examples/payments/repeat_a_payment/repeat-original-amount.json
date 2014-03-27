@@ -1,0 +1,46 @@
+{
+	"description": "Repeat original amount",
+	"request": {
+		"description": "POST /transactions/{instId}/13502091964/repeat",
+		"body": {}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"statusCode": "00",
+					"message": "ACQUIRER OK",
+					"authCode": "100000",
+					"gatewayReference": "5535585570903340-PASS",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"avsAddressCheck": "NOT_MATCHED",
+					"avsPostcodeCheck": "NOT_MATCHED",
+					"cv2Check": "NOT_CHECKED",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			  },
+			"transaction": {
+				"transactionId": "13502091974",
+				"deferred": false,
+				"instalment": false,
+				"status": "SUCCESS",
+				"type": "REPEAT",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T20:35:19.566Z",
+				"relatedTransaction": {
+					"transactionId": "13502091964",
+					"merchantRef": "mer_txn_1234556"
+				}
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+<h2 class="page-title"> Cancel an authorisation </h2>
+
+<div class="page-body">
+	<p>
+		If you don’t want to continue with capturing the funds for an authorisation and you want to release the
+		authorisation amount from your customer's card then you should use the Cancel request. You'll need to provide the
+		reference for the original authorisation.
+	</p>
+	<div class="endpoint">
+		<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/{transactionId}/cancel', 'payments/cancel_an_authorisation').get()) %>
+		<!-- EXAMPLES -->
+		<div class="endpoint-example-section">
+			<div class="endpoint-section-header">API Examples</div>
+			<%= new ExampleRenderer().render('payments/cancel_an_authorisation/cancel') %>
+		</div>
+	</div>
+</div>

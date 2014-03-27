@@ -1,0 +1,320 @@
+{
+	"description": "Fetch transactions by merchant reference",
+	"request": {
+		"description": "GET /transactions/{instId}/byRef?merchantRef={merchantRef}",
+		"body": {}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": [
+				  {
+					"processing": {
+					  "authResponse": {
+						"statusCode": "00",
+						"acquirerName": "HSBC Merchant Services Domestic",
+						"message": "ACQUIRER OK",
+						"authCode": "authCode",
+						"gatewayReference": "4300200042810617-PASS",
+						"gatewayCode": "1",
+						"gatewayMessage": "ACCEPTED",
+						"avsAddressCheck": "NOT_MATCHED",
+						"avsPostcodeCheck": "NOT_MATCHED",
+						"cv2Check": "NOT_MATCHED",
+						"status": "AUTHORISED"
+					  },
+					  "route": "MCPE"
+					},
+					"paymentMethod": {
+					  "card": {
+						"cardToken": "outY+Gn8TGWwNPBuazginA",
+						"new": false,
+						"cardType": "VISA_DEBIT",
+						"maskedPan": "100035******0007",
+						"expiryDate": "0115",
+						"issuer": "Lloyds",
+						"issuerCountry": "GBR",
+						"cardNickname": "John",
+						"validDate": "1111"
+					  },
+					  "billingAddress": {
+						"line1": "Flat 1 ",
+						"line2": "Cauldron house",
+						"line3": "A Street",
+						"line4": "Twertonia",
+						"city": "Bath",
+						"region": "Somerset",
+						"postcode": "BA1 234",
+						"country": "UK"
+					  },
+					  "paymentClass": "CARD"
+					},
+					"customFields": {
+					  "fieldState": [
+						{
+						  "name": "measure_CV2_FAILURES",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_NO_DATA_MATCH",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_ADDRESS_MATCH_ONLY",
+						  "value": "0",
+						  "transient": false
+						},
+						{
+						  "name": "measure_TOTAL_CARD_SPEND",
+						  "value": "3000.00",
+						  "transient": false
+						}
+					  ]
+					},
+					"threeDSecure": {
+					  "scheme": "VERIFIED_BY_VISA",
+					  "status": "AUTHENTICATED",
+					  "enrolmentIndicator": "Y",
+					  "enrolmentStatus": "ENROLLED",
+					  "enrolmentDateTime": "2012-02-23T11:16:02.000Z",
+					  "authenticationIndicator": "Y",
+					  "authenticationStatus": "AUTHENTICATED",
+					  "xid": "00000000003030821144",
+					  "avv": "AAABAmVnMTUFUTUFWWcwAAAAAAA=",
+					  "eci": "05"
+					},
+					"customer": {
+					  "merchantRef": "mer_cust_131241412",
+					  "id": "10500",
+					  "displayName": "Mr O Whatasillyname",
+					  "billingAddress": {
+						"line1": "Flat 1 ",
+						"line2": "Cauldron house",
+						"city": "Bath",
+						"region": "Somerset",
+						"postcode": "BA1 234"
+					  },
+					  "email": "test@test.com",
+					  "telephone": "0123 456 789",
+					  "defaultCurrency": "GBP",
+					  "ip": "212.58.253.67"
+					},
+					"transaction": {
+					  "transactionId": "10349373216",
+					  "merchantRef": "mer_txn_1234551",
+					  "merchantDescription": "Sample Transaction",
+					  "status": "SUCCESS",
+					  "type": "PAYMENT",
+					  "amount": 1000,
+					  "currency": "GBP",
+					  "transactionTime": "2014-01-06T22:14:54.895Z"
+					},
+					"history": [
+					  {
+						"transactionStatus": "PENDING",
+						"reasonCode": "U100",
+						"reasonMessage": "Suspended pending Three D Secure process",
+						"timeStamp": "2014-01-06T22:14:58.544Z"
+					  },
+					  {
+						"transactionStatus": "SUCCESS",
+						"reasonCode": "S100",
+						"reasonMessage": "Authorised",
+						"timeStamp": "2014-01-06T22:15:47.772Z"
+					  }
+					],
+					"followUpStatus": {},
+					"link": [
+					  {
+						"rel": "self",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/transactions/10349373216"
+					  },
+					  {
+						"rel": "customer",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/10500"
+					  },
+					  {
+						"rel": "payment-method",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/10500/paymentMethods/outY+Gn8TGWwNPBuazginA"
+					  }
+					]
+				  },
+				  {
+					"customFields": {
+					  "fieldState": [
+						{
+						  "name": "measure_CV2_FAILURES",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_NO_DATA_MATCH",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_ADDRESS_MATCH_ONLY",
+						  "value": "0",
+						  "transient": false
+						},
+						{
+						  "name": "measure_TOTAL_CARD_SPEND",
+						  "value": "3000.00",
+						  "transient": false
+						}
+					  ]
+					},
+					"threeDSecure": {
+					  "enrolmentIndicator": "Y",
+					  "enrolmentStatus": "ENROLLED",
+					  "enrolmentDateTime": "2012-02-23T11:16:02.000Z"
+					},
+					"customer": {
+					  "merchantRef": "mer_cust_131241412",
+					  "id": "10500",
+					  "displayName": "Mr O Whatasillyname",
+					  "billingAddress": {
+						"line1": "Flat 1 ",
+						"line2": "Cauldron house",
+						"city": "Bath",
+						"region": "Somerset",
+						"postcode": "BA1 234"
+					  },
+					  "email": "test@test.com",
+					  "telephone": "0123 456 789",
+					  "defaultCurrency": "GBP",
+					  "ip": "212.58.253.67"
+					},
+					"transaction": {
+					  "transactionId": "10349111080",
+					  "merchantRef": "mer_txn_1234551",
+					  "merchantDescription": "Sample Transaction",
+					  "status": "EXPIRED",
+					  "type": "PAYMENT",
+					  "amount": 1000,
+					  "currency": "GBP",
+					  "transactionTime": "2014-01-06T21:45:58.653Z"
+					},
+					"history": [
+					  {
+						"transactionStatus": "PENDING",
+						"reasonCode": "U100",
+						"reasonMessage": "Suspended pending Three D Secure process",
+						"timeStamp": "2014-01-06T21:45:59.542Z"
+					  },
+					  {
+						"transactionStatus": "EXPIRED",
+						"reasonCode": "T100",
+						"reasonMessage": "Transaction expired by timeout",
+						"timeStamp": "2014-01-06T22:12:41.737Z"
+					  }
+					],
+					"followUpStatus": {},
+					"link": [
+					  {
+						"rel": "self",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/transactions/10349111080"
+					  },
+					  {
+						"rel": "customer",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/10500"
+					  }
+					]
+				  },
+				  {
+					"paymentMethod": {
+					  "card": {
+						"new": false,
+						"cardType": "VISA_DEBIT",
+						"maskedPan": "100035******0007",
+						"expiryDate": "0115",
+						"issuer": "Lloyds",
+						"issuerCountry": "GBR",
+						"cardNickname": "John",
+						"validDate": "1111"
+					  },
+					  "billingAddress": {
+						"line1": "Flat 1 ",
+						"line2": "Cauldron house",
+						"line3": "A Street",
+						"line4": "Twertonia",
+						"city": "Bath",
+						"region": "Somerset",
+						"postcode": "BA1 234",
+						"country": "UK"
+					  },
+					  "paymentClass": "CARD"
+					},
+					"customFields": {
+					  "fieldState": [
+						{
+						  "name": "measure_CV2_FAILURES",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_NO_DATA_MATCH",
+						  "value": "3",
+						  "transient": false
+						},
+						{
+						  "name": "measure_ADDRESS_MATCH_ONLY",
+						  "value": "0",
+						  "transient": false
+						},
+						{
+						  "name": "measure_TOTAL_CARD_SPEND",
+						  "value": "3000.00",
+						  "transient": false
+						}
+					  ]
+					},
+					"customer": {
+					  "merchantRef": "mer_cust_131241412",
+					  "id": "10500",
+					  "displayName": "Mr O Whatasillyname",
+					  "billingAddress": {
+						"line1": "Flat 1 ",
+						"line2": "Cauldron house",
+						"city": "Bath",
+						"region": "Somerset",
+						"postcode": "BA1 234"
+					  },
+					  "email": "test@test.com",
+					  "telephone": "0123 456 789",
+					  "defaultCurrency": "GBP"
+					},
+					"transaction": {
+					  "transactionId": "10349111079",
+					  "merchantRef": "mer_txn_1234551",
+					  "merchantDescription": "Sample Transaction",
+					  "status": "FAILED",
+					  "type": "PAYMENT",
+					  "amount": 1000,
+					  "currency": "GBP",
+					  "transactionTime": "2014-01-06T21:45:08.843Z"
+					},
+					"history": [
+					  {
+						"transactionStatus": "FAILED",
+						"reasonCode": "A120",
+						"reasonMessage": "Invalid gaming territories country conditions. customerIp not available but cardIssuingCountry ok.",
+						"timeStamp": "2014-01-06T21:45:09.060Z"
+					  }
+					],
+					"followUpStatus": {},
+					"link": [
+					  {
+						"rel": "self",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/transactions/10349111079"
+					  },
+					  {
+						"rel": "customer",
+						"href": "http://localhost:8080/acceptor/rest/manage/1009/customers/10500"
+					  }
+					]
+				  }
+				]
+	}
+}

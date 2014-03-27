@@ -1,0 +1,114 @@
+{
+	"description": "PreAuth",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction": {
+				"currency": "GBP",
+				"amount": "1000.0",
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234557",
+				"commerceType": "MOTO",
+				"deferred": "true"
+			  },
+			"paymentMethod": {
+				"fromCustomer": {
+					"cv2": "123"
+				}
+			},
+			"customer": {
+				"merchantRef": "mer_cust_131241413"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"statusCode": "00",
+					"message": "ACQUIRER OK",
+					"authCode": "100000",
+					"gatewayReference": "8280687149727341-PASS",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"avsAddressCheck": "NOT_MATCHED",
+					"avsPostcodeCheck": "NOT_MATCHED",
+					"cv2Check": "NOT_MATCHED",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"paymentMethod": {
+				"card": {
+					"cardToken": "hJzbc9ccR9CHLlita5g5Jg",
+					"new": false,
+					"cardType": "VISA_DEBIT",
+					"maskedPan": "444433******1111",
+					"expiryDate": "0115",
+					"issuer": "Lloyds",
+					"issuerCountry": "GBR",
+					"cardHolderName": "John Smith",
+					"cardNickname": "John",
+					"validDate": "1111"
+				},
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				},
+				"paymentClass": "CARD"
+			},
+			"customFields": {
+				"fieldState": [
+					{
+						"name": "measure_CV2_FAILURES",
+						"value": "1",
+						"transient": false
+					},
+					{
+						"name": "measure_NO_DATA_MATCH",
+						"value": "1",
+						"transient": false
+					},
+					{
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "1750.00",
+						"transient": false
+					}
+				]
+			},
+			"threeDSecure": {},
+			"customer": {
+				"created": true,
+				"id": "10501",
+				"merchantRef": "mer_cust_131241413"
+			},
+			"transaction": {
+				"transactionId": "13504712363",
+				"deferred": true,
+				"merchantRef": "mer_txn_1234557",
+				"status": "SUCCESS",
+				"type": "PREAUTH",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T20:58:14.365Z"
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+<h2 class="page-title"> Capture custom fields </h2>
+
+<div class="apiPageIntro">
+	<p>
+		As a business do you have fields that you want or need to capture from your customer alongside the payment information? T&Cs acceptance,
+		for example? Promotional Codes – do you need to understand how many people cashed in on last month’s offer?
+		Customer Account Details – is this customer registered in our CRM?  Product Information – what are they buying today?
+		Would you like to understand payment trends in relation to these items?
+	</p>
+	<p>
+		You can configure all API and Hosted requests to capture Custom fields that are relevant to your business.
+	</p>
+	<p>
+		Within Hosted you can even go as far as to configure:
+	</p>
+		<ul>
+			<li>the type of field; Text entry field, multiple radio button selection,  multiple dropdown selection or simply additional text on page <i>(Hosted)</i></li>
+			<li>the content of the field:  default values, options available, masked values <i>(Hosted)</i></li>
+			<li>text for the field label <i>(Hosted)</i></li>
+			<li>the name of the field that we’ll send back to you in responses, call-backs and notifications <i>(API and Hosted)</i></li>
+			<li>the position of the field on the hosted page; form top (before the payment capture fields) or form bottom (after the payment capture fields).<i>(Hosted)</i></li>
+		</ul>
+	<p>
+		We’ll save the values your customer enters and send them back to you in responses, call-backs and notifications.
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>Your account can also be configured so these fields are available in Reporting.  Let us know if you want this feature enabled.</em>
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payment', 'payments/capture_custom_fields').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/capture_custom_fields/payment-existing-customer-default-card-custom-fields') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/payments', 'payments/capture_custom_fields').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('payments/capture_custom_fields/hosted-submit-custom-fields') %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

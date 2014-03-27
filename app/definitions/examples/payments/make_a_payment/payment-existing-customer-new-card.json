@@ -1,0 +1,129 @@
+{
+	"description": "Payment for existing customer with new card",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction": {
+				"currency": "GBP",
+				"amount": "1000.0",
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234556",
+				"commerceType": "MOTO"
+			},
+			"paymentMethod": {
+				"card": {
+					"pan": "4444333322221111",
+					"cv2": "111",
+					"expiryDate": "0115",
+					"startDate": "1111",
+					"cardType": "MC_DEBIT",
+					"nickname": "John",
+					"cardHolderName": "John Smith",
+					"defaultCard": "false"
+				},
+				"billingAddress": {
+					"line1": "Flat 1 ",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				}
+			},
+			"customer": {
+				"merchantRef": "mer_txn_1234557"
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				"authResponse": {
+					"statusCode": "00",
+					"message": "ACQUIRER OK",
+					"authCode": "100000",
+					"gatewayReference": "8946685153043631-PASS",
+					"gatewayCode": "1",
+					"gatewayMessage": "ACCEPTED",
+					"avsAddressCheck": "NOT_MATCHED",
+					"avsPostcodeCheck": "NOT_MATCHED",
+					"cv2Check": "MATCHED",
+					"status": "AUTHORISED"
+				},
+				"route": "MCPE"
+			},
+			"paymentMethod": {
+				"card": {
+					"cardToken": "hJzbc9ccR9CHLlita5g5Jg",
+					"new": true,
+					"cardType": "VISA_DEBIT",
+					"maskedPan": "444433******1111",
+					"expiryDate": "0115",
+					"issuer": "Lloyds",
+					"issuerCountry": "GBR",
+					"cardHolderName": "John Smith",
+					"cardNickname": "John",
+					"validDate": "1111"
+				},
+				"billingAddress": {
+					"line1": "Matched",
+					"line2": "Cauldron house",
+					"line3": "A Street",
+					"line4": "Twertonia",
+					"city": "Bath",
+					"region": "Somerset",
+					"postcode": "BA1 234",
+					"country": "UK"
+				},
+				"paymentClass": "CARD"
+			},
+			"customFields": {
+				"fieldState": [
+					{
+						"name": "measure_CV2_FAILURES",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_NO_DATA_MATCH",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					},
+					{
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "0",
+						"transient": false
+					}
+				]
+			},
+			"threeDSecure": {},
+			"customer": {
+				"created": true,
+				"id": "10501",
+				"merchantRef": "mer_cust_131241413"
+			},
+			"transaction": {
+				"transactionId": "13502877394",
+				"merchantRef": "mer_txn_1234557",
+				"status": "SUCCESS",
+				"type": "PAYMENT",
+				"amount": 1000,
+				"currency": "GBP",
+				"transactionTime": "2014-01-06T17:06:46.793Z"
+			},
+			"outcome": {
+				"status": "SUCCESS",
+				"reasonCode": "S100",
+				"reasonMessage": "Authorised"
+			}
+		}
+	}
+}

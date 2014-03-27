@@ -1,0 +1,1407 @@
+<h2 class="page-title">Response codes and messages</h2>
+
+<div class="page-body">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#generic" data-toggle="tab">Generic</a></li>
+		<li><a href="#validations" data-toggle="tab">Validation</a></li>
+		<li><a href="#paymentAndPreauth" data-toggle="tab">Payment and PreAuth</a></li>
+		<li><a href="#refunds" data-toggle="tab">Refund</a></li>
+		<li><a href="#captures" data-toggle="tab">Capture</a></li>
+		<li><a href="#cancels" data-toggle="tab">Cancel</a></li>
+		<li><a href="#repeats" data-toggle="tab">Repeat</a></li>
+		<li><a href="#reporting" data-toggle="tab">Reporting</a></li>
+		<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane active" id="generic">
+			<h4>Generic response codes and messages</h4>
+
+			<p>
+				Below is a list of the codes and messages you could receive in response to your request.
+				S100 indicates the transaction request was successful.
+			</p>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td>V100</td>
+						<td>&nbsp;</td>
+						<td>The API request was not valid.</td>
+					</tr>
+					<tr>
+						<td>V101</td>
+						<td>Unauthorised access</td>
+						<td>The client address was not configured in the client firewall.</td>
+					</tr>
+					<tr>
+						<td>V102</td>
+						<td>-</td>
+						<td>The server-to-server address was not valid (Internal).</td>
+					</tr>
+					<tr>
+						<td colspan="1">V103</td>
+						<td colspan="1">Access Denied</td>
+						<td colspan="1">The connection API credentials do not have permission to use the
+							specified installation.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V104</td>
+						<td colspan="1">Unsupported transaction type {transactionType} on gateway {gateway}
+						</td>
+						<td colspan="1">The specified operation is not supported on this channel.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V105</td>
+						<td colspan="1">Missing related transaction / Related transaction was not found</td>
+						<td colspan="1">Related transaction was not provided / not found / processed by other
+							merchant.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V106</td>
+						<td colspan="1">Suspended transaction has expired</td>
+						<td colspan="1">The suspended transaction has expired, so it could not be resumed.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V107</td>
+						<td colspan="1">Wrong transaction status for resume - transaction status =
+							{transactionStatus}
+						</td>
+						<td colspan="1">This transaction cannot be resumed.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V108</td>
+						<td colspan="1">PaRes is not valid</td>
+						<td colspan="1">This 3DS transaction cannot be resumed, the provided PaRes is not
+							valid.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V109</td>
+						<td colspan="1">CV2 specified as a standalone field is not consistent with the value
+							from the card lock token.
+						</td>
+						<td colspan="1">CV2 is received as a standalone field and in card lock token and the
+							values are not consistent
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3"> </td>
+					</tr>
+					<tr>
+						<td colspan="1">A102</td>
+						<td colspan="1">No account capable of processing this transaction</td>
+						<td colspan="1">No suitable external account</td>
+					</tr>
+					<tr>
+						<td colspan="1">A103</td>
+						<td colspan="1">-</td>
+						<td colspan="1">The related transaction for this operation was not valid for this operation.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A104</td>
+						<td colspan="1">Unable to determine card type / Card brand not found</td>
+						<td colspan="1">Card type is invalid</td>
+					</tr>
+					<tr>
+						<td colspan="1">A107</td>
+						<td colspan="1">The customer does not have an active default card registered</td>
+						<td colspan="1">Customer doesn't have a default card</td>
+					</tr>
+					<tr>
+						<td colspan="1">A108</td>
+						<td colspan="1">specified customer not found</td>
+						<td colspan="1">Card has no customer / Customer belongs to different Org Unit / Invalid
+							merchant reference
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A109</td>
+						<td colspan="1">specified card not found</td>
+						<td colspan="1">The merchant card token is not found into the system. Used when
+							updating/removing customers.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A110</td>
+						<td colspan="1">Transaction cancelled beacuse of POST_AUTH Callback failure</td>
+						<td colspan="1">Transaction was abandoned because the post-auth callback failed with a technical error.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A111</td>
+						<td colspan="1">Transaction cancelled beacuse of pre AUTH Callback failure</td>
+						<td colspan="1">Transaction was abandoned because the pre-auth callback failed with a technical error.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A112</td>
+						<td colspan="1">invalid configuration expression</td>
+						<td colspan="1">Invalid configuration in regards to expressions (Invalid expression
+							supplied to the global 3dsecure).
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A113</td>
+						<td colspan="1">Transaction rejected after Three D Secure enrolment</td>
+						<td colspan="1">The ThreeDSecure enrolment failed but the process is enforcing &nbsp;3d
+							secure enrolement.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A114</td>
+						<td colspan="1">Transaction rejected after Three D Secure authentication</td>
+						<td colspan="1">The ThreeDSecure progressed but the transaction was not
+							authenticated.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A115</td>
+						<td colspan="1">Card operation no longer valid after resume</td>
+						<td colspan="1">The CCS has identified that a card operation is no longer valid after
+							the transaction is resumed.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A116</td>
+						<td colspan="1">Card fraud checks failed</td>
+						<td colspan="1">The transaction has failed due to the failure of the fraud checks.</td>
+					</tr>
+					<tr>
+						<td colspan="1">A117</td>
+						<td colspan="1">Card brand is not supported on this account</td>
+						<td colspan="1">The card type could not be determined. It is not supported by the
+							route.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A118</td>
+						<td colspan="1">The customer name is missing and is a required field.</td>
+						<td colspan="1">The customer name is not provided.</td>
+					</tr>
+					<tr>
+						<td colspan="1">A119</td>
+						<td colspan="1">The card has already been registered to a customer.</td>
+						<td colspan="1">The card to be registered already exists.</td>
+					</tr>
+					<tr>
+						<td rowspan="13">A120</td>
+						<td colspan="1">Invalid gaming territories country conditions. &nbsp;customerIpCountry
+							and cardIssuingCountry on blocked list.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. &nbsp;customerIpCountry
+							not available but cardIssuingCountry ok.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. &nbsp;customerIpCountry
+							on blocked list and cardIssuingCountry not available.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. &nbsp;customerIpCountry
+							on blocked list but cardIssuingCountry ok.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIp and
+							cardIssuingCountry not available.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIp not available
+							and cardIssuingCountry on blocked list.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIp not available
+							but cardIssuingCountry ok.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIpCountry and
+							cardIssuingCountry not available.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIpCountry and
+							cardIssuingCountry not available.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIpCountry not
+							available and cardIssuingCountry on blocked list.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIpCountry ok but
+							cardIssuingCountry not available.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid gaming territories country conditions. customerIpCountry ok but
+							cardIssuingCountry on blocked list.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Unknown gaming territories conditions</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">A121</td>
+						<td colspan="1">A valid MCC could not be determined.</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">A122</td>
+						<td colspan="1">Max limit exceeded for active cards.</td>
+						<td colspan="1">The max limit of active cards is reached and no new card can be
+							registered.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A123</td>
+						<td colspan="1">Card is in deleted status.</td>
+						<td colspan="1">The card is in a deleted status.</td>
+					</tr>
+					<tr>
+						<td colspan="1">A124</td>
+						<td colspan="1">&nbsp;</td>
+						<td colspan="1">The custom field value is invalid for the configured type.</td>
+					</tr>
+					<tr>
+						<td colspan="1">A125</td>
+						<td colspan="1">Cannot process two concurrent secondary transactions that refer the
+							same primary transaction
+						</td>
+						<td colspan="1">Lock acquisition timeout expired when a first secondary transaction did
+							not complete its processing and a second secondary transaction waits for the first to complete.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A126</td>
+						<td colspan="1">Duplicate transaction submitted</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">A127</td>
+						<td colspan="1">Invalid or unknown card lock token.</td>
+						<td colspan="1">Specified card lock token is not recognized by the Tokenisation
+							Service
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">A128</td>
+						<td colspan="1">Card locks disabled for merchant</td>
+						<td colspan="1">Specified that card locks are disabled for merchant</td>
+					</tr>
+					<tr>
+						<td colspan="1">A129</td>
+						<td colspan="1">Merchant has invalid credentials</td>
+						<td colspan="1">Specified that merchant has no credentials set</td>
+					</tr>
+                    <tr>
+                        <td colspan="1">A30</td>
+                        <td colspan="1">Tokenisation Service temporarily not available</td>
+                        <td colspan="1">Specified that the Tokenisation Service is temporarily unable to process tokenised payments</td>
+                    </tr>
+					<tr>
+						<td colspan="1">C101</td>
+						<td colspan="1">Cancelled by preauth callback</td>
+						<td colspan="1">The Preauth callback returned a CANCEL response.</td>
+					</tr>
+					<tr>
+						<td colspan="1">C102</td>
+						<td colspan="1">Cancelled by postauth callback</td>
+						<td colspan="1">The post auth callback returned a CANCEL response.</td>
+					</tr>
+					<tr>
+						<td colspan="1">C103</td>
+						<td colspan="1">Cancelled due to postauth callback error</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="2">X201</td>
+						<td colspan="1">No processing routes are configured for this type of transaction</td>
+						<td colspan="1">Internal error in decisioning system. The corresponding error message is not used/commented out.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">Failed to communicate with destination transaction processor</td>
+						<td colspan="1">Upstream exception from GS client. Upstream exception from MCPE</td>
+					</tr>
+					<tr>
+						<td colspan="1">X202</td>
+						<td colspan="1">Post Auth transaction void failed</td>
+						<td colspan="1"><p>The transaction mandated a VOID but this failed at the destination
+							platform.</p>
+
+							<p>(the bank response contains unusccessful void response or doe not contain a void response)</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">X203</td>
+						<td colspan="1">&nbsp;</td>
+						<td colspan="1">The destination platform is not available.</td>
+					</tr>
+					<tr>
+						<td colspan="1">X205</td>
+						<td colspan="1">Downstream PayCash authoriser error</td>
+						<td colspan="1"><p>A general error communicating with downstream PayCash authoriser</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">X208</td>
+						<td colspan="1">Could not perform Three D Secure enrolment check</td>
+						<td colspan="1"><p>A general error with 3DS enrollment checks. Appears when the an
+							EnrolmentCheckServiceException</p>
+
+							<p>is thrown or when a refund is attempted for a failed transaction</p></td>
+					</tr>
+					<tr>
+						<td rowspan="6">E500&nbsp;<br><br><br><br></td>
+						<td colspan="1">Unknown error returned from card check</td>
+						<td colspan="1"><p>Checks to see if upon resume, a pending customer card service
+							operation is valid. Checks that pending card</p>
+
+							<p>entry is valid and repeats fraud checks</p></td>
+					</tr>
+					<tr>
+						<td>Stored card details were not available for this suspended transaction</td>
+						<td>Appears when a resumed transaction occurs but the temporarily stored card details
+							were not available
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="4">Internal Server Error<br><br><br></td>
+						<td colspan="1"><p>An internal error has occurred while processing in the transaction
+							acceptor;</p>
+
+							<p>amongs some cases: an exception was thrown while trying to remove or update a customer&nbsp;</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">An unexpected error has occurred while processing</td>
+					</tr>
+					<tr>
+						<td colspan="1">Exception indicating that the ThreeDSecure enrolment status was missing
+							from the AbstractOperation.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">General Transaction Management Exception</td>
+					</tr>
+					<tr>
+						<td rowspan="2">S100</td>
+						<td colspan="1">Accepted</td>
+						<td colspan="1">When multiple reports have been successfully submitted simultaneously.
+							The transaction has completed it's desired goal
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">Authorised</td>
+						<td colspan="1">General Transaction Success code. The transaction has completed it's
+							desired goal
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">S101</td>
+						<td colspan="1">Customer fetched</td>
+						<td colspan="1">General success code stating that a customer has been successfully
+							fetched
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">S102</td>
+						<td colspan="1">Partial Failure</td>
+						<td colspan="1">A report operation failed partially</td>
+					</tr>
+					<tr>
+						<td colspan="1">S103</td>
+						<td colspan="1">Payment method successfully removed</td>
+						<td colspan="1">Payment method was successfully removed</td>
+					</tr>
+					<tr>
+						<td colspan="1">S104</td>
+						<td colspan="1">Payment method successfully updated</td>
+						<td colspan="1">Payment method was successfully updated</td>
+					</tr>
+					<tr>
+						<td colspan="1">D100</td>
+						<td colspan="1">Declined by upstream processor</td>
+						<td colspan="1"><p>Message given by Gateway/MCPE if a transaction is declined during
+							preauth, capture. The authorisor declined to accept</p>
+
+							<p>the transaction, no error occurred.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">U100</td>
+						<td colspan="1">Suspended pending Three D Secure process</td>
+						<td colspan="1">Transaction was suspended by a 3DS enrollment process. See redirect
+							message in response, can only be resumed with a PARes message
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">U101</td>
+						<td colspan="1">Suspended by preauth callback</td>
+						<td colspan="1">Transaction was suspended by Preauth Callback. You can resume this
+							transaction
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">U102</td>
+						<td colspan="1">Suspended for replay by preauth callback</td>
+						<td colspan="1">A report operation failed completely (i.e. 0 successful transactions).
+							Possible cases: installation is unknown
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">R100</td>
+						<td colspan="1">Report Failed</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">T100</td>
+						<td colspan="1">Transaction expired by timeout</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">B100</td>
+						<td colspan="1">Batch failed, see individual items for reasons</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">B101</td>
+						<td colspan="1">Partial batch failure, see individual items for reasons</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">L100</td>
+						<td colspan="1">Cannot obtain lock within configured timeout</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="validations">
+			<h4>General transaction types validations</h4>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="2">Authentication</td>
+						<td colspan="1">V111</td>
+						<td>UserId must be specified</td>
+						<td>Invalid credentials</td>
+					</tr>
+					<tr>
+						<td colspan="1">V111</td>
+						<td>Security Key must be specified</td>
+						<td>Invalid credentials</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Installation</td>
+						<td colspan="1">V112</td>
+						<td>Installation must be specified</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">V113</td>
+						<td>Invalid installation / Installation ID must be numeric</td>
+						<td>Installation id must match only digit characters 0...9</td>
+					</tr>
+					<tr>
+						<td rowspan="3">Customers general validations<br><br></td>
+						<td colspan="1">V114</td>
+						<td>Customer must be specified / Customer details must be specified / When create is specified customer details must be specified.
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V115</td>
+						<td>merchantRef or id must be specified</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V116</td>
+						<td>merchantRef and id must not be specified both in the same time</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="6">Create customers validations</td>
+						<td colspan="1">V117</td>
+						<td colspan="1">
+							You cannot specify a create flag and a platform customer ID.</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V118</td>
+						<td colspan="1">customer name cannot be null</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V119</td>
+						<td colspan="1">At least one name for the customer must be set. </td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V120</td>
+						<td colspan="1">line1 of the address must be set</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V121</td>
+						<td colspan="1">city must be set</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V122</td>
+						<td colspan="1">country must be set</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Payment class validation</td>
+						<td colspan="1">V123</td>
+						<td colspan="1">paymentClass should be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Postal code validation</td>
+						<td colspan="1">V124</td>
+						<td colspan="1">invalid optional post code</td>
+						<td colspan="1">Request customer details with invalid postal code.
+						</td>
+					</tr>
+					<tr>
+						<td>Callback URL validation</td>
+						<td colspan="1">V125</td>
+						<td colspan="1">Invalid URL.</td>
+						<td colspan="1">Callback url does not have a valid URL format.</td>
+					</tr>
+					<tr>
+						<td rowspan="7">
+							Transactions generic validations&nbsp;&nbsp;&nbsp;
+						</td>
+						<td colspan="1">V126</td>
+						<td colspan="1">Currency must be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V127</td>
+						<td colspan="1">Unrecognised currency {currencyType}</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V128</td>
+						<td colspan="1">CommerceType must be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V129</td>
+						<td colspan="1">Amount must be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V130</td>
+						<td colspan="1">Amount {amountValue} cannot be negative</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V131</td>
+						<td colspan="1">Amount {amountValue} exceeds the number of fractional digits {digitsNumber} permitted for currency {currencyType}
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V132</td>
+						<td colspan="1">Amount {amountValue} exceeds the maximum number of non-fractional digits {digitsNumber}
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="7">Secondary transactions validations<br><br></td>
+						<td colspan="1">V133</td>
+						<td colspan="1">Cannot {requestedTxnType} a transaction in a different currency ({requiredCurrency}) to the original {originalCurrency})
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V134</td>
+						<td colspan="1">Cannot perform a {requestedTxnType} against a {originalTxnType} transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V135</td>
+						<td colspan="1">
+							Cannot perform a {requestedTxnType} against an incomplete transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V136</td>
+						<td colspan="1">
+							Cannot perform a {requestedTxnType} &nbsp;against a failed transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V137</td>
+						<td colspan="1">
+							Cannot perform a {requestedTxnType} against an uncaptured transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V138</td>
+						<td colspan="1">Cannot perform a {requestedTxnType} against an already-captured transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V139</td>
+						<td colspan="1">
+							Cannot perform a {requestedTxnType} against an already-void transaction
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="4">Nickname validations</td>
+						<td colspan="1">V140</td>
+						<td colspan="1">Card nickname must be provided</td>
+						<td colspan="1">Card nickname must be provided</td>
+					</tr>
+					<tr>
+						<td colspan="1">V141</td>
+						<td colspan="1">
+							Please ensure nickname consists of more than just spaces.</td>
+						<td colspan="1">Card nickname contains only spaces</td>
+					</tr>
+					<tr>
+						<td colspan="1">V142</td>
+						<td colspan="1">Invalid nickname length (\\{nicknameLength\\}). Max number of
+							permitted characters is 20.
+						</td>
+						<td colspan="1">Card nickname exceeds the max number of permitted characters(20).
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V143</td>
+						<td colspan="1">Card nickname is invalid. Only latin alphanumeric characters,
+							spaces and &nbsp;. - ' are permitted.
+						</td>
+						<td colspan="1">Card nickname contains characters not permitted</td>
+					</tr>
+					<tr>
+						<td rowspan="6">Card details validations</td>
+						<td colspan="1">V144</td>
+						<td colspan="1">Expiry date should be MMYY</td>
+						<td colspan="1">Expiry date must match: MMYY format</td>
+					</tr>
+					<tr>
+						<td colspan="1">V145</td>
+						<td colspan="1">Start date should be MMYY</td>
+						<td colspan="1">Start date must match: MMYY format</td>
+					</tr>
+					<tr>
+						<td colspan="1">V146</td>
+						<td colspan="1">startDate and clearStartDate can not be specified in the same
+							request
+						</td>
+						<td colspan="1">StartDate and ClearStartDate are both specified in the same time
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V147</td>
+						<td colspan="1">Start date after expiry</td>
+						<td colspan="1">StartDate and Expiry are both specified at the same time and start
+							date is after the expiry date
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">V148</td>
+						<td colspan="1">Issue number must be between 0 and 9</td>
+						<td colspan="1">Issue number must be between 0 and 9</td>
+					</tr>
+					<tr>
+						<td colspan="1">V149</td>
+						<td colspan="1">issueNumber and clearIssueNumber can not be specified in the same
+							request
+						</td>
+						<td colspan="1">IssueNumber and ClearIssueNumber are both specified in the same
+							time
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Other validations</td>
+						<td colspan="1">V150</td>
+						<td colspan="1">One payment method should be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V151</td>
+						<td colspan="1">token should be set / cardToken must be specified</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Payment details validations</td>
+						<td colspan="1">V152</td>
+						<td colspan="1">Address field exceeds max length</td>
+						<td colspan="1">Line 1 / Line 2 / Line 3 / Line 4 / City / Country / Postal Code / Region field length exceeds 255 characters
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="paymentAndPreauth">
+			<h4>Payments/Preauths validations</h4>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="13">V100</td>
+						<td rowspan="3">Card details validations<br><br></td>
+						<td colspan="1">V302</td>
+						<td>invalid pan format: {maskedPan} / Card contains non-numeric characters / Invalid
+							card number
+						</td>
+						<td>Pan must match only digits 0...9</td>
+					</tr>
+					<tr>
+						<td colspan="1">V303</td>
+						<td colspan="1">invalid pan length: {panLength} / Invalid card length ({panLength})
+						</td>
+						<td colspan="1">Pan length must be between [13,19] characters.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V304</td>
+						<td>expiryDate is null or empty</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Payment details validations<br><br><br><br></td>
+						<td colspan="1">V305</td>
+						<td colspan="1"><p>Unknown card type, valid types are {listOfValidTypes}.</p></td>
+						<td colspan="1"><p>Payment details card type must be one of the accepted ones:
+							ELECTRON, MAESTRO, MC_DEBIT,</p>
+
+							<p>SWITCH, SOLO, &nbsp;MC_CREDIT, &nbsp;VISA_DEBIT, &nbsp;VISA_CREDIT, AMEX, &nbsp;JCB, &nbsp;LASER,
+								&nbsp;DISCOVER, &nbsp;DINERS.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">V306</td>
+						<td colspan="1">CV2 should be valid</td>
+						<td colspan="1">CV2 is not a valid integer number.</td>
+					</tr>
+					<tr>
+						<td rowspan="8">Other validations</td>
+						<td colspan="1">V307</td>
+						<td colspan="1">Only one payment method can be used at the same time. Trying to use card as well
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V308</td>
+						<td colspan="1">Only one payment method can be used at the same time. Trying to use
+							cardToken as well.
+						</td>
+						<td colspan="1">Card token is specified.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V309</td>
+						<td colspan="1">Only one payment method can be used at the same time. Trying to use
+							fromCustomer as well.
+						</td>
+						<td colspan="1">From customer field is specified.</td>
+					</tr>
+					<tr>
+						<td colspan="1">V310</td>
+						<td colspan="1">Only one payment method can be used at the same time. Trying to use
+							payCash as well
+						</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V311</td>
+						<td colspan="1">Card lock token OR card number should be set</td>
+						<td colspan="1">No valid card lock token or pan specified</td>
+					</tr>
+					<tr>
+						<td colspan="1">V312</td>
+						<td colspan="1">Either card lock token OR card number should be set</td>
+						<td colspan="1">Both card lock token and pan specified (only one can be used within a
+							request)
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="refunds">
+			<h4>Secondary transactions - Refunds</h4>
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="2"><br>Amount</td>
+						<td colspan="1">V401</td>
+						<td>Cannot perform a refund for a zero amount</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V402</td>
+						<td>Amount exceeds amount refundable</td>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="captures">
+			<h4>Secondary transactions - Captures</h4>
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="3"><br>Amount</td>
+						<td colspan="1">V501</td>
+						<td>Amount exceeds the original pre-authorized amount</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V502</td>
+						<td colspan="1">Amount is less than the original pre-authorized amount</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V503</td>
+						<td colspan="1">Cannot perform a capture for a zero amount</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="cancels">
+			<h4>Secondary transactions - Cancels</h4>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="3"><br>Amount</td>
+						<td colspan="1">V601</td>
+						<td>Amount exceeds the original pre-authorized amount</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V602</td>
+						<td colspan="1">Amount is less than the original pre-authorized amount</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">V603</td>
+						<td colspan="1">Cannot perform a cancel for a zero amount</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="repeats">
+			<h4>Secondary transactions - Repeats</h4>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td>Amount</td>
+						<td colspan="1">V701</td>
+						<td>Cannot perform a repeat for zero amount</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Instalment</td>
+						<td colspan="1">V702</td>
+						<td colspan="1">Cannot suppress auto instalment set in installation config</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1">Instalment</td>
+						<td colspan="1">V703</td>
+						<td colspan="1">Cannot suppress auto instalment set in domain config</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="reporting">
+			<h4>Reporting</h4>
+
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>Validation Type</th>
+						<th colspan="1">Code</th>
+						<th>Message</th>
+						<th>Business Case</th>
+					</tr>
+					<tr>
+						<td rowspan="3">Transaction details<br><br></td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Transaction report must be provided</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Transaction details must be provided</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Transaction status must be terminal, pending is not allowed</td>
+						<td>Transaction must not be in PENDING status.</td>
+					</tr>
+					<tr>
+						<td rowspan="3">Amount<br><br></td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Amount {amountValue} cannot be negative</td>
+						<td>Transaction amount must be a positive number.</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Amount {amountValue} exceeds the number of fractional digits
+							{currencyMinorUnitValue} permitted for currency {isoCurrencyCode}
+						</td>
+						<td>The transaction amount exceeds the number of fractional digits permitted.</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Amount{amountValue} exceeds the maximum number of non-fractional digits 16</td>
+						<td>The specified amount exceeds the default maximum non-fractional length.</td>
+					</tr>
+					<tr>
+						<td>Currency</td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Unrecognised currency {currencyType}</td>
+						<td>Transaction currency could not be found into the system.</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Transaction manager</td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>The transaction manager is not correctly specified: Unrecognised transaction
+							manager{transactionManager}
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>The acquirer specified on the auth response is not correct: Unrecognised acquirer
+							name {acquirerName}
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Payment method validations</td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td>Payment class could not be fetched into the system: Unrecognised payment class
+							{paymentClassName}
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td rowspan="5"><br><br><br><br><br></td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1">Unrecognised card type {cardType}</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1">Unrecognised issuer country {issuerCountry}</td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1">Unrecognised customer address country {countryCode}</td>
+						<td colspan="1">Customer address country is not a valid country in the system.</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1">Unrecognised customer default currency {currency}</td>
+						<td colspan="1">Customer default currency is not correct.</td>
+					</tr>
+					<tr>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1">Unrecognised customer IP {ip}</td>
+						<td colspan="1">Customer IP does not match a valid IP regex.</td>
+					</tr>
+					<tr>
+						<td colspan="1">Other validations</td>
+						<td colspan="1" class="highlight">Not included</td>
+						<td colspan="1"><p>The number of requested report transactions exceeds the max number
+							of allowed reported txns: {txnNumber} transactions reported.</p>
+
+							<p>Maximum allowed number of reported&nbsp;</p></td>
+						<td colspan="1">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="tab-pane" id="hosted">
+			<h4>Hosted response codes</h4>
+
+			<p>
+				Below is a list of the codes and messages you could receive in response to your hosted request.
+			</p>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Code</th>
+						<th>Message</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="1">exception.authenticationFailure.noAuth</td>
+						<td colspan="1">Authentication Failed</td>
+						<td colspan="1">Authentication Failed</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.authenticationFailure.noPriv</td>
+						<td colspan="1">Authorisation Failed</td>
+						<td colspan="1">Authorisation Failed</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.cache.invalidResourcePath</td>
+						<td colspan="1">Invalid Resource Path</td>
+						<td colspan="1">Resource not found.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.config.noCustomerCardDomain</td>
+						<td colspan="1">No customer-card domain configured</td>
+						<td colspan="1">Customer-card domain not found for the installation.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.config.noReturnUrl</td>
+						<td colspan="1">No return url provided</td>
+						<td colspan="1">Return url not configured on customer session.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.error.amo</td>
+						<td colspan="1">CSC Address match only</td>
+						<td colspan="1">
+							Fraud check fails for "address match only" rule</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.error.dcr</td>
+						<td colspan="1">Daily card registrations</td>
+						<td colspan="1">
+							Fraud check fails for "daily card registrations" rule
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.error.mcr</td>
+						<td colspan="1">Max card register</td>
+						<td colspan="1">
+							Fraud check fails for "max card register" rule</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.error.ndm</td>
+						<td colspan="1">CSC No data match</td>
+						<td colspan="1">
+							Fraud check fails for "no data match" rule</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.error.nvd</td>
+						<td colspan="1">Net balance</td>
+						<td colspan="1">Fraud check fails for "net balance" rule</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.initialiseHosted.noCustomer</td>
+						<td colspan="1">Customer not found</td>
+						<td colspan="1"><p>No customer found while initializing:</p>
+							<ul>
+								<li>a manage cards page,&nbsp;</li>
+								<li>a transaction</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.installation.lookup</td>
+						<td colspan="1">No installation configured</td>
+						<td colspan="1">When trying to get the skin for the merchant, if the installation was not found.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.landing.invalidFlow</td>
+						<td colspan="1">Invalid flow provided</td>
+						<td colspan="1">No flow specified or it is invalid.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.manageCards.noRegisteredCards</td>
+						<td colspan="1">No cards registered</td>
+						<td colspan="1"><p>Exception for customer having no cards registered.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.manageCards.noRegisteredCards.message</td>
+						<td colspan="1">Currently you have no registered cards which are available for manage
+							cards.
+						</td>
+						<td colspan="1">Response message when there are no cards registered.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.manageCards.noValidCards</td>
+						<td colspan="1">No cards active</td>
+						<td colspan="1">Customer has no card active.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.payout.noValidCards</td>
+						<td colspan="1">No valid cards for withdrawal</td>
+						<td colspan="1"><p>Exception when performing a PAYOUT and no cards available.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.payout.noValidCards.message</td>
+						<td colspan="1">Currently you have no registered cards which are available for
+							withdrawal.
+						</td>
+						<td colspan="1"><p>
+							Response message when performing a PAYOUT and no cards available.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.permission.denied</td>
+						<td colspan="1">Permission Denied</td>
+						<td colspan="1"><p>Exception's message thrown when session details are not valid.</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.permission.denied.message</td>
+						<td colspan="1">You do not have permission to perform that action</td>
+						<td colspan="1">Response message for "permision denied" exception.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.resumeFailure.invalidSession</td>
+						<td colspan="1">Session invalid for resumption</td>
+						<td colspan="1">When trying to resume a not susspended session.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.resumeFailure.noSession</td>
+						<td colspan="1">No session found</td>
+						<td colspan="1"><p>When:</p>
+							<ul>
+								<li>trying to resume a session that doesn't exist,</li>
+								<li>it was a problem with retrieving the session,</li>
+								<li>session was already expired or</li>
+								<li>session was not found</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.skin.installation</td>
+						<td colspan="1">Skin specified in installation not valid</td>
+						<td colspan="1"><p>The skin status is not "VALID" or initializing the resources from
+							the skin has failed.</p></td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.skin.lookup</td>
+						<td colspan="1">No skin configured</td>
+						<td colspan="1">No skin is configured for the current merchant.</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.skin.merchant.lookup</td>
+						<td colspan="1">No merchant configured</td>
+						<td colspan="1">When trying to get the skin for the merchant, if the merchant was not
+							found.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">exception.skin.request</td>
+						<td colspan="1">Skin specified in request not valid</td>
+						<td colspan="1"><p>When trying to get the skin for the merchant, if:</p>
+							<ul>
+								<li>the skin id is not provided</li>
+								<li>skin is not found</li>
+								<li>provided skin is not the merchant's skin</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h4>Hosted validation response codes</h4>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Code</th>
+						<th>Message</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="1">validation.transaction.pan</td>
+						<td colspan="1">Must be 3 or 4 digits</td>
+						<td colspan="1">When a pan is invalid (null or empty, invalid format or length)</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.issueNumber</td>
+						<td colspan="1">Issue number must be between 0 and 9</td>
+						<td colspan="1">Issue number validation on payment or update card</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.card.selection</td>
+						<td colspan="1">Invalid card selection</td>
+						<td colspan="1">If there are no available cards or a problem occurred in the card
+							selection.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.card.billingAddress</td>
+						<td colspan="1">Max number of permitted characters is 255</td>
+						<td colspan="1">Displayed for an address' element who exceeds the maximum permitted
+							number of characters (e.g. billing address' lines, city, country)
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.amount.range</td>
+						<td colspan="1">Value must be in range</td>
+						<td colspan="1">If the range restriction is applied and the amount specified is not in
+							the range.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.amount.other</td>
+						<td colspan="1">The amount you entered must be greater than zero</td>
+						<td colspan="1">Amount is filled with the "other" string and the "other amount" field
+							is null.
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.amount.invalidnumber</td>
+						<td colspan="1">The amount you entered must be numeric</td>
+						<td colspan="1">The entered amount is not numeric.</td>
+					</tr>
+					<tr>
+						<td colspan="1">validation.transaction.amount.invalidcsc</td>
+						<td colspan="1">When a pan is invalid (null or empty, invalid format or length)</td>
+						<td colspan="1">If the filled csc does not have 3 or 4 digits.</td>
+					</tr>
+					<tr>
+						<td>validation.transaction.amount.csc</td>
+						<td>Please provide the CSC number of your credit/debit card.</td>
+						<td>The csc was not specified.</td>
+					</tr>
+					<tr>
+						<td>validation.transaction.amount</td>
+						<td>You must enter an amount</td>
+						<td>The amount is missing.</td>
+					</tr>
+					<tr>
+						<td colspan="1">Range.cardRegistration.cardNickname</td>
+						<td colspan="1">Invalid nickname length. Max number of permitted characters is 20.</td>
+						<td colspan="1">Max size limit validation for card nickname.</td>
+					</tr>
+					<tr>
+						<td colspan="1">NotEmpty.cardRegistration.cardNickname</td>
+						<td colspan="1">Please enter a nickname for your card. This will help you quickly
+							identify your card.
+						</td>
+						<td colspan="1">Not empty validation for card nickname.</td>
+					</tr>
+					<tr>
+						<td colspan="1">NotEmpty.cardRegistration.cardHolder</td>
+						<td colspan="1">Cardholder name cannot be blank</td>
+						<td colspan="1">Validation error for card holder name on card registration page</td>
+					</tr>
+					<tr>
+						<td colspan="1">NotBlank.cardRegistration.cardNickname</td>
+						<td colspan="1">Please ensure nickname consists of more than just spaces.</td>
+						<td colspan="1">Not blank validation for card nickname.</td>
+					</tr>
+					<tr>
+						<td colspan="1">label.error.maxCardsLimitReached</td>
+						<td colspan="1">You've reached the maximum number of cards allowed.</td>
+						<td colspan="1">Error label on "cannot add new card" page.</td>
+					</tr>
+					<tr>
+						<td colspan="1">label.error.cannotDeleteCard</td>
+						<td colspan="1">You don't have permission to delete cards.</td>
+						<td colspan="1">Error label on "cannot delete card" page</td>
+					</tr>
+					<tr>
+						<td colspan="1">Invalid.cardRegistration.cardNickname</td>
+						<td colspan="1">Invalid characters. Only latin alphanumeric characters, spaces and . - '' permitted.</td>
+						<td colspan="1">Characters-set limitations validation for card nickname.</td>
+					</tr>
+					<tr>
+						<td colspan="1">Future.cardSelection.expiredByDate</td>
+						<td colspan="1">Must have a valid expiry date</td>
+						<td colspan="1">When the expiry date is invalid while trying to make a payment with a card selected from the available cards list.</td>
+					</tr>
+					<tr>
+						<td colspan="1">Future.cardRegistration.expiredByDate</td>
+						<td colspan="1">Must have a valid expiry date</td>
+						<td colspan="1">When the expiry date is invalid.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

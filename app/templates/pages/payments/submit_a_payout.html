@@ -1,0 +1,48 @@
+<h2 class="page-title"> Submit a payout </h2>
+
+<div class="page-body">
+	<p>
+		If you’re a Gaming Merchant and need to send your Customer’s winnings back to their payment method
+		then the Payout request will allow you to do just that as a Visa CFT (Cardholder Funds Transfer)
+		or a MasterCard PoW (Payment of Winnings).
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>You don’t need to reference an original payment or authorisation in order to request a Payout.</em>
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/transactions/{instId}/payout', 'payments/submit_a_payout').get()) %>
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/submit_a_payout/payout-existing-customer-default-card') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('hosted/rest/sessions/{instId}/payouts', 'payments/submit_a_payout').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('payments/submit_a_payout/hosted-submit-payout') %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

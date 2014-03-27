@@ -1,0 +1,53 @@
+<h2 class="page-title"> Outlet locator </h2>
+
+<div class="page-body">
+	<p>
+		You may wish to offer customers a lookup service to locate their nearest PayPoint outlet – remember,
+		there are over 25,000 in the UK, with over 95% of the population within one mile (urban areas) and
+		five miles (rural areas) of a participating retailer.
+	</p>
+
+	<p>
+		PayPoint offer a centralised web service for locating nearest PayPoint outlets. The web service definition
+		(WSDL) is located here:
+		<a href="http://locator.paypoint.com:61001/sitelocator.asmx?wsdl">http://locator.paypoint.com:61001/sitelocator.asmx?wsdl</a>
+	</p>
+
+	<p>
+		For locating outlets which can take payment for PayCash transactions, you need to use the GetNearestSitesType2
+		method.
+		It will search in all branded PayPoint terminal locations, since all participate in this service.
+		Input parameters are as follows:
+	</p>
+
+	<ul>
+		<li>
+			searchCriteria (the value you want to search by, for example a postcode, town or city, locale, or full
+			address)
+		</li>
+		<li>
+			searchType (a numeric value denoting the type of search to perform, 0 = PayPoint automatically determines
+			based on the searchCriteria supplied, 2 = postcode, 3 = postcode district, 4 = town/city)
+		</li>
+		<li>
+			maxRecords (the number of nearest outlets to be returned, from between 1 and 20)
+		</li>
+		<li>
+			openNow (an optional flag to indicate we should only return outlets open at the time of search – a real
+			‘live’ look-up)
+		</li>
+	</ul>
+
+	<p>
+		For each outlet identified by proximity, the returned data structure includes detailed information on the site
+		including distance from the search location given in searchCriteria, the full site address and the full weeks
+		opening hours of each location.
+	</p>
+
+	<p>
+		PayPoint operate many different services via its retail outlets – including bill payment and mobile top-up.
+		You should disregard any other optional parameters mentioned in the WSDL as these are simply different searches
+		for other PayPoint services.
+	</p>
+</div>
+

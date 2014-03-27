@@ -1,0 +1,19 @@
+<% if(provider.hasChildren() || provider.isArray()) { %>
+<div class="row bottom-bordered">
+	<div class="vertical-extend col-xs-5 right-bordered">
+		<div class="vertical-extend">
+			<% for(var i = 0; i < provider.offset(); i++) { %>
+			<div class="spacer"></div>
+			<% } %>
+
+			<% var close = provider.isArray() ? ']' : '}'; %>
+			<%= close %>
+		</div>
+	</div>
+	<div class="vertical-extend col-xs-7">
+		<div class="vertical-extend">
+			&nbsp;
+		</div>
+	</div>
+</div>
+<% } %>

@@ -1,0 +1,56 @@
+<h2 class="page-title"> Notifications </h2>
+
+<div class="page-body">
+	<p>
+		All or individual requests can be configured for notifications.
+		This allows you to keep your back office systems in synch with your commerce systems.
+		Notifications are sent when transaction processing is complete.
+	</p>
+	<p>
+		We’ll send you everything we know about the transaction including custom fields captured, 3D Secure information,
+		data we’ve found out through our third party data sources (for example, supplementary card information)
+		as well as information from the authoriser i.e. Authorisation responses, messages and codes,
+		AVS and CV2 responses plus the core details of the request.
+	</p>
+	<p>
+		<img src="app/img/More_Info.png" width="48" height="48"/>
+		<em>If we can’t successfully deliver the notification to you first time, we’ll keep trying.</em>
+	</p>
+
+	<div class="endpoint">
+
+		<!-- TAB SELECTOR -->
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#api" data-toggle="tab">API</a></li>
+			<li><a href="#hosted" data-toggle="tab">Hosted</a></li>
+		</ul>
+
+		<!-- TAB CONTENT -->
+		<div class="tab-content">
+
+			<!-- API TAB -->
+			<div class="tab-pane active" id="api">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('merchant defined notification callback URL (endpoint)', 'payments/notifications').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">API Examples</div>
+					<%= new ExampleRenderer().render('payments/notifications/payment-with-json-notification') %>
+				</div>
+			</div>
+
+			<!-- HOSTED TAB -->
+			<div class="tab-pane" id="hosted">
+				<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('merchant defined notification callback URL (endpoint)', 'payments/notifications').get()) %>
+
+				<!-- EXAMPLES -->
+				<div class="endpoint-example-section">
+					<div class="endpoint-section-header">Hosted Examples</div>
+					<%= new ExampleRenderer().render('payments/notifications/hosted-payment-with-notification') %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+

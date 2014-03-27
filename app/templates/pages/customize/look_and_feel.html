@@ -1,0 +1,152 @@
+<h2 class="page-title"> Customise Hosted Look and Feel </h2>
+
+<div class="page-content">
+
+	This page attempts to document the implementation (functionality, data model, available tools) of generic skins within the Blue platform.
+
+		<h4>Overview</h4>
+
+		<p>The look and feel of a hosted flow generated web page can be customized through a merchant-specific skin. A skin
+			is collection of CSS, JavaScript, images, and screen labels that make the appearance of the page unique for that
+			merchant, even if the same data would be displayed in that page for a different merchant. The skin is packed in
+			an archive in zip format.</p>
+
+		<h4>Selecting a specific skin at runtime</h4>
+
+		<p>When initializing a payment session, the merchant can specify a skin to be used when rendering the pages to the
+			customer. The skin is specified by its id in the REST request as an JSON element. That skin will be picked over
+			the default skin.</p>
+
+		<p>If the installation being used in the current transaction has a skin associated with it, then that is the default
+			skin. If no skin is associated with the installation, then the default skin for the domain organizational unit
+			(such a default skin guaranteed to exist) will be chosen as the default skin.</p>
+
+		<h4>Skin format</h4>
+
+		<p>The set of skin items/files should be packed in a zip archive. Moreover, the set of skin items must be in a
+			specific folder hierarchy. In the root of the skin archive there are two folders: assets and locale.</p>
+
+		<p>Images, fonts, JavaScript, and CSS files should reside in the assets folder. Resource bundles containing the
+			labels that appear in the cashier screens should be placed in the locale folder. The content of all bundles
+			containing UI labels must be encoded in the UTF-8 format.</p>
+
+		<p>There are only two types of resources present in the skin bundle that are directly referred from the
+			application:</p>
+		<ul>
+			<li>the entry point CSS file:
+				<ul>
+					<li>/assets/css/main.css</li>
+					<li>/assets/css/ie.css</li>
+					<li>optionally, you can have specific IE version stylesheets (.../ie6.css; .../ie7.css; .../ie8.css;
+						.../ie9.css)
+					</li>
+				</ul>
+			</li>
+			<li>the entry point JavaScript file: /assets/js/main.js</li>
+		</ul>
+		<p>All other resources should be included using CSS import statements, and dynamic loading of JavaScript,
+			respectively.</p>
+
+		<p>Given the security concerns (cross-site scripting and related attacks) of providing custom content to customers
+			directly from the Blue platform each individual skin needs to be reviewed by a PayPoint SysAdmin such that the
+			bundle will NOT contain assets that are vulnerable to attacks, contain inappropriate content or affects the
+			merchant customer in any negative way.</p>
+
+		<p>Thus, the skin has a state which could be one of VALID, INVALID, or PENDING, and this state can be changed by a
+			PayPoint SysAdmin after reviewing the skin bundle (PENDING is the state before the review). Only skins in the
+			VALID state can be used by the merchant within the hosted cashier. If a merchant does not have a skin set up in
+			the correct state the cashier will be using the Blue default skin. Any changes to the skin bundle will
+			automatically change the state to PENDING.</p>
+
+		<p>In order to successfully upload a skin bundle (to be further used in the cashier), the size of the skin archive
+			must not exceed 5 MB.</p>
+
+		<h4>Loading main skin entry points</h4>
+
+		<p>The two main types of resources, stylesheets (.css)&nbsp;and main.js, are automatically loaded in any application
+			page. There are placed inside the HTML &lt;head&gt; section/element of the page, and no other script is defined
+			in the application pages. All other assets will be loaded through a CSS import mechanism or dynamic JavaScript
+			loading.</p>
+
+		<h4>Injected JavaScript object</h4>
+
+		<p>In order to provide extensibility, the page contains (before the main entry point, in document order) a
+			JavaScript object that has the following structure:</p>
+
+		<pre>
+PayPoint.Cashier = {
+	'resourcePath' : '/hosted/c031b0f7-3cf1-4a02-95ca-387f17613b62/skin/10031',
+	'locale' : {
+		'selected' : 'en',
+		'messages' : {
+			'message.code1' : 'message.text1',
+			'message.code2' : 'message.text2',
+		},
+	},
+	'flow' : 'PAYMENT',
+	'initialRegistration' : true,
+	'sessionAmount' : {
+		'amountType' : 'MIXED',
+		'fixed' : null,
+		'min' : '150',
+		'max' : '350',
+		'defaultAmount' : '250',
+		'options' : [ '150', '250', '350' ]
+	},
+	'transactionCurrencySymbol' : '&#163',
+	'cardList' : {
+		'selectedCard' : 0,
+		'availableCards' : {
+			'0' : {
+				'maskedPan' : '444433******1111',
+				'cardHolder':'given2 family2',
+				'cardType':null,
+				'cardBrand' : 'VISA_DEBIT',
+				'cardNickname' : '4321',
+				'validMonth' : null,
+				'validYear' : null,
+				'expiryMonth' : '01',
+				'expiryYear' : '15',
+				'issueNumber' : '1',
+				'cardDefault' : true,
+				'validDateChanged' : false,
+				'expiryDateChanged' : false,
+				'issueNoChanged' : false
+			}
+		}
+	}
+};
+		</pre>
+
+		<p>This object can be used by the skin javascript files to read transaction session configuration information and
+			the locale messages defined in the skin based on the customer locale settings.</p>
+
+		<p>&nbsp;</p>
+
+		<h4>Placeholder images</h4>
+
+		<p>None of the Cashier pages have images embedded with the &lt;img&gt; tag, but some placeholders have beed created
+			to ease the addition of images.</p>
+
+		<pre>
+&lt;div class="cardBrand image"&gt;&lt;/div&gt;
+		</pre>
+		<p>There are two ways to add images to the page:</p>
+
+		<pre>
+<strong>Using background style</strong>
+.img {
+    background: url(../images/my-image.png) no-repeat;
+    height: 20px;
+    width: 20px;
+    margin: 1px 1px -4px 5px;
+    padding: 0;
+    display: inline-block;
+}
+		</pre>
+		<pre>
+<strong>Using javascript (jquery example)</strong>
+$('&lt;img src="' + PayPoint.Cashier.resourcePath + '/assets/images/my-image.png"/&gt;').appendTo($('div.cardBrand'));
+		</pre>
+</div>
+

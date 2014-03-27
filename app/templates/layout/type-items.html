@@ -1,0 +1,18 @@
+<% if(!provider.hide()) { %>
+	<div class="row bottom-bordered">
+		<%= new GenericRenderer().render('type-items-field-col', provider.get()) %>
+
+		<%= new GenericRenderer().render('type-items-desc-col', provider.get()) %>
+	</div>
+
+	<% _.each(provider.childTypes(), function (child) { %>
+		<%= new GenericRenderer().render('type-items', provider.providerFor(child).get()) %>
+	<% }); %>
+
+	<% if(provider.isArray()) { %>
+		<%= new GenericRenderer().render('type-items', provider.providerFor(provider.arrayType()).get()) %>
+	<% } %>
+
+	<%= new GenericRenderer().render('type-items-field-close-col', provider.get()) %>
+
+<% } %>

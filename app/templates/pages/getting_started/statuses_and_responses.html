@@ -1,0 +1,29 @@
+<h2 class="page-title">Statuses and responses</h2>
+
+<div class="page-body">
+	<pre>
+	<strong>1) Blue Processing - Overall</strong>
+Field Name: Status
+Possible values: Success, Failed, Pending, Expired, Cancelled, Voided
+API Location: &lt;outcome&gt;
+Blue Processing - Detailed
+Field Name: Status
+Possible Values: Success, Failed, Suspended, Suspended_3DS, Expired, Cancelled, Voided, Suspended_Replay
+API Location: &lt;transaction&gt;
+
+	<strong>2) Generic Server Processing</strong>
+Field Name: Status
+Possible values: Authorised, Error, Declined
+API Location: &lt;authResponse&gt;
+
+	<strong>3) PSP Processing</strong>
+Field Name: Gateway Message
+Possible values: Unknown - PSP dependant.
+API Location: &lt;authResponse&gt;
+
+	<strong>4) Acquirer Processing</strong>
+Field Name: Message
+Possible values: Unknown - Acquirer dependant.
+API Location: &lt;authResponse&gt;
+	</pre>
+</div>

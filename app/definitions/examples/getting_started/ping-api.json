@@ -1,0 +1,9 @@
+{
+	"description": "Ping",
+	"request": {
+		"description": "GET /transactions/ping"
+	},
+	"response": {
+		"description": "HTTP/1.1 200"
+	}
+}

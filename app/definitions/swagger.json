@@ -1,0 +1,3648 @@
+{"apiVersion": "1.0", "resourcePath": "/",
+	"apis": [
+		{
+			"path": "/transactions/{instId}/payment",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Payment",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processPayment",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "PrimaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/payout",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Payout",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processPayout",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "PrimaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/ping",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "ping",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"Void"
+					},
+					"nickname": "ping"
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}/refund",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Refund",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processRefund",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "DetailedSecondaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}/repeat",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Repeat",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processRepeat",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "DetailedSecondaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}/capture",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Capture",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processCapture",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "DetailedSecondaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}/cancel",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Cancel",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processCancel",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "DetailedSecondaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}/resume",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Resume",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionResponse"
+					},
+					"nickname": "processResume",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "ResumeSecondaryManageRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/{transactionId}",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "show Transaction",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"TransactionInfo"
+					},
+					"nickname": "showTransaction",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "long"
+						},
+						{
+							"name": "transactionId",
+							"description": "transaction Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/byRef",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "find Transactions By Merchant Ref",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"List",
+						"items":"TransactionResource"
+					},
+					"nickname": "findTransactionsByMerchantRef",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "long"
+						},
+						{
+							"name": "merchantRef",
+							"description": "merchant Ref",
+							"notes": "",
+							"paramType": "query",
+							"defaultValue": "",
+							"required": true,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/transactions/{instId}/report",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "submit a Transaction",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"ReportTransactionResponse"
+					},
+					"nickname": "submit transaction",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "ReportTransactionRESTRequest"
+						}
+					]
+				}
+			]
+		},
+
+
+		{
+			"path": "hosted/rest/sessions/{instId}/payouts",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Payout",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"InitialiseHostedPayoutResponse"
+					},
+					"nickname": "processPayout",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "InitialiseHostedPayoutRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "hosted/rest/sessions/{instId}/sessions/{sessionId}/resume",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "resume session",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"ResumeHostedSessionResponse"
+					},
+					"nickname": "resumePayment",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "sessionId",
+							"description": "session Id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "hosted/rest/sessions/{instId}/payments",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process Payment",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"InitialiseHostedPaymentResponse"
+					},
+					"nickname": "processPayment",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "InitialiseHostedPaymentRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "hosted/rest/sessions/{instId}/cards",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "card session",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"InitialiseHostedCardManagementResponse"
+					},
+					"nickname": "cardManagement",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "InitialiseHostedCardManagementRESTRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "hosted/rest/sessions/ping",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "test connectivity",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"Void"
+					},
+					"nickname": "ping"
+				}
+			]
+		},
+
+		{
+			"path": "/customers/{instId}/byRef",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "find Customer By Merchant Ref",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"FetchedCustomerDetails"
+					},
+					"nickname": "findCustomerByMerchantRef",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "merchantRef",
+							"description": "merchant Ref",
+							"notes": "",
+							"paramType": "query",
+							"defaultValue": "",
+							"required": true,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "show Customer",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"FetchedCustomerDetails"
+					},
+					"nickname": "showCustomer",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}/paymentMethods",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "list Payment Methods",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"List",
+						"items":"PaymentMethod"
+					},
+					"nickname": "listPaymentMethods",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}/paymentMethods/{token}",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "GET",
+					"summary": "show Payment Method",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"PaymentMethod"
+					},
+					"nickname": "showPaymentMethod",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "token",
+							"description": "token",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}/paymentMethods/{token}/update",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "update Payment Method",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"PaymentMethod"
+					},
+					"nickname": "updatePaymentMethod",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "token",
+							"description": "token",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "update",
+							"description": "update",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "PaymentMethodUpdate"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}/paymentMethod/{token}/makeDefault",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "make Payment Method Default",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"PaymentMethod"
+					},
+					"nickname": "makePaymentMethodDefault",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "token",
+							"description": "token",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "/customers/{instId}/{customerId}/paymentMethod/{token}/remove",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "remove Payment Method",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"Void"
+					},
+					"nickname": "removePaymentMethod",
+					"parameters": [
+						{
+							"name": "instId",
+							"description": "The installation id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "customerId",
+							"description": "The customer id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						},
+						{
+							"name": "id",
+							"description": "id",
+							"notes": "",
+							"paramType": "path",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "String"
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"path": "merchant defined pre-auth callback URL (endpoint)",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process a pre-auth callback request",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"PreAuthCallbackResponse"
+					},
+					"nickname": "processCallback",
+					"parameters": [
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "PreAuthCallbackRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "merchant defined post-auth callback URL (endpoint)",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "process a post-auth callback request",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"PostAuthCallbackResponse"
+					},
+					"nickname": "processCallback",
+					"parameters": [
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "PostAuthCallbackRequest"
+						}
+					]
+				}
+			]
+		},
+		{
+			"path": "merchant defined notification callback URL (endpoint)",
+			"description": "",
+			"operations": [
+				{
+					"httpMethod": "POST",
+					"summary": "receive a notification callback request",
+					"notes": "",
+					"deprecated": false,
+					"responseClass": {
+						"type":"Void"
+					},
+					"nickname": "receiveNotification",
+					"parameters": [
+						{
+							"name": "request",
+							"description": "request",
+							"notes": "",
+							"paramType": "body",
+							"defaultValue": "",
+							"required": false,
+							"allowMultiple": false,
+							"dataType": "TransactionNotification"
+						}
+					]
+
+				}
+			]
+		}
+
+	], "models": {
+
+	"DetailedSecondaryManageRESTRequest": {
+		"properties": {
+			"customFields": {
+				"type": "CustomFieldState",
+				"flags": ["O"]
+			},
+			"transaction": {
+				"type": "SecondaryTransactionDetails",
+				"flags": ["O"]
+			},
+			"callbacks": {
+				"type": "CallbackRequestDetails",
+				"flags": ["O"]
+			}
+		},
+		"type": "DetailedSecondaryManageRESTRequest"
+	},
+	"CardUpdates": {
+		"properties": {
+			"issueNumber": {
+				"type": "number",
+				"description": "The issue number for the card.",
+				"flags": ["O"]
+			},
+			"startDate": {
+				"type": "YearMonth",
+				"description": "The start date for the card.",
+				"flags": ["O"]
+			},
+			"nickname": {
+				"type": "string",
+				"description": "The name the Customer provides for their card to allow easy selection where they register multiple cards.",
+				"flags": ["O"]
+			},
+			"expiryDate": {
+				"type": "YearMonth",
+				"description": "The expiry date for the card.",
+				"flags": ["O"]
+			},
+			"clearStartDate": {
+				"type": "boolean",
+				"display": false,
+				"flags": ["O"]
+			},
+			"clearIssueNumber": {
+				"type": "boolean",
+				"display": false,
+				"flags": ["O"]
+			}
+		},
+		"type": "CardUpdates"
+	},
+	"FollowUpTransactionDetail": {
+		"properties": {
+			"transactionId": {
+				"type": "string"
+			},
+			"timeStamp": {
+				"type": "DateTime",
+				"description": "Date and time in ISO-8601 format.",
+				"flags": ["M"]
+			}
+		},
+		"type": "FollowUpTransactionDetail"
+	},
+	"PaymentMethodResponseDetail": {
+		"properties": {
+			"paymentClass": {
+				"type": "string",
+				"description": "The classification of payment method used.  Eg. Card, Cash",
+				"flags": ["M"]
+			},
+			"isPrimary": {
+				"type": "boolean",
+				"description": "Indicates if the payment method was the Customer's default payment method."
+			},
+			"any": {
+				"items": "Object",
+				"type": "List",
+				"display": false
+			},
+			"card": {
+				"type": "CardResponseDetail"
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks."
+			}
+		},
+		"type": "PaymentMethodResponseDetail"
+	},
+	"TransactionEventHistoryDetail": {
+		"type": "TransactionEventHistoryDetail",
+		"properties": {
+			"transactionStatus": {
+				"type": "TransactionStateValue",
+				"flags": ["M"]
+			},
+			"reasonCode": {
+				"type": "string",
+				"flags": ["M"]
+			},
+			"reasonMessage": {
+				"type": "string",
+				"flags": ["M"]
+			},
+			"timeStamp": {
+				"type": "DateTime",
+				"description": "Date and time in ISO-8601 format.",
+				"flags": ["M"]
+			}
+		}
+	},
+	"TransactionOptions": {
+		"properties": {
+			"do3DSecure": {
+				"type": "boolean",
+				"description": "Indicates if the transaction should be processed with 3DS. This will override account configuration for 3DS.",
+				"flags": ["O"]
+			},
+			"motoIgnoreCustomerIP": {
+				"type": "boolean",
+				"display": false,
+				"flags": ["O"]
+			},
+			"cardFraudManagement": {
+				"type": "CardFraudManagement",
+				"display": false,
+				"flags": ["O"]
+			}
+		},
+		"type": "TransactionOptions"
+	},
+	"RedirectFrameType": {
+		"properties": {},
+		"values": {
+			"CONTAINER":{},
+			"TOP":{}
+		},
+		"type": "RedirectFrameType"
+	},
+	"TransactionStateValue": {
+		"type": "TransactionStateValue",
+		"properties": {},
+		"values": {
+			"SUCCESS":{},
+			"FAILED":{},
+			"PENDING":{},
+			"EXPIRED":{},
+			"CANCELLED":{},
+			"VOIDED":{}
+		}
+	},
+	"TransactionFollowUpStatusDetail": {
+		"properties": {
+			"status": {
+				"items": "TransactionFollowUpStatusEntryDetail",
+				"type": "List"
+			}
+		},
+		"type": "TransactionFollowUpStatusDetail"
+	},
+	"CardAuthResponseDetail": {
+		"type": "CardAuthResponseDetail",
+		"properties": {
+			"statusCode": {
+				"type": "string",
+				"description": "The code for the status received from the authoriser, if applicable."
+			},
+			"acquirerReference": {
+				"type": "string",
+				"description": "The reference received from the authoriser for your transaction, if applicable"
+			},
+			"acquirerName": {
+				"type": "string",
+				"description": "Name of the authoriser, if applicable."
+			},
+			"message": {
+				"type": "string",
+				"description": "The message received from the authoriser, if applicable."
+			},
+			"authCode": {
+				"type": "string",
+				"description": "The code received from the authoriser, if applicable."
+			},
+			"gatewayReference": {
+				"type": "string",
+				"description": "The reference received from the processing engine."
+			},
+			"gatewayCode": {
+				"type": "string",
+				"description": "The code for the status receied from the processing engine."
+			},
+			"gatewayMessage": {
+				"type": "string",
+				"description": "The message received from the processing engine."
+			},
+			"avsAddressCheck": {
+				"type": "AVSCheckResult",
+				"description": "Results for the Address Verification checks, if applicable, if applicable. "
+			},
+			"avsPostcodeCheck": {
+				"type": "AVSCheckResult",
+				"description": "Results for the PostCode Verification checks, if applicable."
+			},
+			"cv2Check": {
+				"type": "CV2CheckResult",
+				"description": "Results for the CV2 Verification checks, if applicable."
+			},
+			"gatewayStatus": {
+				"type": "string",
+				"description": "The status received from the processing engine."
+			},
+			"status": {
+				"type": "AuthorisationStatus",
+				"description": "The status received from the authoriser, if applicable.",
+				"flags": ["M"]
+			},
+			"any": {
+				"type": "List",
+				"items":"Object",
+				"display": false
+			}
+		}
+	},
+	"PayCashResponseDetail": {
+		"properties": {
+			"barcode": {
+				"type": "string",
+				"description": "The code that should be used at a PayPoint outlet to complete the Cash payment. You can generate your own barcode image using this code."
+			},
+			"barcodeUrl": {
+				"type": "string",
+				"description": "A link to a mobile responsive barcode number and image that can be used at a PayPoint outlet to complete the Cash payment."
+			}
+		},
+		"type": "PayCashResponseDetail"
+	},
+	"CardFraudManagement": {
+		"properties": {
+			"cardDuplication": {
+				"type": "CardFraudManagementAction",
+				"flags": ["O"]
+			},
+			"cardRemoval": {
+				"type": "CardFraudManagementAction",
+				"flags": ["O"]
+			}
+		},
+		"type": "CardFraudManagement"
+	},
+	"ProcessingResponseDetail": {
+		"properties": {
+			"route": {
+				"type": "string",
+				"description": "The name of the processing engine your transaction was submitted to.",
+				"flags": ["M"]
+			},
+			"voidSuccessful": {
+				"type": "boolean",
+				"description": "Indicates if the transaction was voided by a Post Authorisation callback."
+			},
+			"any": {
+				"items": "Object",
+				"type": "List",
+				"display": false
+			},
+			"authResponse": {
+				"type": "CardAuthResponseDetail"
+			},
+			"payCashResponse": {
+				"type": "PayCashResponseDetail"
+			}
+		},
+		"properties_inflight_callbacks": {
+			"authResponse": {
+				"type": "CardAuthResponseDetail"
+			},
+			"voidSuccessful": {
+				"type": "boolean",
+				"display": false
+			},
+			"payCashResponse": {
+				"type": "PayCashResponseDetail",
+				"display": false
+			},
+			"route": {
+				"type": "string",
+				"description": "The name of the processing engine your transaction was submitted to.",
+				"flags": ["M"]
+			},
+			"any": {
+				"type": "List",
+				"items":"Object",
+				"display": false
+			}
+		},
+
+		"type": "ProcessingResponseDetail"
+	},
+	"SecondaryTransactionDetails": {
+		"properties": {
+			"amount": {
+				"type": "BigDecimal",
+				"flags": ["O"]
+			},
+			"commerceType": {
+				"type": "CommerceType",
+				"flags": ["O"]
+			},
+			"merchantRef": {
+				"type": "string",
+				"flags": ["O"]
+			},
+			"description": {
+				"type": "string",
+				"flags": ["O"]
+			},
+			"currency": {
+				"type": "string",
+				"flags": ["O"]
+			},
+			"deferred": {
+				"type": "boolean",
+				"flags": ["O"]
+			}
+		},
+		"type": "SecondaryTransactionDetails"
+	},
+	"CV2CheckResult": {
+		"properties": {},
+		"values": {
+			"NOT_CHECKED":{},
+			"MATCHED":{},
+			"NOT_MATCHED":{}
+		},
+		"type": "CV2CheckResult"
+	},
+	"CommerceType": {
+		"type": "CommerceType",
+		"properties": {},
+		"values": {
+			"ECOM":{},
+			"MOTO":{},
+			"CNP":{}
+		}
+	},
+	"OutcomeResponseDetail": {
+		"properties": {
+			"reasonMessage": {
+				"type": "string",
+				"description": "A message indicating the overall outcome of the request.  This is where we'll provide detailed reasons for any errors.",
+				"flags": ["M"]
+			},
+			"status": {
+				"type": "ResponseStatus",
+				"description": "The overall outcome of the request.",
+				"flags": ["M"]
+			},
+			"reasonCode": {
+				"type": "string",
+				"description": "A code indicating the overall outcome of the request. Refer to Errors for more information.",
+				"flags": ["M"]
+			}
+		},
+		"type": "OutcomeResponseDetail"
+	},
+	"TransactionResponse": {
+		"properties": {
+			"clientRedirect": {
+				"type": "RedirectResponseDetail",
+				"description": "Information about where to send your customer in the case of 3DS or a Callback."
+			},
+			"fraudGuard": {
+				"type": "FraudGuardResponseDetail",
+				"description": "Information about the Payment."
+			},
+			"transaction": {
+				"type": "TransactionStateResponseDetail"
+			},
+			"customFields": {
+				"type": "CustomFieldState",
+				"description": "Information about the custom fields you submitted in the request."
+			},
+			"trace": {
+				"type": "string",
+				"display": false
+			},
+			"any": {
+				"items": "Object",
+				"type": "List",
+				"display": false
+			},
+			"processing": {
+				"type": "ProcessingResponseDetail",
+				"description": "Information about the authorisation status of your transaction."
+			},
+			"threeDSecure": {
+				"type": "ThreeDSecureResponseDetail",
+				"description": "Information about the 3D Secure status of your transaction."
+			},
+			"customer": {
+				"type": "ReturnCustomerDetail",
+				"description": "Information about the Customer."
+			},
+			"outcome": {
+				"type": "OutcomeResponseDetail",
+				"description": "Information about the overal outcome of the request.",
+				"flags":["M"]
+			},
+			"paymentMethod": {
+				"type": "PaymentMethodResponseDetail",
+				"description": "Information about the Payment Method used in the request."
+			}
+		},
+		"type": "TransactionResponse"
+	},
+	"PaymentMethod": {
+		"properties": {
+			"cardToken": {
+				"type": "CardTokenPaymentDetails",
+				"description": "Use if you want to use tokenised card details from a previous transaction.",
+				"flags": ["M"]
+			},
+			"fromCustomer": {
+				"type": "FromCustomerPaymentDetails",
+				"description": "Use if you want to use your Customer's default card.",
+				"flags": ["M"]
+			},
+			"card": {
+				"type": "FullCardPaymentDetails",
+				"description": "Use if you want to proivide your Customer's card details.",
+				"flags": ["M"]
+			},
+			"payCash": {
+				"type": "PayCashPaymentDetails",
+				"description": "Include if the payment is being made by Cash.",
+				"flags": ["M"]
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks.",
+				"flags": ["O"]
+			}
+		},
+		"type": "PaymentMethod"
+	},
+	"TransactionStateResponseDetail": {
+		"properties": {
+			"commerceType": {
+				"type": "CommerceType",
+				"description": "The Commerce Type of the transaction."
+			},
+			"transactionId": {
+				"type": "string",
+				"description": "Our ID for the transaction."
+			},
+			"status": {
+				"type": "TransactionStateValue",
+				"description": "The current state of the transaction."
+			},
+			"merchantDescription": {
+				"type": "string",
+				"description": "The description of the transaction provided in the request."
+			},
+			"deferralExpires": {
+				"type": "DateTime",
+				"description": "Date and time in ISO-8601 format.",
+				"display": false
+			},
+			"deferred": {
+				"type": "boolean",
+				"description": "Indicates if the Payment capture is deferred."
+			},
+			"type": {
+				"type": "TransactionType",
+				"description": "Indicates the type of the transaction."
+			},
+			"currency": {
+				"type": "string",
+				"description": "Indicates the currency of the transaction."
+			},
+			"amount": {
+				"type": "BigDecimal",
+				"description": "Indicates the amount of the transaction."
+			},
+			"relatedTransaction": {
+				"type": "RelatedTransaction",
+				"description": "This field is not applicable for Payments. In case of Refunds it indicates the transaction that was refunded. "
+			},
+			"transactionTime": {
+				"type": "DateTime",
+				"description": "The date and time we received the transaction in ISO-8601 format."
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the transaction."
+			},
+			"any": {
+				"items": "Object",
+				"type": "List",
+				"display": false
+			}
+		},
+		"type": "TransactionStateResponseDetail"
+	},
+	"FraudGuardResponseDetail": {
+		"properties": {
+			"score": {
+				"type": "BigDecimal",
+				"description": "The score assigned by FraudGuard. Refer to FraudGuard documentation for further details."
+			}
+		},
+		"type": "FraudGuardResponseDetail"
+	},
+	"PrimaryManageRESTRequest": {
+		"properties": {
+			"browserInfo": {
+				"type": "BrowserInfoDetails",
+				"flags": ["O"]
+			},
+			"sessionId": {
+				"type": "string",
+				"description": "Your reference for the Customer's session.",
+				"flags": ["O"]
+			},
+			"customFields": {
+				"type": "CustomFieldState",
+				"flags": ["O"]
+			},
+			"transaction": {
+				"type": "PrimaryTransactionDetails",
+				"flags": ["M"]
+			},
+			"locale": {
+				"type": "string",
+				"description": "The ISO-639 code for your Customer's locale.",
+				"flags": ["O"]
+			},
+			"callbacks": {
+				"type": "CallbackRequestDetails",
+				"flags": ["O"]
+			},
+			"customer": {
+				"type": "RequestCustomerDetails",
+				"flags": ["O"]
+			},
+			"transactionOptions": {
+				"type": "TransactionOptions",
+				"flags": ["O"]
+			},
+			"paymentMethod": {
+				"type": "PaymentMethod",
+				"flags": ["M"]
+			}
+		},
+		"type": "PrimaryManageRESTRequest"
+	},
+	"TransactionResource": {
+		"properties": {
+			"transactionInfo": {
+				"type": "TransactionInfo"
+			},
+			"link": {
+				"items": "Link",
+				"type": "List"
+			}
+		},
+		"type": "TransactionResource"
+	},
+	"AuthorisationStatus": {
+		"properties": {},
+		"values": {
+			"AUTHORISED":{},
+			"DECLINED":{},
+			"REVERSED":{},
+			"REVERSE_FAILED":{},
+			"ERROR":{}
+		},
+		"type": "AuthorisationStatus"
+	},
+	"CardResponseDetail": {
+		"properties": {
+			"issueNumber": {
+				"type": "string",
+				"description": "The issue number of the card used in the request."
+			},
+			"_new": {
+				"type": "boolean",
+				"display": false
+			},
+			"cardToken": {
+				"type": "string",
+				"description": "The token for the card."
+			},
+			"cardHolderName": {
+				"type": "string",
+				"description": "The Cardholder's name."
+			},
+			"issuer": {
+				"type": "string",
+				"description": "The Issuer of the card."
+			},
+			"maskedPan": {
+				"type": "string",
+				"description": "The masked card number. eg. 123456******1234",
+				"flags": ["M"]
+			},
+			"issuerCountry": {
+				"type": "string",
+				"description": "The country of the card Issuer."
+			},
+			"expiryDate": {
+				"type": "string",
+				"description": "The expiry date of the card. Formatted as MMYY.",
+				"flags": ["M"]
+			},
+			"validDate": {
+				"type": "string",
+				"description": "The valid from date of the card.  Formatted as MMYY."
+			},
+			"cardType": {
+				"type": "string",
+				"description": "The type of card. Eg. MC_DEBIT, VISA_CREDIT, AMEX.",
+				"flags": ["M"]
+			},
+			"cardNickname": {
+				"type": "string",
+				"description": "The name the Customer provided for their Card to allow easy selection where they registered multiple cards.",
+				"flags": ["M"]
+			}
+		},
+		"type": "CardResponseDetail"
+	},
+	"RequestCustomerDetails": {
+		"properties": {
+			"id": {
+				"type": "string",
+				"description": "Our ID for the Customer where they are already registered with us.",
+				"flags": ["O"]
+			},
+			"update": {
+				"type": "boolean",
+				"description": "Indicates if you want to update the Customer's details with the transaction.",
+				"flags": ["O"]
+			},
+			"email": {
+				"type": "string",
+				"description": "Email address for the Customer.",
+				"flags": ["O"]
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the Customer.",
+				"flags": ["O"]
+			},
+			"defaultCurrency": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			},
+			"dob": {
+				"type": "string",
+				"description": "Date of birth for the Customer.",
+				"flags": ["O"]
+			},
+			"billingAddress": {
+				"type": "CustomerDetails.PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks.",
+				"flags": ["M"]
+			},
+			"displayName": {
+				"type": "string",
+				"description": "The Customer's name.",
+				"flags": ["M"]
+			},
+			"telephone": {
+				"type": "string",
+				"description": "Telephone number for the Customer.",
+				"flags": ["O"]
+			},
+			"create": {
+				"type": "boolean",
+				"description": "Indicates whether to create the Customer if they don't already exist. Default: true.",
+				"flags": ["O"]
+			},
+			"ip": {
+				"type": "string",
+				"description": "The Customer's IP address.",
+				"flags": ["O"]
+			}
+		},
+		"type": "RequestCustomerDetails"
+	},
+	"FromCustomerPaymentDetails": {
+		"properties": {
+			"cv2": {
+				"type": "string",
+				"description": "The Customer's Card Security Code (CSC, CV2, CVV).",
+				"flags": ["O"]
+			}
+		},
+		"type": "FromCustomerPaymentDetails"
+	},
+	"PayCashPaymentDetails": {
+		"properties": {
+		},
+		"type": "PayCashPaymentDetails"
+	},
+	"BrowserInfoDetails": {
+		"properties": {
+			"userAgentHeader": {
+				"type": "string",
+				"description": "The Customer's user agent.",
+				"flags": ["O"]
+			},
+			"deviceCategory": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			},
+			"acceptHeader": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			}
+		},
+		"type": "BrowserInfoDetails"
+	},
+	"RelatedTransaction": {
+		"properties": {
+			"transactionId": {
+				"type": "string",
+				"description": "Our ID for the transaction that was original.",
+				"flags": ["M"]
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the transaction that was original."
+			}
+		},
+		"type": "RelatedTransaction"
+	},
+	"Void": {
+		"properties": {},
+		"type": "Void"
+	},
+	"AVSCheckResult": {
+		"properties": {},
+		"values": {
+			"NOT_CHECKED":{},
+			"FULL_MATCH":{},
+			"NOT_MATCHED":{},
+			"NOT_PROVIDED":{}
+		},
+		"type": "AVSCheckResult"
+	},
+	"ReturnCustomerDetail": {
+		"properties": {
+			"id": {
+				"type": "string",
+				"description": "Our ID for the Customer."
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the Customer."
+			},
+			"created": {
+				"type": "boolean",
+				"description": "Indicates if the Customer was created as part of the request."
+			}
+		},
+		"type": "ReturnCustomerDetail"
+	},
+	"TransactionFollowUpStatusEntryDetail": {
+		"properties": {
+			"name": {
+				"type": "TransactionFollowUpStateValue",
+				"flags": ["M"]
+			},
+			"followUpTransaction": {
+				"items": "FollowUpTransactionDetail",
+				"type": "List",
+				"flags": ["M"]
+			}
+		},
+		"type": "TransactionFollowUpStatusEntryDetail"
+	},
+	"RedirectResponseDetail": {
+		"properties": {
+			"frame": {
+				"type": "RedirectFrameType",
+				"description": "The redirect type when the transaction is set to suspend and redirect to a new URL."
+			},
+			"type": {
+				"type": "string",
+				"display": false,
+				"flags": ["M"]
+			},
+			"pareq": {
+				"type": "string",
+				"description": "Returned when the transaction is suspended for 3DS authorisation."
+			},
+			"url": {
+				"type": "string",
+				"description": "The URL the Customer should be redirected to.",
+				"flags": ["M"]
+			}
+		},
+		"type": "RedirectResponseDetail"
+	},
+	"PrimaryTransactionDetails": {
+		"properties": {
+			"currency": {
+				"type": "string",
+				"description": "The currency of your Customer's transaction. Use the 3 character ISO-4217 code.",
+				"flags": ["M"]
+			},
+			"amount": {
+				"type": "BigDecimal",
+				"description": "The amount of your Customer's transaction.",
+				"flags": ["M"]
+			},
+			"commerceType": {
+				"type": "CommerceType",
+				"description": "The commerce type for your Customer's transaction.",
+				"flags": ["M"]
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the transaction. It's recommended that you keep this unique.",
+				"flags": ["O"]
+			},
+			"deferred": {
+				"type": "boolean",
+				"description": "Indicates if you want the Payment to be Authorised and Captured separately.",
+				"flags": ["O"]
+			},
+			"recurring": {
+				"type": "boolean",
+				"description": "Set this field if you want to repeat your Customer's Payment or Authorisation in the future.",
+				"flags": ["O"]
+			},
+			"description": {
+				"type": "string",
+				"description": "The description of the transaction.",
+				"flags": ["O"]
+			}
+		},
+		"type": "PrimaryTransactionDetails"
+	},
+	"TransactionType": {
+		"type": "TransactionType",
+		"properties": {},
+		"values": {
+			"PAYMENT":{},
+			"PREAUTH":{},
+			"PAYOUT":{},
+			"REFUND":{},
+			"CAPTURE":{},
+			"CANCEL":{},
+			"REPEAT":{},
+			"CASH_ISSUE":{},
+			"CASH_PAYMENT":{}
+		}
+	},
+	"CustomFieldState": {
+		"properties": {
+			"fieldState": {
+				"items": "CustomFieldState.FieldState",
+				"type": "List",
+				"flags": ["M"]
+			}
+		},
+		"type": "CustomFieldState"
+	},
+	"CustomFieldState.FieldState": {
+		"properties": {
+			"name": {
+				"type": "string",
+				"flags": ["M"]
+			},
+			"value": {
+				"type": "string",
+				"flags": ["O"]
+			},
+			"transient": {
+				"type": "boolean",
+				"flags": ["O"]
+			}
+		},
+		"type": "CustomFieldState.FieldState"
+	},
+	"TransactionInfo": {
+		"properties": {
+			"history": {
+				"items": "TransactionEventHistoryDetail",
+				"type": "List"
+			},
+			"followUpStatus": {
+				"type": "TransactionFollowUpStatusDetail"
+			},
+			"fraudGuard": {
+				"type": "FraudGuardResponseDetail"
+			},
+			"sessionId": {
+				"type": "string"
+			},
+			"transaction": {
+				"type": "TransactionStateResponseDetail"
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"locale": {
+				"type": "string"
+			},
+			"processing": {
+				"type": "ProcessingResponseDetail"
+			},
+			"threeDSecure": {
+				"type": "ThreeDSecureResponseDetail"
+			},
+			"customer": {
+				"type": "TransactionCustomerDetails"
+			},
+			"paymentMethod": {
+				"type": "PaymentMethodResponseDetail"
+			}
+		},
+		"type": "TransactionInfo"
+	},
+	"CardTokenPaymentDetails": {
+		"properties": {
+			"token": {
+				"type": "string",
+				"description": "The token we provided as part of a previous transaction.",
+				"flags": ["M"]
+			},
+			"cv2": {
+				"type": "string",
+				"description": "The Card Security Code (CSC, CV2, CVV)",
+				"flags": ["O"]
+			},
+			"cardUpdates": {
+				"type": "CardUpdates",
+				"description": "Use if you are updating card details with the transaction.",
+				"flags": ["O"]
+			}
+		},
+		"type": "CardTokenPaymentDetails"
+	},
+	"CallbackRequestDetails": {
+		"properties": {
+			"preAuthCallback": {
+				"type": "CallbackDetail",
+				"description": "Details of the callback made before the transaction is sent for authorisation.",
+				"flags": ["O"]
+			},
+			"transactionNotification": {
+				"type": "CallbackDetail",
+				"description": "Details of the notification sent after transaction completion.",
+				"flags": ["O"]
+			},
+			"postAuthCallback": {
+				"type": "CallbackDetail",
+				"description": "Details of the callback made after the transaction is sent for authorisation.",
+				"flags": ["O"]
+			},
+			"expiryNotification": {
+				"type": "CallbackDetail",
+				"description": "Details of the notification sent should the transaction expire. For example, uncompleted 3DS processing or expired Authorisation requests.",
+				"flags": ["O"]
+			}
+		},
+		"type": "CallbackRequestDetails"
+	},
+	"ResponseStatus": {
+		"type": "ResponseStatus",
+		"properties": {},
+		"values": {
+			"SUCCESS":{},
+			"FAILED":{}
+		}
+	},
+	"ThreeDSecureResponseDetail": {
+		"properties": {
+			"authenticationStatus": {
+				"type": "ThreeDSecureAuthorisationStatus",
+				"description": "The status of 3DS authentication check."
+			},
+			"authenticationIndicator": {
+				"type": "ThreeDSecureAuthorisationIndicator",
+				"description": "The indicator of the 3DS authentication status."
+			},
+			"enrolmentDateTime": {
+				"type": "DateTime",
+				"description": "The date and time the 3DS enrolment check was performed in ISO-8601 format."
+			},
+			"scheme": {
+				"type": "string",
+				"description": "The scheme that processed the transaction for 3DS."
+			},
+			"eci": {
+				"type": "string",
+				"description": "The eCommerce indicator for the transaction."
+			},
+			"status": {
+				"type": "ThreeDSecureStatus",
+				"description": "The overall 3DS result for the transaction."
+			},
+			"xid": {
+				"type": "string",
+				"description": "The ID used during 3DS processing."
+			},
+			"enrolmentIndicator": {
+				"type": "ThreeDSecureEnrolmentIndicator",
+				"description": "The indicator of the 3DS enrolment status."
+			},
+			"avv": {
+				"type": "string",
+				"description": "The authentication verification value for the transaction.  (CAVV or AAV)"
+			},
+			"enrolmentStatus": {
+				"type": "ThreeDSecureEnrolmentStatus",
+				"description": "The status of the 3DS enrolment check."
+			}
+		},
+		"type": "ThreeDSecureResponseDetail"
+	},
+	"TransactionCustomerDetails": {
+		"properties": {
+			"id": {
+				"type": "string",
+				"description":"The ID given to the Customer by the processing engine."
+			},
+			"email": {
+				"type": "string",
+				"description":"Email address for the Customer."
+			},
+			"merchantRef": {
+				"type": "string",
+				"description":"Your reference for the Customer."
+			},
+			"defaultCurrency": {
+				"type": "string"
+			},
+			"dob": {
+				"type": "string",
+				"description":"Date of birth for the Customer"
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks."
+			},
+			"displayName": {
+				"type": "string",
+				"description":"The Customer's name."
+			},
+			"telephone": {
+				"type": "string",
+				"description":"Telephone number for the Customer."
+			},
+			"ip": {
+				"type": "string",
+				"description":"The Customer's IP address."
+			}
+		},
+		"type": "TransactionCustomerDetails"
+	},
+	"FullCardPaymentDetails": {
+		"properties": {
+			"pan": {
+				"type": "string",
+				"description": "The card number.",
+				"flags": ["M"]
+			},
+			"cardLockToken": {
+				"type": "string",
+				"flags": ["M"],
+				"description": "The CardLock token for the card."
+			},
+			"cv2": {
+				"type": "string",
+				"description": "The Card Security Code (CSC, CV2, CVV).",
+				"flags": ["O"]
+			},
+			"cardType": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			},
+			"expiryDate": {
+				"type": "string",
+				"description": "The expiry date for the card. Provide as MMYY.",
+				"flags": ["M"]
+			},
+			"nickname": {
+				"type": "string",
+				"description": "The name the Customer provides for their card to allow easy selection where they register multiple cards.",
+				"flags": ["M"]
+			},
+			"defaultCard": {
+				"type": "boolean",
+				"description": "Indicates if the card being used should become the Customer's default card.",
+				"flags": ["O"]
+			},
+			"cardHolderName": {
+				"type": "string",
+				"description": "The name printed on the card.",
+				"flags": ["O"]
+			},
+			"issueNumber": {
+				"type": "number",
+				"description": "The issue number for the card.",
+				"flags": ["O"]
+			},
+			"startDate": {
+				"type": "string",
+				"description": "The start date for the card.",
+				"flags": ["O"]
+			}
+		},
+		"type": "FullCardPaymentDetails"
+	},
+	"ThreeDSecureStatus": {
+		"properties": {},
+		"values": {
+			"AUTHENTICATED":{},
+			"BYPASSED":{},
+			"FAILED":{},
+			"NOT_ENROLLED":{},
+			"ENROLMENT_CHECK_FAILURE":{},
+			"INCOMPLETE":{},
+			"NOT_AVAILABLE":{},
+			"NOT_IMPLEMENTED":{}
+		},
+		"type": "ThreeDSecureStatus"
+	},
+	"CallbackDetail": {
+		"properties": {
+			"format": {
+				"type": "string",
+				"description": "The format of the callback content.",
+				"flags": ["O"]
+			},
+			"url": {
+				"type": "string",
+				"description": "The URL you want the callback or notification to be sent to.",
+				"flags": ["M"]
+			}
+		},
+		"type": "CallbackDetail"
+	},
+	"PostalAddress": {
+		"properties": {
+			"name": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			},
+			"line1": {
+				"type": "string",
+				"description": "Line 1 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"line2": {
+				"type": "string",
+				"description": "Line 2 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"line3": {
+				"type": "string",
+				"description": "Line 3 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"line4": {
+				"type": "string",
+				"description": "Line 4 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"city": {
+				"type": "string",
+				"description": "City of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"region": {
+				"type": "string",
+				"description": "Region of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"postcode": {
+				"type": "string",
+				"description": "Post Code of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"country": {
+				"type": "string",
+				"description": "Country name of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"countryCode": {
+				"type": "string",
+				"description": "The 3 character ISO-3166-1 code for the Customer's billing address country.",
+				"flags": ["O"]
+			}
+		},
+		"type": "PostalAddress"
+	},
+	"CustomerDetails.PostalAddress": {
+		"properties": {
+			"name": {
+				"type": "string",
+				"display": false,
+				"flags": ["O"]
+			},
+			"line1": {
+				"type": "string",
+				"description": "Line 1 of the Customer's billing address.",
+				"flags": ["M"]
+			},
+			"line2": {
+				"type": "string",
+				"description": "Line 2 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"line3": {
+				"type": "string",
+				"description": "Line 3 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"line4": {
+				"type": "string",
+				"description": "Line 4 of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"city": {
+				"type": "string",
+				"description": "City of the Customer's billing address.",
+				"flags": ["M"]
+			},
+			"region": {
+				"type": "string",
+				"description": "Region of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"postcode": {
+				"type": "string",
+				"description": "Post Code of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"country": {
+				"type": "string",
+				"description": "Country name of the Customer's billing address.",
+				"flags": ["O"]
+			},
+			"countryCode": {
+				"type": "string",
+				"description": "The 3 character ISO-3166-1 code for the Customer's billing address country.",
+				"flags": ["O"]
+			}
+		},
+		"type": "PostalAddress"
+	},
+	"ResumeSecondaryManageRESTRequest": {
+		"properties": {
+			"threeDSecureResponse": {
+				"type": "ResumeRequest.ThreeDSecureResponse",
+				"flags": ["O"]
+			},
+			"customFields": {
+				"type": "CustomFieldState",
+				"flags": ["O"]
+			},
+			"callbacks": {
+				"type": "CallbackRequestDetails",
+				"flags": ["O"]
+			}
+		},
+		"type": "ResumeSecondaryManageRESTRequest"
+	},
+	"TransactionFollowUpStateValue": {
+		"properties": {},
+		"values": {
+			"REFUNDED":{},
+			"PARTIALLY_REFUNDED":{},
+			"REPEATED":{},
+			"CANCELLED":{},
+			"CAPTURED":{},
+			"REVERSED":{}
+		},
+		"type": "TransactionFollowUpStateValue"
+	},
+	"Link": {
+		"properties": {
+			"rel": {
+				"type": "string"
+			},
+			"href": {
+				"type": "string"
+			}
+		},
+		"type": "Link"
+	},
+	"CardFraudManagementAction": {
+		"properties": {},
+		"values": {
+			"IGNORE":{}
+		},
+		"type": "CardFraudManagementAction"
+	},
+	"ResumeRequest.ThreeDSecureResponse": {
+		"properties": {
+			"pares": {
+				"type": "string",
+				"flags": ["M"]
+			}
+		},
+		"type": "ResumeRequest.ThreeDSecureResponse"
+	},
+	"ThreeDSecureEnrolmentIndicator": {
+		"type": "ThreeDSecureEnrolmentIndicator",
+		"properties": {},
+		"values": {
+			"Y":{},
+			"N":{},
+			"U":{}
+		}
+	},
+	"ThreeDSecureEnrolmentStatus": {
+		"type": "ThreeDSecureEnrolmentStatus",
+		"properties": {},
+		"values": {
+			"ENROLLED":{},
+			"NOT_ENROLLED":{},
+			"UNABLE_TO_AUTHENTICATE":{}
+		}
+	},
+	"ThreeDSecureAuthorisationIndicator": {
+		"type": "ThreeDSecureAuthorisationIndicator",
+		"properties": {},
+		"values": {
+			"Y":{},
+			"A":{},
+			"N":{},
+			"U":{}
+		}
+	},
+	"ThreeDSecureAuthorisationStatus": {
+		"type": "ThreeDSecureAuthorisationStatus",
+		"properties": {},
+		"values": {
+			"AUTHENTICATED":{},
+			"ATTEMPTED":{},
+			"FAILED":{},
+			"ERROR":{}
+		}
+	},
+
+	"InitialiseHostedPayoutRESTRequest": {
+		"type": "InitialiseHostedPayoutRESTRequest",
+		"properties": {
+			"transaction": {
+				"type": "TransactionTemplate",
+				"flags": ["M"]
+			},
+			"customer": {
+				"type": "InitialiseHostedTransactionRequest.Customer",
+				"flags": ["M"]
+			},
+			"customFields": {
+				"type": "CustomFields",
+				"flags": ["O"]
+			},
+			"restrictedPermissions": {
+				"type": "HostedPermissions",
+                "display": false,
+				"flags": ["O"]
+			},
+			"locale": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"session": {
+				"type": "HostedSessionConfiguration",
+				"flags": ["M"]
+			}
+		}
+	},
+	"InitialiseHostedPaymentRESTRequest": {
+		"type": "InitialiseHostedPaymentRESTRequest",
+		"properties": {
+			"transaction": {
+				"type": "TransactionTemplate",
+				"description": "Details of the transaction you want to create.",
+				"flags": ["M"]
+			},
+			"customer": {
+				"type": "InitialiseHostedTransactionRequest.Customer",
+				"flags": ["M"]
+			},
+			"customFields": {
+				"type": "CustomFields",
+				"flags": ["O"]
+			},
+			"restrictedPermissions": {
+				"type": "HostedPermissions",
+				"display": false,
+				"flags": ["O"]
+			},
+			"locale": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"session": {
+				"type": "HostedSessionConfiguration",
+				"flags": ["M"]
+			}
+		}
+	},
+	"InitialiseHostedCardManagementRESTRequest": {
+		"type": "InitialiseHostedCardManagementRESTRequest",
+		"properties": {
+			"customer": {
+				"type": "InitialiseHostedCardManagementRequest.Customer",
+				"flags": ["M"]
+			},
+			"restrictedPermissions": {
+				"type": "HostedPermissions",
+                "display": false,
+				"flags": ["O"]
+			},
+			"locale": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"session": {
+				"type": "HostedSessionConfiguration",
+				"flags": ["M"]
+			}
+		}
+	},
+	"HostedPermissions": {
+		"type": "HostedPermissions",
+		"properties": {
+			"canregistercard": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"cansuspend": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canunsuspend": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canmakepayment": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"candeposit": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canmakepayout": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canwithdraw": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canviewcustomername": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canregisterduplicatecard": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canreversependingpayouts": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canreversependingwithdrawals": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canoverridefraudrules": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"canviewfraudfailures": {
+				"type": "boolean",
+				"flags": ["O"]
+			},
+			"candeletecard": {
+				"type": "boolean",
+				"flags": ["O"]
+			}
+		}
+	},
+
+
+	"InitialiseHostedTransactionRequest.Customer": {
+		"type": "InitialiseHostedTransactionRequest.Customer",
+		"properties": {
+			"create": {
+				"type": "boolean",
+				"flags": ["M"]
+			},
+			"identity": {
+				"type": "CustomerIdentity",
+				"flags": ["M"]
+			},
+			"details": {
+				"type": "CustomerDetails",
+				"flags": ["O"]
+			}
+		}
+	},
+	"InitialiseHostedCardManagementRequest.Customer": {
+		"type": "InitialiseHostedCardManagementRequest.Customer",
+		"properties":{
+			"identity":{
+				"type":"CustomerIdentity",
+				"flags": ["M"]
+			}
+		}
+	},
+	"CustomerIdentity": {
+		"type": "CustomerIdentity",
+		"properties": {
+			"platformCustomerId": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Our ID for your customer."
+			},
+			"merchantCustomerId": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Your ID for the customer."
+			}
+		}
+
+	},
+	"CustomerDetails": {
+		"type": "CustomerDetails",
+		"properties": {
+			"name": {
+				"type": "string",
+				"description": "The Customer's name.",
+				"flags": ["M"]
+			},
+			"address": {
+				"type": "PostalAddress",
+				"flags": ["O"],
+				"display": false
+			},
+			"telephone": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Telephone number for the Customer."
+			},
+			"emailAddress": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Email address for the Customer."
+			},
+			"ipAddress": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The Customer's IP address."
+			},
+			"defaultCurrency": {
+				"type": "string",
+				"flags": ["O"],
+				"display": false
+			}
+		}
+	},
+	"CustomFields": {
+		"type": "CustomFields",
+		"properties": {
+			"dataFieldOrTextFieldOrLabelField": {
+				"type": "List",
+				"flags": ["O"],
+				"items": "CustomField"
+			}
+		}
+	},
+	"CustomField":{
+		"type":"CustomField",
+		"properties":{
+			"name":{
+				"type": "string",
+				"flags": ["M"]
+			},
+			"value":{
+				"type": "string",
+				"flags": ["O"]
+			},
+			"transient":{
+				"type": "boolean",
+				"flags": ["O"]
+			}
+		}
+	},
+	"HostedSessionConfiguration": {
+		"type": "HostedSessionConfiguration",
+		"properties": {
+			"preAuthCallback": {
+				"type": "CallbackDescriptor",
+				"flags": ["O"],
+				"description": "Details of the callback made before the transaction is sent for authorisation."
+			},
+			"postAuthCallback": {
+				"type": "CallbackDescriptor",
+				"flags": ["O"],
+				"description": "Details of the callback made after the transaction is sent for authorisation."
+			},
+			"transactionNotification": {
+				"type": "CallbackDescriptor",
+				"flags": ["O"],
+				"description": "Details of the notification sent after transaction completion."
+			},
+			"returnUrl": {
+				"type": "RedirectDescriptor",
+				"flags": ["M"],
+				"description": "The URL that we will return your customer after the processing the transaction."
+			},
+			"skin": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The ID of the skin used to drive look and feed for this session.  Refer to Customise hosted look and feel for more information."
+			}
+		}
+	},
+	"TransactionTemplate": {
+		"type": "TransactionTemplate",
+		"properties": {
+			"merchantReference": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Your reference for the transaction."
+			},
+			"money": {
+				"type": "MoneySpecification",
+				"flags": ["M"]
+			},
+			"description": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The description of the transaction."
+			},
+			"commerceType": {
+				"type": "CommerceType",
+				"flags": ["O"],
+				"description": "The commerce type for your Customer's transaction."
+			},
+			"deferred": {
+				"type": "boolean",
+				"flags": ["O"],
+				"description": "Indicates if you want the Payment to be Authorised and Captured separately."
+			}
+		}
+	},
+	"MoneySpecification": {
+		"type": "MoneySpecification",
+		"properties": {
+			"currency": {
+				"type": "string",
+				"description": "The currency of your Customer's transaction.  Use the 3 character ISO-4217 code.",
+				"flags": ["M"]
+			},
+			"amount": {
+				"type": "AmountSpecification",
+				"flags": ["M"]
+			}
+		}
+	},
+	"AmountSpecification": {
+		"type": "AmountSpecification",
+		"properties": {
+			"fixed": {
+				"type": "BigDecimal",
+				"flags": ["O"],
+				"description": "Use if you want your customer to only make a payment for a fixed amount. The customer can not change the amount."
+			},
+			"choice": {
+				"type": "AmountChoice",
+				"flags": ["O"],
+				"description": "Use if you want your customer to select from a predefined set of amounts."
+			},
+			"range": {
+				"type": "AmountRange",
+				"flags": ["O"],
+				"description": "Use if you want your customer to choose an amount between a minimum and maximum value.  You can also provide a default amount. This can be overtyped by the customer if they want to."
+			},
+			"suggested": {
+				"type": "AmountSpecification.Suggested",
+				"flags": ["O"],
+				"description": "Use if you want to your customer to choose an amount between a minimum and maximum value or from a predefined set of amounts. "
+			}
+		}
+	},
+	"AmountChoice": {
+		"type": "AmountChoice",
+		"properties": {
+			"option": {
+				"type": "List",
+				"items": "BigDecimal",
+				"flags": ["M"]
+			}
+		}
+	},
+	"AmountRange": {
+		"type": "AmountRange",
+		"properties": {
+			"min": {
+				"type": "BigDecimal",
+				"flags": ["O"]
+			},
+			"max": {
+				"type": "BigDecimal",
+				"flags": ["O"]
+			},
+			"default": {
+				"type": "BigDecimal",
+				"flags": ["O"]
+			}
+		}
+	},
+	"AmountSpecification.Suggested": {
+		"type": "AmountSpecification.Suggested",
+		"properties": {
+			"choice": {
+				"type": "AmountChoice",
+				"flags": ["M"]
+			},
+			"range": {
+				"type": "AmountRange",
+				"flags": ["M"]
+			}
+		}
+	},
+	"RedirectDescriptor": {
+		"type": "RedirectDescriptor",
+		"properties": {
+			"url": {
+				"type": "string",
+				"flags": ["M"]
+			}
+		}
+	},
+	"CallbackDescriptor": {
+		"type": "CallbackDescriptor",
+		"properties": {
+			"url": {
+				"type": "string",
+				"flags": ["M"],
+				"description": "The URL you want the callback or notification to be sent to."
+			},
+			"format": {
+				"type": "CallbackFormat",
+				"flags": ["O"],
+				"description": "The format of the callback content."
+			}
+		}
+	},
+	"CallbackFormat": {
+		"type": "CallbackFormat",
+		"properties": {},
+		"values": {
+			"REST_XML":{},
+			"REST_JSON":{}
+		}
+	},
+	"InitialiseHostedPayoutResponse": {
+		"type": "InitialiseHostedPayoutResponse",
+		"properties": {
+			"sessionId": {
+				"type": "string",
+				"description": "Our ID for the hosted session."
+			},
+			"redirectUrl": {
+				"type": "string",
+				"description": "The URL you should direct your customer to to start the hosted session."
+			},
+			"status": {
+				"type": "ResponseStatus",
+				"flags": ["M"],
+				"description": "Indicates the status of the session creation."
+			},
+			"reasonCode": {
+				"type": "string",
+				"description": "Further information about the status of the session creation."
+			},
+			"reasonMessage": {
+				"type": "string",
+				"description": "Further information about the status of the session creation. This is where we will provide detailed information about any errors."
+			},
+			"trace": {
+				"type": "string",
+				"display": false
+			}
+		}
+	},
+	"ResumeHostedSessionResponse": {
+		"type": "ResumeHostedSessionResponse",
+		"properties":{
+			"sessionId": {
+				"type": "string",
+				"description": "Our ID for the hosted session."
+			},
+			"redirectUrl": {
+				"type": "string",
+				"description": "The URL you should direct your customer to to start the hosted session."
+			},
+			"status": {
+				"type": "ResponseStatus",
+				"flags": ["M"],
+				"description": "Indicates the status of the session creation."
+			},
+			"reasonCode": {
+				"type": "string",
+				"description": "Further information about the status of the session creation."
+			},
+			"reasonMessage": {
+				"type": "string",
+				"description": "Further information about the status of the session creation. This is where we will provide detailed information about any errors."
+			},
+			"trace": {
+				"type": "string",
+				"display": false
+			}
+		}
+	},
+	"InitialiseHostedPaymentResponse": {
+		"type": "InitialiseHostedPaymentResponse",
+		"properties": {
+			"sessionId": {
+				"type": "string",
+				"description": "Our ID for the hosted session."
+			},
+			"redirectUrl": {
+				"type": "string",
+				"description": "The URL you should direct your customer to to start the hosted session."
+			},
+			"status": {
+				"type": "ResponseStatus",
+				"flags": ["M"],
+				"description": "Indicates the status of the session creation."
+			},
+			"reasonCode": {
+				"type": "string",
+				"description": "Further information about the status of the session creation."
+			},
+			"reasonMessage": {
+				"type": "string",
+				"description": "Further information about the status of the session creation. This is where we will provide detailed information about any errors."
+			},
+			"trace": {
+				"type": "string",
+				"display": false
+			}
+		}
+	},
+	"InitialiseHostedCardManagementResponse": {
+		"type": "InitialiseHostedCardManagementResponse",
+		"properties": {
+			"sessionId": {
+				"type": "string",
+				"flags": ["M"],
+				"description": "Our ID for the hosted session."
+			},
+			"redirectUrl": {
+				"type": "string",
+				"flags": ["M"],
+				"description": "The URL you should direct your customer to to start the hosted session."
+			},
+			"status": {
+				"type": "ResponseStatus",
+				"flags": ["M"],
+				"description": "Indicates the status of the session creation."
+			},
+			"reasonCode": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Further information about the status of the session creation."
+			},
+			"reasonMessage": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "Further information about the status of the session creation. This is where we will provide detailed information about any errors."
+			},
+			"trace": {
+				"type": "string",
+				"flags": ["O"],
+				"display": false
+			}
+		}
+	},
+
+	"PaymentMethodUpdate": {
+		"properties": {
+			"isPrimary": {
+				"type": "boolean",
+				"flags": ["O"],
+				"description": "Indicates if the card being used should become the Customer's default card."
+			},
+			"card": {
+				"type": "Card",
+				"flags": ["O"],
+				"description": "Use if you are updating card details."
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"flags": ["O"],
+				"description": "The billing address of the Customer. Will be used for AVS checks."
+			}
+		},
+		"type": "PaymentMethodUpdate"
+	},
+	"FetchedCustomerDetails": {
+		"properties": {
+			"id": {
+				"type": "string",
+				"description": "Our ID for the Customer that is registered with us."
+			},
+			"email": {
+				"type": "string",
+				"description": "Email address for the Customer."
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the Customer."
+			},
+			"defaultCurrency": {
+				"type": "string",
+				"description": "The Customer's default currency."
+			},
+			"dob": {
+				"type": "string",
+				"description": "Date of birth for the Customer."
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks."
+			},
+			"displayName": {
+				"type": "string",
+				"description": "The Customer's name."
+			},
+			"telephone": {
+				"type": "string",
+				"description": "Telephone number for the Customer."
+			}
+		},
+		"type": "FetchedCustomerDetails"
+	},
+	"Card": {
+		"properties": {
+			"issueNumber": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The issue number for the card."
+			},
+			"expiryDate": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The expiry date for the card."
+			},
+			"validDate": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The valid from date of the card. Formatted as MMYY."
+			},
+			"cardNickname": {
+				"type": "string",
+				"flags": ["O"],
+				"description": "The name the Customer provides for their card to allow easy selection where they register multiple cards."
+			}
+		},
+		"type": "Card"
+	},
+
+	"PreAuthCallbackRequest": {
+		"type": "PreAuthCallbackRequest",
+		"properties": {
+			"availableActions": {
+				"type": "PreAuthCallbackRequest.AvailableActions",
+				"description": "The actions you can ask us to perform in the callback response.",
+				"flags": ["M"]
+			},
+			"locale": {
+				"type": "string",
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"processing": {
+				"type": "ProcessingResponseDetail"
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"threeDSecure": {
+				"type": "ThreeDSecureResponseDetail"
+			},
+			"paymentMethod": {
+				"type": "PaymentMethodResponseDetail",
+				"flags": ["M"]
+			},
+			"customer": {
+				"type": "TransactionCustomerDetails",
+				"flags": ["M"]
+			},
+			"transaction": {
+				"type": "TransactionStateResponseDetail",
+				"flags": ["M"]
+			},
+			"fraudGuard": {
+				"type": "FraudGuardResponseDetail"
+			},
+			"sessionId": {
+				"type": "string",
+				"description": "Your reference for the Customer's session.",
+				"flags": ["M"]
+			}
+		}
+	},
+	"PostAuthCallbackRequest": {
+		"type": "PostAuthCallbackRequest",
+		"properties": {
+			"availableActions": {
+				"type": "PostAuthCallbackRequest.AvailableActions",
+				"description": "The actions you can ask us to perform in the callback response.",
+				"flags": ["M"]
+			},
+			"locale": {
+				"type": "string",
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"processing": {
+				"type": "ProcessingResponseDetail"
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"threeDSecure": {
+				"type": "ThreeDSecureResponseDetail"
+			},
+			"paymentMethod": {
+				"type": "PaymentMethodResponseDetail",
+				"flags": ["M"]
+			},
+			"customer": {
+				"type": "TransactionCustomerDetails",
+				"flags": ["M"]
+			},
+			"transaction": {
+				"type": "TransactionStateResponseDetail",
+				"flags": ["M"]
+			},
+			"fraudGuard": {
+				"type": "FraudGuardResponseDetail"
+			},
+			"sessionId": {
+				"type": "string",
+				"description": "Your reference for the Customer's session.",
+				"flags": ["M"]
+			}
+		}
+	},
+	"TransactionNotification": {
+		"type": "TransactionNotification",
+		"properties": {
+			"history": {
+				"type": "List",
+				"items":"TransactionEventHistoryDetail",
+				"flags": ["M"]
+			},
+			"locale": {
+				"type": "string",
+				"description": "The ISO-639 code for your Customer's locale."
+			},
+			"processing": {
+				"type": "ProcessingResponseDetail"
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"threeDSecure": {
+				"type": "ThreeDSecureResponseDetail"
+			},
+			"paymentMethod": {
+				"type": "PaymentMethodResponseDetail",
+				"flags": ["M"]
+			},
+			"customer": {
+				"type": "TransactionCustomerDetails",
+				"flags": ["M"]
+			},
+			"transaction": {
+				"type": "TransactionStateResponseDetail",
+				"flags": ["M"]
+			},
+			"fraudGuard": {
+				"type": "FraudGuardResponseDetail"
+			},
+			"sessionId": {
+				"type": "string",
+				"description": "Your reference for the Customer's session.",
+				"flags": ["M"]
+			}
+		}
+	},
+	"PostAuthCallbackRequest.AvailableActions": {
+		"type": "PostAuthCallbackRequest.AvailableActions",
+		"properties": {
+			"action": {
+				"type": "List",
+				"items":"CallbackAction",
+				"flags": ["M"]
+			}
+		}
+	},
+	"PreAuthCallbackRequest.AvailableActions": {
+		"type": "PreAuthCallbackRequest.AvailableActions",
+		"properties": {
+			"action": {
+				"type": "List",
+				"items":"CallbackAction",
+				"flags": ["M"]
+			}
+		}
+	},
+	"CallbackAction": {
+		"type": "CallbackAction",
+		"values": {
+			"PROCEED": {
+				"description": "Use if you to continue with transaction processing."
+			},
+			"SUSPEND": {
+				"description": "Use if you want to suspend transaction processing so that you can perform external decisioning.  Only available for pre authorisation callbacks."
+			},
+			"SUSPEND_REPLAY": {
+				"description": "Use if you want to repeat the callback after you have resumed your suspended transaction. Only availlable for pre authorisation callbacks."
+			},
+			"CANCEL": {
+				"description": "Use if you want to cancel the transaction at this point in processing.  Available for all transaction types when used in the pre authorisation callbacks.  Available for some transaction types when used in post authorisation callbacks.  Refer to your Relationship Manager for further details."
+			}
+		},
+		"comment":"enum"
+	},
+	"PreAuthCallbackResponse": {
+		"type": "PreAuthCallbackResponse",
+		"properties": {
+			"action": {
+				"type": "CallbackAction",
+				"description": "The action you want us to perform.",
+				"flags": ["M"]
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"redirect": {
+				"type": "Redirect",
+				"description": "The URL to direct the customer to in the case of a pre authorisation SUSPEND action.  If this is a hosted request, we will redirect your customer to this URL.  If this is an API request, the URL will be returned to you in the transaction response."
+			},
+			"return": {
+				"type": "Return",
+				"description": "The URL  direct your customer to once transaction processing is complete. If this is a hosted request, we will redirect your customer to this URL.  If this is an API requiest the URL will be returned to you in the transaction response."
+			}
+		}
+	},
+	"Redirect": {
+		"type": "Redirect",
+		"properties": {
+			"url": {
+				"type": "string",
+				"flags": ["M"]
+			},
+			"frame": {
+				"type": "RedirectFrameType"
+			}
+		}
+	},
+	"Return": {
+		"type": "Return",
+		"properties": {
+			"url": {
+				"type": "string",
+				"flags": ["M"]
+			}
+		}
+	},
+	"PostAuthCallbackResponse": {
+		"type": "PostAuthCallbackResponse",
+		"properties": {
+			"action": {
+				"type": "CallbackAction",
+				"flags": ["M"]
+			},
+			"customFields": {
+				"type": "CustomFieldState"
+			},
+			"redirect": {
+				"type": "Redirect",
+				"display": false
+			},
+			"return": {
+				"type": "Return"
+			}
+		}
+	},
+
+
+	"ReportTransactionResponse":{
+		"type":"ReportTransactionResponse",
+		"properties":{
+			"outcome":{
+				"type":"OutcomeDetail",
+				"properties":{},
+				"flags": ["M"],
+				"description":""
+			},
+			"sessionId":{
+				"type":"String",
+				"description":"Your reference for the session."
+			},
+			"transaction":{
+				"type":"List",
+				"items":"TransactionReportResult"
+			},
+			"trace":{
+				"type":"String"
+			}
+
+		}
+	},
+	"ReportTransactionRESTRequest":{
+		"type":"ReportTransactionRESTRequest",
+		"properties":{
+			"sessionId":{
+				"type":"string",
+				"flags": ["M"],
+				"description":"Your reference for the session."
+			},
+			"reportTransaction":{
+				"type":"List",
+				"items":"ReportTransactionDetail",
+				"flags": ["M"]
+			}
+		}
+	},
+	"OutcomeDetail":{
+		"type":"OutcomeDetail",
+		"properties":{
+			"status":{
+				"type":"OutcomeStatus",
+				"flags":["M"],
+				"description":"Information about the overal outcome of the request."
+			},
+			"reasonCode":{
+				"type":"String",
+				"description":"A code indicating the overall outcome of the request. Refer to Errors for more information."
+
+			},
+			"reasonMessage":{
+				"type":"String",
+				"description":"A message indicating the overall outcome of the request. This is where we'll provide detailed reasons for any errors."
+			},
+			"submitted":{
+				"type":"String"
+			},
+			"successful":{
+				"type":"String"
+			},
+			"failed":{
+				"type":"String"
+			}
+		}
+	},
+	"OutcomeStatus":{
+		"type":"OutcomeStatus",
+		"values": {
+			"SUCCESS":{},
+			"PARTIAL":{},
+			"FAILED":{}
+		}
+	},
+	"TransactionReportResult":{
+		"type":"TransactionReportResult",
+		"properties":{
+			"merchantRef":{
+				"type":"String",
+				"description":"Your reference for the transaction."
+			},
+			"transactionId":{
+				"type":"String"
+			},
+			"reportedStatus":{
+				"type":"ReportedStatus",
+				"properties":{},
+				"flags": ["M"]
+			},
+			"reasonCode":{
+				"type":"String",
+				"description":"A code indicating the overall outcome of the request. Refer to Errors for more information."
+			},
+			"reasonMessage":{
+				"type":"String",
+				"description":"A message indicating the overall outcome of the request. This is where we'll provide detailed reasons for any errors. "
+			}
+		}
+	},
+	"ReportedStatus":{
+		"type":"ReportedStatus",
+		"values": {
+			"SUCCESS":{},
+			"FAILED":{}
+		}
+	},
+	"ReportTransactionDetail":{
+		"type":"ReportTransactionDetail",
+		"properties":{
+			"installation":{
+				"type":"String",
+				"description":"The installation that the original transaction was processed on."
+			},
+			"processing":{
+				"type":"reportmode.ProcessingResponseDetail",
+				"properties":{}
+			},
+			"paymentMethod":{
+				"type":"PaymentMethodDetail",
+				"properties":{}
+			},
+			"customer":{
+				"type":"reportmode.TransactionCustomerDetails",
+				"properties":{}
+			},
+			"transaction":{
+				"type":"reportmode.TransactionStateResponseDetail",
+				"properties":{},
+				"flags": ["M"]
+			},
+			"customFields":{
+				"type":"CustomFieldState",
+				"properties":{}
+			},
+			"threeDSecureInformation":{
+				"type":"ThreeDSecureInformation",
+				"properties":{}
+			}
+		}
+	},
+	"reportmode.ProcessingResponseDetail":{
+		"type":"reportmode.ProcessingResponseDetail",
+		"properties":{
+			"authResponse":{
+				"type":"CardAuthResponseDetail"
+			},
+			"voidSuccessful":{
+				"type":"boolean",
+				"description":"Indicates if the transaction was voided by a Post Authorisation callback."
+			},
+			"route":{
+				"type":"string",
+				"description":"The name of the processing engine your transaction was submitted to."
+			},
+			"transactionManager":{
+				"type":"string",
+				"description":"The name of the processing engine."
+			},
+			"decidingEntity":{
+				"type":"DecidingEntity",
+				"description":"The entity that decided the outcome of the transaction."
+			},
+			"routeAccount":{
+				"type":"string"
+			},
+			"channel":{
+				"type":"ChannelType",
+				"flags":["M"],
+				"description":"The sales channel that the transaction was processed on."
+			},
+			"routeData":{
+				"type":"RouteDataList"
+			}
+		}
+	},
+	"reportmode.TransactionCustomerDetails": {
+		"properties": {
+			"id": {
+				"type": "string",
+				"description":"The ID given to the Customer by the processing engine."
+			},
+			"email": {
+				"type": "string",
+				"description":"Email address for the Customer."
+			},
+			"merchantRef": {
+				"type": "string",
+				"description":"Your reference for the Customer."
+			},
+			"dob": {
+				"type": "string",
+				"description":"Date of birth for the Customer"
+			},
+			"billingAddress": {
+				"type": "PostalAddress",
+				"description": "The billing address of the Customer. Will be used for AVS checks."
+			},
+			"displayName": {
+				"type": "string",
+				"description":"The Customer's name."
+			},
+			"telephone": {
+				"type": "string",
+				"description":"Telephone number for the Customer."
+			},
+			"ip": {
+				"type": "string",
+				"description":"The Customer's IP address."
+			}
+		},
+		"type": "TransactionCustomerDetails"
+	},
+	"reportmode.TransactionStateResponseDetail": {
+		"type": "reportmode.TransactionStateResponseDetail",
+		"properties": {
+			"commerceType": {
+				"type": "CommerceType",
+				"description": "The Commerce Type of the transaction."
+			},
+			"status": {
+				"type": "TransactionStateValue",
+				"description": "The current state of the transaction.",
+				"flags":["M"]
+			},
+			"merchantDescription": {
+				"type": "string",
+				"description": "The description of the transaction."
+			},
+			"deferred": {
+				"type": "boolean",
+				"description": "Indicates if the Payment capture is deferred."
+			},
+			"type": {
+				"type": "TransactionType",
+				"description": "Indicates the type of the transaction.",
+				"flags":["M"]
+			},
+			"currency": {
+				"type": "string",
+				"description": "Indicates the currency of the transaction.",
+				"flags":["M"]
+			},
+			"amount": {
+				"type": "BigDecimal",
+				"description": "A string value that describes a precision 2 decimal number (i.e.: '1000.02'). Indicates the amount of the transaction.",
+				"flags":["M"]
+			},
+			"transactionTime": {
+				"type": "DateTime",
+				"description": "The date and time the processing engine received the transaction in ISO-8601 format.",
+				"flags":["M"]
+			},
+			"merchantRef": {
+				"type": "string",
+				"description": "Your reference for the transaction.",
+				"flags":["M"]
+			},
+			"originalMerchantReference": {
+				"type":"string",
+				"description":"Your reference for the original transactions where the reported transaction is a authorisation capture, authorisation void or refund."
+			},
+			"originalTransactionId":{
+				"type":"string",
+				"description":"The ID given to the original transaction by the processing engine where the reported transaction is an authorisation capture, authorisation void or refund."
+			}
+		}
+	},
+
+	"ChannelType":{
+		"type":"ChannelType",
+		"values": {
+			"WEB":{},
+			"MOBILE":{},
+			"SMS":{},
+			"RETAIL":{},
+			"MOTO":{},
+			"IVR":{},
+			"OTHER":{}
+		}
+	},
+	"PaymentMethodDetail":{
+		"type":"PaymentMethodDetail",
+		"properties":{
+			"card":{
+				"type":"FullCardPaymentDetails",
+				"properties":{}
+			},
+			"paypal":{
+				"type":"PayPalDetails",
+				"properties":{}
+			},
+			"payCash":{
+				"type":"PayCashPaymentDetails",
+				"properties":{}
+			},
+			"paymentClass":{
+				"type":"String",
+				"flags": ["M"],
+				"description":"Indicates if the transaction was a PayCash transaction.  Mandatory if the PayCash section is provided."
+			}
+
+		}
+	},
+	"ThreeDSecureInformation":{
+		"type":"ThreeDSecureInformation",
+		"properties":{
+			"status":{
+				"type":"ThreeDSecureStatus",
+				"properties":{},
+				"description": "The overall 3DS result for the transaction."
+			},
+			"liabilityShift":{
+				"type":"ThreeDSecureLiabilityShift",
+				"properties":{}
+			},
+			"scheme":{
+				"type":"ThreeDSecureScheme",
+				"properties":{},
+				"description": "The scheme that processed the transaction for 3DS."
+			},
+			"eci":{
+				"type":"String",
+				"description": "The eCommerce indicator for the transaction."
+			},
+			"xid":{
+				"type":"String",
+				"description": "The ID used during 3DS processing."
+			},
+			"avv":{
+				"type":"String",
+				"description": "The authentication verification value for the transaction.  (CAVV or AAV)"
+			},
+			"avvAlgorithm":{
+				"type":"AvvAlgorithm",
+				"properties":{}
+			},
+			"enrolmentStatus":{
+				"type":"ThreeDSecureEnrolmentStatus",
+				"properties":{},
+				"description": "The status of the 3DS enrolment check."
+			},
+			"authorisationStatus":{
+				"type":"ThreeDSecureAuthorisationStatus",
+				"properties":{},
+				"description":"The status of 3DS authentication check."
+			},
+			"processedDateTime":{
+				"type":"DateTime",
+				"description":"The date and time the transaction was processed in ISO-8601 format."
+			},
+			"enrolmentDateTime":{
+				"type":"DateTime",
+				"description": "The date and time the 3DS enrolment check was performed in ISO-8601 format."
+			},
+			"authorisationDateTime":{
+				"type":"DateTime",
+				"description": "The date and time the 3DS authorisation has occured in ISO-8601 format."
+			}
+		}
+	},
+	"PayPalDetails":{
+		"type":"PayPalDetails",
+		"properties":{
+			"username":{
+				"type":"String",
+				"flags":["M"],
+				"description":"The username for the PayPal transaction.  Mandatory if the PayPal section is provided."
+			},
+			"accountId":{
+				"type":"String",
+				"description":"The account id for the PayPal transaction."
+			}
+		}
+
+	},
+	"ThreeDSecureLiabilityShift":{
+		"type":"ThreeDSecureLiabilityShift",
+		"values": {
+			"LIABILITY_SHIFT":{},
+			"ATTEMPTS_ONLY":{},
+			"NONE":{}
+		}
+	},
+	"ThreeDSecureScheme":{
+		"type":"ThreeDSecureScheme",
+		"values": {
+			"VERIFIED_BY_VISA":{},
+			"MASTERCARD_SECURECODE":{},
+			"JSECURE":{},
+			"SAFEKEY":{}
+		}
+	},
+	"AvvAlgorithm":{
+		"type":"AvvAlgorithm",
+		"values": {
+			"NOT_SECURE":{},
+			"SECURE":{}
+		}
+	}
+
+}}

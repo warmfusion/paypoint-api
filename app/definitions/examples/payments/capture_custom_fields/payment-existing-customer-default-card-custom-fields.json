@@ -1,0 +1,169 @@
+{
+	"description": "Payment for existing customer with default card and custom fields",
+	"request": {
+		"description": "POST /transactions/{instId}/payment",
+		"body": {
+			"transaction": {
+				"currency": "GBP",
+				"amount": "1000.0",
+				"description": "Sample Transaction",
+				"merchantRef": "mer_txn_1234556",
+				"commerceType": "MOTO"
+			  },
+			  "customFields": {
+				  "fieldState": [
+					 {
+						"name": "measure_CV2_FAILURES",
+						"value": "1",
+						"transient": false
+					 },
+					 {
+						"name": "measure_NO_DATA_MATCH",
+						"value": "1",
+						"transient": false
+					 },
+					 {
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					 },
+					 {
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "1000.00",
+						"transient": false
+					 }
+				  ]
+			  },
+			  "paymentMethod": {
+				"card": {
+				  "pan": "1000350000000007",
+				  "cv2": "123",
+				  "expiryDate": "0115",
+				  "startDate": "1111",
+				  "cardType": "MC_DEBIT",
+				  "nickname": "John",
+				  "cardHolderName": "John Smith",
+				  "defaultCard": "false"
+				},
+				"billingAddress": {
+				  "line1": "Flat 1 ",
+				  "line2": "Cauldron house",
+				  "line3": "A Street",
+				  "line4": "Twertonia",
+				  "city": "Bath",
+				  "region": "Somerset",
+				  "postcode": "BA1 234",
+				  "country": "UK"
+				}
+			  },
+			  "customer": {
+				"create": "true",
+				"merchantRef": "mer_cust_131241413",
+				"displayName": "Mr O Whatasillyname",
+				"billingAddress": {
+				  "line1": "Flat 1 ",
+				  "line2": "Cauldron house",
+				  "line3": "A Street",
+				  "line4": "Twertonia",
+				  "city": "Bath",
+				  "region": "Somerset",
+				  "postcode": "BA1 234",
+				  "country": "UK"
+				},
+				"email": "test@test.com",
+				"telephone": "0123 456 789",
+				"defaultCurrency": "GBP",
+				"ip": "212.58.253.67"
+			  }
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 201",
+		"body": {
+			"processing": {
+				  "authResponse": {
+					 "statusCode": "00",
+					 "message": "ACQUIRER OK",
+					 "authCode": "100000",
+					 "gatewayReference": "5896345970448890-PASS",
+					 "gatewayCode": "1",
+					 "gatewayMessage": "ACCEPTED",
+					 "avsAddressCheck": "NOT_MATCHED",
+					 "avsPostcodeCheck": "NOT_MATCHED",
+					 "cv2Check": "NOT_MATCHED",
+					 "status": "AUTHORISED"
+				  },
+				  "route": "MCPE"
+			   },
+			   "paymentMethod": {
+				  "card": {
+					 "cardToken": "rusq9CmgRC2o39RYx9HAlA",
+					 "new": true,
+					 "cardType": "VISA_DEBIT",
+					 "maskedPan": "100035******0007",
+					 "expiryDate": "0115",
+					 "issuer": "Lloyds",
+					 "issuerCountry": "GBR",
+					 "cardHolderName": "John Smith",
+					 "cardNickname": "John",
+					 "validDate": "1111"
+				  },
+				  "billingAddress": {
+					 "line1": "Flat 1 ",
+					 "line2": "Cauldron house",
+					 "line3": "A Street",
+					 "line4": "Twertonia",
+					 "city": "Bath",
+					 "region": "Somerset",
+					 "postcode": "BA1 234",
+					 "country": "UK"
+				  },
+				  "paymentClass": "CARD"
+			   },
+			   "customFields": {
+				  "fieldState": [
+					 {
+						"name": "measure_CV2_FAILURES",
+						"value": "1",
+						"transient": false
+					 },
+					 {
+						"name": "measure_NO_DATA_MATCH",
+						"value": "1",
+						"transient": false
+					 },
+					 {
+						"name": "measure_ADDRESS_MATCH_ONLY",
+						"value": "0",
+						"transient": false
+					 },
+					 {
+						"name": "measure_TOTAL_CARD_SPEND",
+						"value": "1000.00",
+						"transient": false
+					 }
+				  ]
+			   },
+			   "threeDSecure": {},
+			   "customer": {
+				  "created": true,
+				  "id": "10501",
+				  "merchantRef": "mer_cust_131241413"
+			   },
+			   "transaction": {
+				  "transactionId": "13501566687",
+				  "merchantRef": "mer_txn_1234556",
+				  "status": "SUCCESS",
+				  "type": "PAYMENT",
+				  "amount": 1000,
+				  "currency": "GBP",
+				  "transactionTime": "2014-01-06T12:25:30.902Z"
+			   },
+			   "outcome": {
+				  "status": "SUCCESS",
+				  "reasonCode": "S100",
+				  "reasonMessage": "Authorised"
+			   }
+		}
+	}
+}

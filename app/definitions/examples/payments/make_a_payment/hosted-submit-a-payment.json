@@ -1,0 +1,56 @@
+{
+	"description": "Submit a Payment",
+	"request": {
+		"description": "POST hosted/rest/sessions/{instId}/payments",
+		"body": {
+			"session": {
+				"preAuthCallback": {
+					"url": "http://www.merchant.com/callback/preAuth?status=SUSPEND",
+					"format": "REST_XML"
+				},
+				"returnUrl": {
+					"url": "http://www.merchant.com/transactionResult?MERCHANTREF=761585761585"
+				}
+			},
+			"transaction": {
+
+				"merchantReference": "761585761585",
+				"money": {
+					"amount": {
+						"fixed": 100
+					},
+					"currency": "GBP"
+				}
+			},
+			"customer": {
+				"create": "true",
+				"identity": {
+					"merchantCustomerId": "1111111111111"
+				},
+				"details": {
+					"name": "given1 Family1",
+					"address": {
+						"line1": "matched",
+						"line2": "initialCustomer1AddresssLine2",
+						"city": "initalCustomer1City",
+						"region": "initalCustomer1Region",
+						"postcode": "AVS111",
+						"country": "initialCustomer1Country"
+					},
+					"telephone": "0044111111111",
+					"emailAddress": "initialCustomer1@example.com",
+					"ipAddress": "1.1.1.1",
+					"defaultCurrency": "GBP"
+				}
+			}
+		}
+	},
+	"response": {
+		"description": "HTTP/1.1 200",
+		"body": {
+			"sessionId": "5280f295-b7ea-4eaa-8e3b-ebd6fa67cc58",
+			"redirectUrl": "http://www.paypoint.net/hosted/8f2c9ec4-f9e6-44a7-b14a-39a47d3aeb65/begin/5280f295-b7ea-4eaa-8e3b-ebd6fa67cc58",
+			"status": "SUCCESS"
+		}
+	}
+}

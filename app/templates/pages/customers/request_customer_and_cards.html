@@ -1,0 +1,61 @@
+<h2 class="page-title"> Request a customer and their cards </h2>
+
+
+<div class="page-body">
+	<p>
+        Use this request for on-demand customer and payment method information.
+	</p>
+
+	<!-- TAB SELECTOR -->
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#customerByMerchantRef" data-toggle="tab">Customer by Merchant Reference</a></li>
+		<li><a href="#customerByCustomerId" data-toggle="tab">Customer by Customer ID</a></li>
+		<li><a href="#listCustomerPaymentMethods" data-toggle="tab">List Customer Payment Methods</a></li>
+		<li><a href="#showPaymentMethod" data-toggle="tab">Show Payment Method</a></li>
+	</ul>
+
+	<!-- TAB CONTENT -->
+	<div class="tab-content">
+
+		<!-- CUSTOMER BY MERCHANT REFERENCE -->
+		<div class="tab-pane active" id="customerByMerchantRef">
+			<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/byRef', 'customers/request_customer_and_cards').get()) %>
+			<!-- EXAMPLES -->
+			<div class="endpoint-example-section">
+				<div class="endpoint-section-header">API Examples</div>
+				<%= new ExampleRenderer().render('customers/request_customer_and_cards/get-customer-by-merchant-ref') %>
+			</div>
+		</div>
+
+		<!-- CUSTOMER BY CUSTOMER ID -->
+		<div class="tab-pane" id="customerByCustomerId">
+			<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/{customerId}', 'customers/request_customer_and_cards').get()) %>
+			<!-- EXAMPLES -->
+			<div class="endpoint-example-section">
+				<div class="endpoint-section-header">API Examples</div>
+				<%= new ExampleRenderer().render('customers/request_customer_and_cards/get-customer-by-customer-id') %>
+			</div>
+		</div>
+
+		<!-- LIST CUSTOMER PAYMENT METHODS -->
+		<div class="tab-pane" id="listCustomerPaymentMethods">
+			<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/{customerId}/paymentMethods', 'customers/request_customer_and_cards').get()) %>
+			<!-- EXAMPLES -->
+			<div class="endpoint-example-section">
+				<div class="endpoint-section-header">API Examples</div>
+				<%= new ExampleRenderer().render('customers/request_customer_and_cards/list-customer-payment-methods') %>
+			</div>
+		</div>
+
+		<!-- SHOW PAYMENT METHOD -->
+		<div class="tab-pane" id="showPaymentMethod">
+			<%= new GenericRenderer().render('endpoint', new EndpointModelProvider('/customers/{instId}/{customerId}/paymentMethods/{token}', 'customers/request_customer_and_cards').get()) %>
+			<!-- EXAMPLES -->
+			<div class="endpoint-example-section">
+				<div class="endpoint-section-header">API Examples</div>
+				<%= new ExampleRenderer().render('customers/request_customer_and_cards/show-payment-method') %>
+			</div>
+		</div>
+	</div>
+</div>
+
